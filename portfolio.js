@@ -4,140 +4,89 @@
 const projects = [
     {
         id: 1,
-        title: "Aplikasi Manajemen Inventory",
-        description: "Sistem tracking stok barang dengan notifikasi otomatis via email saat stok menipis. Terintegrasi dengan Google Sheets sebagai database real-time.",
-        tech: ["Google Apps Script", "Google Sheets", "Email API", "Trigger"],
-        url: "https://script.google.com/macros/s/ABCDEFG12345/exec",
+        title: "Manajement Inventory V.1",
+        description: "Aplikasi berbasis web ini dirancang untuk mempermudah pencatatan, pelacakan, dan pengawasan status inventaris serta aset secara real-time, efisien, dan terstruktur.",
+        tech: ["Coming Soon],
+        url: "https://script.google.com/macros/s/AKfycbww6LjEAP-Slaz0NLO1OaVhrBh_vtwhg9W6XYKnz1IvXoyF1XM21mIv8JcVDcDabfI/exec",
         screenshot: "assets/inventory-app.jpg",
-        category: "Tools",
+        category: "Coming Soon",
         status: "Live",
-        date: "2025-01-15",
+        date: "2026-04-24",
         features: [
-            "Tracking stok real-time",
-            "Notifikasi email otomatis",
-            "Laporan bulanan",
-            "Multi-user access"
+            "Coming Soon",           
         ]
     },
     {
         id: 2,
-        title: "Dashboard Penjualan Real-time",
-        description: "Dashboard interaktif yang menampilkan grafik penjualan harian, mingguan, dan bulanan dari data Google Sheets dengan visualisasi yang memukau.",
-        tech: ["Google Apps Script", "Chart.js", "Google Sheets API", "CSS3"],
-        url: "https://script.google.com/macros/s/HIJKLMN67890/exec",
+        title: "Ticketing System",
+        description: "Antarmuka Pusat Bantuan & Laporan ini berfungsi sebagai portal pengaduan dan tiket layanan pelanggan yang dirancang untuk memudahkan wali murid serta siswa dalam menyampaikan kendala secara terstruktur",
+        tech: ["Coming Soon"],
+        url: "https://script.google.com/macros/s/AKfycbw_VFHI-k87QzbCPMV0To4a8Sqm_Rox6YVK8p1oGDHW6p17PY_VUgch0ZHSsODiYlo/exec",
         screenshot: "assets/dashboard-app.jpg",
-        category: "Dashboard",
+        category: "Coming Soon",
         status: "Live",
-        date: "2025-02-20",
+        date: "2026-07-13",
         features: [
-            "Grafik interaktif",
-            "Filter tanggal",
-            "Export PDF",
-            "Mobile responsive"
+            "Coming Soon",
         ]
     },
     {
         id: 3,
-        title: "Form Pengaduan Customer",
-        description: "Formulir pengaduan yang otomatis mengirim email ke tim support dan menyimpan data ke Google Sheets untuk tracking dan analisis.",
-        tech: ["Google Apps Script", "Google Sheets", "Form Validation", "Bootstrap"],
-        url: "https://script.google.com/macros/s/OPQRSTU11111/exec",
+        title: "Manajement Inventory V.2",
+        description: "Antarmuka Dashboard Sarana dan Prasarana ini dirancang khusus untuk mengelola, memantau sirkulasi, serta mencatat kelayakan aset operasional sekolah secara real-time dan terpusat",
+        tech: ["Coming Soon"],
+        url: "https://script.google.com/macros/s/AKfycbxowBfgs9xvyMNTbN24KR6p2KzGssDUntHv4rGUOOO1VCMZCFZg7TbNMScuvrlZ6mEw/exec",
         screenshot: "assets/form-app.jpg",
-        category: "Form",
+        category: "Coming Soon",
         status: "Live",
-        date: "2025-03-10",
+        date: "2026-07-15",
         features: [
-            "Validasi input",
-            "Auto-reply email",
-            "Dashboard admin",
-            "Export ke Excel"
+            "Coming Soon",
         ]
     },
     {
         id: 4,
-        title: "Auto-Reply Email Bot",
-        description: "Bot otomatis yang membalas email masuk berdasarkan keyword tertentu. Sangat berguna untuk customer service dan otomatisasi email.",
-        tech: ["Google Apps Script", "Gmail API", "Google Sheets", "Regex"],
-        url: "https://script.google.com/macros/s/XYZABC12345/exec",
+        title: "SABAR - Sistem Arus Barang Masuk & Keluar",
+        description: "Antarmuka sistem SABAR (Sistem Arus Barang Masuk dan Keluar) ini berfungsi sebagai dashboard manajemen logistik dan persediaan barang yang dirancang untuk memantau pergerakan stok secara terstruktur dan efisien.",
+        tech: ["Coming Soon"],
+        url: "https://script.google.com/macros/s/AKfycbxqBjuuCdrOUbjfeBxoWLqFzerNPlyZ_mEWHKatwI5STBjzIJ2Vb01MOUUoURWmK-c/exec",
         screenshot: "assets/email-bot.jpg",
-        category: "Automation",
+        category: "Coming Soon",
         status: "Live",
-        date: "2025-04-05",
+        date: "2026-07-30",
         features: [
-            "Keyword detection",
-            "Auto-reply template",
-            "Logging ke sheets",
-            "Analytics dashboard"
+            "Coming Soon",
         ]
     },
     {
         id: 5,
-        title: "Sistem Absensi Karyawan",
-        description: "Aplikasi absensi berbasis QR Code. Karyawan scan QR dan data masuk ke Google Sheets secara real-time dengan validasi lokasi.",
-        tech: ["Google Apps Script", "QR Code", "Google Sheets", "Geolocation API"],
-        url: "https://script.google.com/macros/s/DEFGHI67890/exec",
+        title: "SAHIN - Secure, Authentic, Hands-In",
+        description: "Antarmuka web app Sah In dirancang sebagai sistem Tanda Tangan Elektronik (TTE) dan pemeliharaan dokumen digital yang memfasilitasi penandatanganan serta pembubuhan stempel resmi secara visual, instan, dan aman",
+        tech: ["Coming Soon"],
+        url: "https://script.google.com/macros/s/AKfycbxMciO7OR6mKZcgEKaEg_rgQOjqoJI3X12drJciYhEIkhlzGyhOiSCvjs5BOINhVlEz/exec",
         screenshot: "assets/absensi-app.jpg",
-        category: "Tools",
-        status: "Development",
-        date: "2025-05-12",
+        category: "Coming Soon",
+        status: "Live",
+        date: "2026-08-05",
         features: [
-            "QR Code scanner",
-            "Validasi lokasi",
-            "Rekap absensi",
-            "Notifikasi telat"
+            "Coming Soon",
         ]
     },
     {
         id: 6,
-        title: "REST API Generator dari Sheets",
-        description: "Mengubah Google Sheets menjadi REST API endpoint. Bisa digunakan untuk mobile apps atau website lain.",
-        tech: ["Google Apps Script", "REST API", "JSON", "Google Sheets"],
-        url: "https://script.google.com/macros/s/API12345678/exec",
+        title: "GROO",
+        description: "Antarmuka Dashboard SDM (GROO - Grow Together, Work Better) ini dirancang khusus untuk mengelola data kepegawaian, memantau status kualifikasi pendidik, serta mengadministrasikan data Sumber Daya Manusia secara terstruktur dan terpusat",
+        tech: ["Coming Soon"],
+        url: "https://script.google.com/macros/s/AKfycbwwTlxg56WFLLE-_shY6s6iI3DQmKGRoUCwpzE1BaaYF_imsQ5WxenWUBxI-fVsz-dS/exec",
         screenshot: "assets/api-app.jpg",
-        category: "API",
+        category: "Coming Soon",
         status: "Live",
-        date: "2025-06-01",
+        date: "2026-08-13",
         features: [
-            "RESTful endpoints",
-            "Filter & sorting",
-            "Authentication",
-            "Rate limiting"
+            "Coming Soon",
         ]
     },
-    {
-        id: 7,
-        title: "Invoice Generator Otomatis",
-        description: "Generate invoice otomatis dari data penjualan di Google Sheets, lengkap dengan nomor invoice unik dan email ke customer.",
-        tech: ["Google Apps Script", "Google Docs", "PDF", "Email API"],
-        url: "https://script.google.com/macros/s/INVOICE12345/exec",
-        screenshot: "assets/invoice-app.jpg",
-        category: "Automation",
-        status: "Live",
-        date: "2025-07-08",
-        features: [
-            "Generate PDF",
-            "Nomor invoice unik",
-            "Email otomatis",
-            "Template kustom"
-        ]
-    },
-    {
-        id: 8,
-        title: "Survey & Polling System",
-        description: "Sistem survey online dengan hasil real-time. Bisa membuat pertanyaan multiple choice, skala, dan text. Hasil langsung di visualisasi.",
-        tech: ["Google Apps Script", "Google Sheets", "Chart.js", "Form Builder"],
-        url: "https://script.google.com/macros/s/SURVEY12345/exec",
-        screenshot: "assets/survey-app.jpg",
-        category: "Form",
-        status: "Development",
-        date: "2025-08-15",
-        features: [
-            "Builder pertanyaan",
-            "Multiple question types",
-            "Real-time results",
-            "Export data"
-        ]
-    }
+    {        
 ];
 
 // ============================================
