@@ -43,7 +43,7 @@ const projects = [
         title: "SABAR - Sistem Arus Barang Masuk & Keluar",
         description: "Antarmuka sistem SABAR (Sistem Arus Barang Masuk dan Keluar) ini berfungsi sebagai dashboard manajemen logistik dan persediaan barang yang dirancang untuk memantau pergerakan stok secara terstruktur dan efisien.",
         tech: ["Coming Soon"],
-        url: "https://script.google.com/macros/s/AKfycbxqBjuuCdrOUbjfeBxoWLqFzerNPlyZ_mEWHKatwI5STBjzIJ2Vb01MOUUoURWmK-c/exec",
+        url: "https://maeppeam.github.io/sabar/",
         screenshot: "https://via.placeholder.com/400x250/ea4335/ffffff?text=SABAR",
         category: "Automation",
         status: "Live",
