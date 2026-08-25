@@ -13,7 +13,7 @@ const projects = [
         status: "Live",
         date: "2026-04-24",
         features: [
-            "Coming Soon"        
+            "Coming Soon"
         ]
     },
     {
@@ -86,7 +86,6 @@ const projects = [
             "Coming Soon"
         ]
     }
-    {        
 ];
 
 // ============================================
