@@ -1,5 +1,5 @@
 // ============================================
-// DATA PROJECT GAS - LENGKAP
+// DATA PROJECT GAS
 // ============================================
 const projects = [
     {
@@ -8,13 +8,11 @@ const projects = [
         description: "Aplikasi berbasis web ini dirancang untuk mempermudah pencatatan, pelacakan, dan pengawasan status inventaris serta aset secara real-time, efisien, dan terstruktur.",
         tech: ["Coming Soon"],
         url: "https://script.google.com/macros/s/AKfycbww6LjEAP-Slaz0NLO1OaVhrBh_vtwhg9W6XYKnz1IvXoyF1XM21mIv8JcVDcDabfI/exec",
-        screenshot: "assets/inventory-app.jpg",
-        category: "Coming Soon",
+        screenshot: "https://via.placeholder.com/400x250/1a73e8/ffffff?text=Inventory+V1",
+        category: "Tools",
         status: "Live",
         date: "2026-04-24",
-        features: [
-            "Coming Soon"
-        ]
+        features: ["Coming Soon"]
     },
     {
         id: 2,
@@ -22,13 +20,11 @@ const projects = [
         description: "Antarmuka Pusat Bantuan & Laporan ini berfungsi sebagai portal pengaduan dan tiket layanan pelanggan yang dirancang untuk memudahkan wali murid serta siswa dalam menyampaikan kendala secara terstruktur",
         tech: ["Coming Soon"],
         url: "https://script.google.com/macros/s/AKfycbw_VFHI-k87QzbCPMV0To4a8Sqm_Rox6YVK8p1oGDHW6p17PY_VUgch0ZHSsODiYlo/exec",
-        screenshot: "assets/dashboard-app.jpg",
-        category: "Coming Soon",
+        screenshot: "https://via.placeholder.com/400x250/34a853/ffffff?text=Ticketing",
+        category: "Dashboard",
         status: "Live",
         date: "2026-07-13",
-        features: [
-            "Coming Soon"
-        ]
+        features: ["Coming Soon"]
     },
     {
         id: 3,
@@ -36,13 +32,11 @@ const projects = [
         description: "Antarmuka Dashboard Sarana dan Prasarana ini dirancang khusus untuk mengelola, memantau sirkulasi, serta mencatat kelayakan aset operasional sekolah secara real-time dan terpusat",
         tech: ["Coming Soon"],
         url: "https://script.google.com/macros/s/AKfycbxowBfgs9xvyMNTbN24KR6p2KzGssDUntHv4rGUOOO1VCMZCFZg7TbNMScuvrlZ6mEw/exec",
-        screenshot: "assets/form-app.jpg",
-        category: "Coming Soon",
+        screenshot: "https://via.placeholder.com/400x250/fbbc04/ffffff?text=Inventory+V2",
+        category: "Dashboard",
         status: "Live",
         date: "2026-07-15",
-        features: [
-            "Coming Soon"
-        ]
+        features: ["Coming Soon"]
     },
     {
         id: 4,
@@ -50,13 +44,11 @@ const projects = [
         description: "Antarmuka sistem SABAR (Sistem Arus Barang Masuk dan Keluar) ini berfungsi sebagai dashboard manajemen logistik dan persediaan barang yang dirancang untuk memantau pergerakan stok secara terstruktur dan efisien.",
         tech: ["Coming Soon"],
         url: "https://script.google.com/macros/s/AKfycbxqBjuuCdrOUbjfeBxoWLqFzerNPlyZ_mEWHKatwI5STBjzIJ2Vb01MOUUoURWmK-c/exec",
-        screenshot: "assets/email-bot.jpg",
-        category: "Coming Soon",
+        screenshot: "https://via.placeholder.com/400x250/ea4335/ffffff?text=SABAR",
+        category: "Automation",
         status: "Live",
         date: "2026-07-30",
-        features: [
-            "Coming Soon"
-        ]
+        features: ["Coming Soon"]
     },
     {
         id: 5,
@@ -64,13 +56,11 @@ const projects = [
         description: "Antarmuka web app Sah In dirancang sebagai sistem Tanda Tangan Elektronik (TTE) dan pemeliharaan dokumen digital yang memfasilitasi penandatanganan serta pembubuhan stempel resmi secara visual, instan, dan aman",
         tech: ["Coming Soon"],
         url: "https://script.google.com/macros/s/AKfycbxMciO7OR6mKZcgEKaEg_rgQOjqoJI3X12drJciYhEIkhlzGyhOiSCvjs5BOINhVlEz/exec",
-        screenshot: "assets/absensi-app.jpg",
-        category: "Coming Soon",
+        screenshot: "https://via.placeholder.com/400x250/4285f4/ffffff?text=SAHIN",
+        category: "API",
         status: "Live",
         date: "2026-08-05",
-        features: [
-            "Coming Soon"
-        ]
+        features: ["Coming Soon"]
     },
     {
         id: 6,
@@ -78,13 +68,11 @@ const projects = [
         description: "Antarmuka Dashboard SDM (GROO - Grow Together, Work Better) ini dirancang khusus untuk mengelola data kepegawaian, memantau status kualifikasi pendidik, serta mengadministrasikan data Sumber Daya Manusia secara terstruktur dan terpusat",
         tech: ["Coming Soon"],
         url: "https://script.google.com/macros/s/AKfycbwwTlxg56WFLLE-_shY6s6iI3DQmKGRoUCwpzE1BaaYF_imsQ5WxenWUBxI-fVsz-dS/exec",
-        screenshot: "assets/api-app.jpg",
-        category: "Coming Soon",
+        screenshot: "https://via.placeholder.com/400x250/0f9d58/ffffff?text=GROO",
+        category: "Dashboard",
         status: "Live",
         date: "2026-08-13",
-        features: [
-            "Coming Soon"
-        ]
+        features: ["Coming Soon"]
     }
 ];
 
@@ -92,12 +80,11 @@ const projects = [
 // STATE
 // ============================================
 let state = {
-    currentCategory: 'Semua',
-    searchQuery: '',
-    sortBy: 'default',
+    currentCategory: "Semua",
+    searchQuery: "",
+    sortBy: "default",
     currentPage: 1,
     itemsPerPage: 6,
-    isDarkMode: false,
     filteredProjects: [...projects]
 };
 
@@ -105,91 +92,73 @@ let state = {
 // UTILITY FUNCTIONS
 // ============================================
 function getCategoryIcon(category) {
-    const icons = {
-        'Tools': '🔧',
-        'Dashboard': '📊',
-        'Form': '📝',
-        'Automation': '⚡',
-        'API': '🔌'
+    var icons = {
+        "Tools": "🔧",
+        "Dashboard": "📊",
+        "Form": "📝",
+        "Automation": "⚡",
+        "API": "🔌"
     };
-    return icons[category] || '📦';
+    return icons[category] || "📦";
 }
 
 function formatDate(dateString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('id-ID', options);
+    var options = { year: "numeric", month: "long", day: "numeric" };
+    return new Date(dateString).toLocaleDateString("id-ID", options);
 }
 
 function getStatusBadge(status) {
-    if (status === 'Live') {
-        return '<span class="status status-live">🟢 Live</span>';
+    if (status === "Live") {
+        return "<span class=\"status status-live\">🟢 Live</span>";
     }
-    return '<span class="status status-dev">🔧 Development</span>';
+    return "<span class=\"status status-dev\">🔧 Development</span>";
 }
 
 // ============================================
 // RENDER PROJECT CARDS
 // ============================================
 function renderProjects(projectList) {
-    const container = document.getElementById('projectContainer');
-    const defaultImage = 'https://via.placeholder.com/400x250/4285f4/ffffff?text=GAS+Project';
+    var container = document.getElementById("projectContainer");
+    var defaultImage = "https://via.placeholder.com/400x250/4285f4/ffffff?text=GAS+Project";
     
     if (projectList.length === 0) {
-        container.innerHTML = `
-            <div class="empty-state">
-                <div class="empty-icon">🔍</div>
-                <h2>Tidak ada project yang ditemukan</h2>
-                <p>Coba cari dengan keyword lain atau reset filter</p>
-                <button onclick="resetAllFilters()" class="btn-reset">🔄 Reset Filter</button>
-            </div>
-        `;
+        container.innerHTML = "<div class=\"empty-state\"><div class=\"empty-icon\">🔍</div><h2>Tidak ada project yang ditemukan</h2><p>Coba cari dengan keyword lain atau reset filter</p><button onclick=\"resetAllFilters()\" class=\"btn-reset\">🔄 Reset Filter</button></div>";
         updatePagination(0);
         return;
     }
     
-    // Pagination
-    const start = (state.currentPage - 1) * state.itemsPerPage;
-    const end = start + state.itemsPerPage;
-    const paginatedItems = projectList.slice(start, end);
+    var start = (state.currentPage - 1) * state.itemsPerPage;
+    var end = start + state.itemsPerPage;
+    var paginatedItems = projectList.slice(start, end);
     
-    let html = '';
-    paginatedItems.forEach((project, index) => {
-        const delay = index * 0.08;
-        html += `
-            <div class="project-card" style="animation-delay: ${delay}s">
-                <img src="${project.screenshot || defaultImage}" 
-                     alt="${project.title}" 
-                     onerror="this.src='${defaultImage}'"
-                     loading="lazy">
-                <div class="card-content">
-                    <div class="card-header">
-                        <span class="category">${getCategoryIcon(project.category)} ${project.category}</span>
-                        ${getStatusBadge(project.status)}
-                    </div>
-                    <h2>${project.title}</h2>
-                    <p>${project.description}</p>
-                    <div class="tech-tags">
-                        ${project.tech.map(t => `<span>${t}</span>`).join('')}
-                    </div>
-                    <div class="project-meta">
-                        <span>📅 ${formatDate(project.date)}</span>
-                        <span>#${project.id}</span>
-                    </div>
-                    <div class="card-actions">
-                        <a href="${project.url}" target="_blank" class="btn-demo">
-                            🚀 Lihat Demo
-                        </a>
-                        <button class="btn-detail" onclick="showDetail(${project.id})">
-                            📖 Detail
-                        </button>
-                        <button class="btn-share" onclick="shareProject(${project.id})">
-                            📤 Share
-                        </button>
-                    </div>
-                </div>
-            </div>
-        `;
-    });
+    var html = "";
+    for (var i = 0; i < paginatedItems.length; i++) {
+        var project = paginatedItems[i];
+        var delay = i * 0.08;
+        html += "<div class=\"project-card\" style=\"animation-delay: " + delay + "s\">";
+        html += "<img src=\"" + (project.screenshot || defaultImage) + "\" alt=\"" + project.title + "\" onerror=\"this.src='" + defaultImage + "'\" loading=\"lazy\">";
+        html += "<div class=\"card-content\">";
+        html += "<div class=\"card-header\">";
+        html += "<span class=\"category\">" + getCategoryIcon(project.category) + " " + project.category + "</span>";
+        html += getStatusBadge(project.status);
+        html += "</div>";
+        html += "<h2>" + project.title + "</h2>";
+        html += "<p>" + project.description + "</p>";
+        html += "<div class=\"tech-tags\">";
+        for (var j = 0; j < project.tech.length; j++) {
+            html += "<span>" + project.tech[j] + "</span>";
+        }
+        html += "</div>";
+        html += "<div class=\"project-meta\">";
+        html += "<span>📅 " + formatDate(project.date) + "</span>";
+        html += "<span>#" + project.id + "</span>";
+        html += "</div>";
+        html += "<div class=\"card-actions\">";
+        html += "<a href=\"" + project.url + "\" target=\"_blank\" class=\"btn-demo\">🚀 Lihat Demo</a>";
+        html += "<button class=\"btn-detail\" onclick=\"showDetail(" + project.id + ")\">📖 Detail</button>";
+        html += "<button class=\"btn-share\" onclick=\"shareProject(" + project.id + ")\">📤 Share</button>";
+        html += "</div></div></div>";
+    }
     
     container.innerHTML = html;
     updatePagination(projectList.length);
@@ -200,40 +169,32 @@ function renderProjects(projectList) {
 // PAGINATION
 // ============================================
 function updatePagination(totalItems) {
-    const container = document.getElementById('pagination');
-    const totalPages = Math.ceil(totalItems / state.itemsPerPage);
+    var container = document.getElementById("pagination");
+    var totalPages = Math.ceil(totalItems / state.itemsPerPage);
     
     if (totalPages <= 1) {
-        container.innerHTML = '';
+        container.innerHTML = "";
         return;
     }
     
-    let html = '';
-    // Prev button
-    html += `<button class="page-btn" onclick="changePage(${state.currentPage - 1})" 
-                    ${state.currentPage === 1 ? 'disabled' : ''}>◀</button>`;
+    var html = "";
+    html += "<button class=\"page-btn\" onclick=\"changePage(" + (state.currentPage - 1) + ")\" " + (state.currentPage === 1 ? "disabled" : "") + ">◀</button>";
     
-    // Page numbers
-    for (let i = 1; i <= totalPages; i++) {
-        html += `<button class="page-btn ${i === state.currentPage ? 'active' : ''}" 
-                        onclick="changePage(${i})">${i}</button>`;
+    for (var i = 1; i <= totalPages; i++) {
+        html += "<button class=\"page-btn " + (i === state.currentPage ? "active" : "") + "\" onclick=\"changePage(" + i + ")\">" + i + "</button>";
     }
     
-    // Next button
-    html += `<button class="page-btn" onclick="changePage(${state.currentPage + 1})" 
-                    ${state.currentPage === totalPages ? 'disabled' : ''}>▶</button>`;
+    html += "<button class=\"page-btn\" onclick=\"changePage(" + (state.currentPage + 1) + ")\" " + (state.currentPage === totalPages ? "disabled" : "") + ">▶</button>";
     
     container.innerHTML = html;
 }
 
 function changePage(page) {
-    const totalPages = Math.ceil(state.filteredProjects.length / state.itemsPerPage);
+    var totalPages = Math.ceil(state.filteredProjects.length / state.itemsPerPage);
     if (page < 1 || page > totalPages) return;
     state.currentPage = page;
     renderProjects(state.filteredProjects);
-    
-    // Scroll ke atas
-    document.querySelector('main').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelector("main").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 // ============================================
@@ -243,9 +204,15 @@ function filterProjects(category) {
     state.currentCategory = category;
     state.currentPage = 1;
     
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.category === category);
-    });
+    var btns = document.querySelectorAll(".filter-btn");
+    for (var i = 0; i < btns.length; i++) {
+        var btn = btns[i];
+        if (btn.dataset.category === category) {
+            btn.classList.add("active");
+        } else {
+            btn.classList.remove("active");
+        }
+    }
     
     applyFilters();
 }
@@ -262,41 +229,46 @@ function sortProjects(sortBy) {
 }
 
 function applyFilters() {
-    let filtered = [...projects];
-    
-    // Filter kategori
-    if (state.currentCategory !== 'Semua') {
-        filtered = filtered.filter(p => p.category === state.currentCategory);
+    var filtered = [];
+    for (var i = 0; i < projects.length; i++) {
+        filtered.push(projects[i]);
     }
     
-    // Filter search
+    if (state.currentCategory !== "Semua") {
+        var temp = [];
+        for (var i = 0; i < filtered.length; i++) {
+            if (filtered[i].category === state.currentCategory) {
+                temp.push(filtered[i]);
+            }
+        }
+        filtered = temp;
+    }
+    
     if (state.searchQuery) {
-        filtered = filtered.filter(p => 
-            p.title.toLowerCase().includes(state.searchQuery) ||
-            p.description.toLowerCase().includes(state.searchQuery) ||
-            p.category.toLowerCase().includes(state.searchQuery) ||
-            p.tech.some(t => t.toLowerCase().includes(state.searchQuery)) ||
-            p.status.toLowerCase().includes(state.searchQuery)
-        );
+        var temp = [];
+        for (var i = 0; i < filtered.length; i++) {
+            var p = filtered[i];
+            var match = false;
+            if (p.title.toLowerCase().indexOf(state.searchQuery) !== -1) match = true;
+            if (p.description.toLowerCase().indexOf(state.searchQuery) !== -1) match = true;
+            if (p.category.toLowerCase().indexOf(state.searchQuery) !== -1) match = true;
+            if (p.status.toLowerCase().indexOf(state.searchQuery) !== -1) match = true;
+            for (var j = 0; j < p.tech.length; j++) {
+                if (p.tech[j].toLowerCase().indexOf(state.searchQuery) !== -1) match = true;
+            }
+            if (match) temp.push(p);
+        }
+        filtered = temp;
     }
     
-    // Sorting
-    switch(state.sortBy) {
-        case 'title':
-            filtered.sort((a, b) => a.title.localeCompare(b.title));
-            break;
-        case 'title-desc':
-            filtered.sort((a, b) => b.title.localeCompare(a.title));
-            break;
-        case 'newest':
-            filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
-            break;
-        case 'oldest':
-            filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
-            break;
-        default:
-            // Default sorting by ID
-            filtered.sort((a, b) => a.id - b.id);
+    if (state.sortBy === "title") {
+        filtered.sort(function(a, b) { return a.title.localeCompare(b.title); });
+    } else if (state.sortBy === "title-desc") {
+        filtered.sort(function(a, b) { return b.title.localeCompare(a.title); });
+    } else if (state.sortBy === "newest") {
+        filtered.sort(function(a, b) { return new Date(b.date) - new Date(a.date); });
+    } else if (state.sortBy === "oldest") {
+        filtered.sort(function(a, b) { return new Date(a.date) - new Date(b.date); });
     }
     
     state.filteredProjects = filtered;
@@ -304,17 +276,22 @@ function applyFilters() {
 }
 
 function resetAllFilters() {
-    state.currentCategory = 'Semua';
-    state.searchQuery = '';
-    state.sortBy = 'default';
+    state.currentCategory = "Semua";
+    state.searchQuery = "";
+    state.sortBy = "default";
     state.currentPage = 1;
     
-    document.getElementById('searchInput').value = '';
-    document.getElementById('sortSelect').value = 'default';
+    document.getElementById("searchInput").value = "";
+    document.getElementById("sortSelect").value = "default";
     
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.category === 'Semua');
-    });
+    var btns = document.querySelectorAll(".filter-btn");
+    for (var i = 0; i < btns.length; i++) {
+        if (btns[i].dataset.category === "Semua") {
+            btns[i].classList.add("active");
+        } else {
+            btns[i].classList.remove("active");
+        }
+    }
     
     applyFilters();
 }
@@ -323,29 +300,33 @@ function resetAllFilters() {
 // SHARE PROJECT
 // ============================================
 function shareProject(id) {
-    const project = projects.find(p => p.id === id);
+    var project = null;
+    for (var i = 0; i < projects.length; i++) {
+        if (projects[i].id === id) {
+            project = projects[i];
+            break;
+        }
+    }
     if (!project) return;
     
     if (navigator.share) {
         navigator.share({
             title: project.title,
-            text: `Cek project GAS keren: ${project.title}\n${project.description}`,
+            text: "Cek project GAS keren: " + project.title + "\n" + project.description,
             url: project.url
-        }).catch(() => {});
+        }).catch(function() {});
     } else {
-        // Fallback: copy URL
-        navigator.clipboard.writeText(project.url).then(() => {
-            alert('✅ URL project telah disalin ke clipboard!');
-        }).catch(() => {
-            // Jika clipboard tidak support
-            const text = `${project.title}\n${project.url}`;
-            const textarea = document.createElement('textarea');
+        navigator.clipboard.writeText(project.url).then(function() {
+            alert("✅ URL project telah disalin ke clipboard!");
+        }).catch(function() {
+            var text = project.title + "\n" + project.url;
+            var textarea = document.createElement("textarea");
             textarea.value = text;
             document.body.appendChild(textarea);
             textarea.select();
-            document.execCommand('copy');
+            document.execCommand("copy");
             document.body.removeChild(textarea);
-            alert('✅ Text project telah disalin!');
+            alert("✅ Text project telah disalin!");
         });
     }
 }
@@ -354,66 +335,59 @@ function shareProject(id) {
 // SHOW DETAIL MODAL
 // ============================================
 function showDetail(id) {
-    const project = projects.find(p => p.id === id);
+    var project = null;
+    for (var i = 0; i < projects.length; i++) {
+        if (projects[i].id === id) {
+            project = projects[i];
+            break;
+        }
+    }
     if (!project) return;
     
-    const modal = document.getElementById('modal');
-    const modalBody = document.getElementById('modalBody');
+    var modal = document.getElementById("modal");
+    var modalBody = document.getElementById("modalBody");
     
-    modalBody.innerHTML = `
-        <div class="modal-header">
-            <h2>${project.title}</h2>
-            <span class="modal-status">${getStatusBadge(project.status)}</span>
-        </div>
-        <div class="modal-content-body">
-            <div class="modal-section">
-                <h3>📝 Deskripsi</h3>
-                <p>${project.description}</p>
-            </div>
-            <div class="modal-section">
-                <h3>🔧 Teknologi</h3>
-                <div class="tech-tags">
-                    ${project.tech.map(t => `<span>${t}</span>`).join('')}
-                </div>
-            </div>
-            <div class="modal-section">
-                <h3>✨ Fitur Unggulan</h3>
-                <ul class="feature-list">
-                    ${project.features.map(f => `<li>✅ ${f}</li>`).join('')}
-                </ul>
-            </div>
-            <div class="modal-section">
-                <h3>📊 Informasi</h3>
-                <p><strong>Kategori:</strong> ${getCategoryIcon(project.category)} ${project.category}</p>
-                <p><strong>Tanggal:</strong> ${formatDate(project.date)}</p>
-                <p><strong>Status:</strong> ${project.status}</p>
-                <p><strong>Project ID:</strong> #${project.id}</p>
-            </div>
-            <div class="modal-actions">
-                <a href="${project.url}" target="_blank" class="btn-demo">🚀 Buka Demo</a>
-                <button onclick="shareProject(${project.id})" class="btn-share-modal">📤 Share</button>
-                <button onclick="closeModal()" class="btn-close-modal">✕ Tutup</button>
-            </div>
-        </div>
-    `;
+    var html = "<div class=\"modal-header\"><h2>" + project.title + "</h2><span class=\"modal-status\">" + getStatusBadge(project.status) + "</span></div>";
+    html += "<div class=\"modal-content-body\">";
+    html += "<div class=\"modal-section\"><h3>📝 Deskripsi</h3><p>" + project.description + "</p></div>";
+    html += "<div class=\"modal-section\"><h3>🔧 Teknologi</h3><div class=\"tech-tags\">";
+    for (var i = 0; i < project.tech.length; i++) {
+        html += "<span>" + project.tech[i] + "</span>";
+    }
+    html += "</div></div>";
+    html += "<div class=\"modal-section\"><h3>✨ Fitur Unggulan</h3><ul class=\"feature-list\">";
+    for (var i = 0; i < project.features.length; i++) {
+        html += "<li>✅ " + project.features[i] + "</li>";
+    }
+    html += "</ul></div>";
+    html += "<div class=\"modal-section\"><h3>📊 Informasi</h3>";
+    html += "<p><strong>Kategori:</strong> " + getCategoryIcon(project.category) + " " + project.category + "</p>";
+    html += "<p><strong>Tanggal:</strong> " + formatDate(project.date) + "</p>";
+    html += "<p><strong>Status:</strong> " + project.status + "</p>";
+    html += "<p><strong>Project ID:</strong> #" + project.id + "</p></div>";
+    html += "<div class=\"modal-actions\">";
+    html += "<a href=\"" + project.url + "\" target=\"_blank\" class=\"btn-demo\">🚀 Buka Demo</a>";
+    html += "<button onclick=\"shareProject(" + project.id + ")\" class=\"btn-share-modal\">📤 Share</button>";
+    html += "<button onclick=\"closeModal()\" class=\"btn-close-modal\">✕ Tutup</button>";
+    html += "</div></div>";
     
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+    modalBody.innerHTML = html;
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
 }
 
 function closeModal() {
-    document.getElementById('modal').style.display = 'none';
-    document.body.style.overflow = 'auto';
+    document.getElementById("modal").style.display = "none";
+    document.body.style.overflow = "auto";
 }
 
 // ============================================
 // UPDATE COUNTER
 // ============================================
 function updateProjectCount(count) {
-    const el = document.getElementById('projectCount');
+    var el = document.getElementById("projectCount");
     if (el) {
-        const total = projects.length;
-        el.textContent = `📦 ${count} dari ${total} project ditampilkan`;
+        el.textContent = "📦 " + count + " dari " + projects.length + " project ditampilkan";
     }
 }
 
@@ -421,67 +395,59 @@ function updateProjectCount(count) {
 // DARK MODE
 // ============================================
 function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-    const btn = document.getElementById('darkModeToggle');
-    const isDark = document.body.classList.contains('dark-mode');
-    btn.textContent = isDark ? '☀️' : '🌙';
-    localStorage.setItem('darkMode', isDark ? 'true' : 'false');
+    document.body.classList.toggle("dark-mode");
+    var btn = document.getElementById("darkModeToggle");
+    var isDark = document.body.classList.contains("dark-mode");
+    btn.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("darkMode", isDark ? "true" : "false");
 }
 
 // ============================================
 // INITIALIZATION
 // ============================================
-document.addEventListener('DOMContentLoaded', () => {
-    // Render awal
+document.addEventListener("DOMContentLoaded", function() {
     applyFilters();
     
-    // Event: Filter
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterProjects(btn.dataset.category);
+    var filterBtns = document.querySelectorAll(".filter-btn");
+    for (var i = 0; i < filterBtns.length; i++) {
+        filterBtns[i].addEventListener("click", function() {
+            filterProjects(this.dataset.category);
         });
-    });
+    }
     
-    // Event: Search (debounce)
-    const searchInput = document.getElementById('searchInput');
-    let debounceTimer;
-    searchInput.addEventListener('input', () => {
+    var searchInput = document.getElementById("searchInput");
+    var debounceTimer;
+    searchInput.addEventListener("input", function() {
         clearTimeout(debounceTimer);
-        debounceTimer = setTimeout(() => {
+        debounceTimer = setTimeout(function() {
             searchProjects(searchInput.value);
         }, 300);
     });
     
-    // Event: Sort
-    document.getElementById('sortSelect').addEventListener('change', (e) => {
+    document.getElementById("sortSelect").addEventListener("change", function(e) {
         sortProjects(e.target.value);
     });
     
-    // Event: Dark Mode
-    const darkBtn = document.getElementById('darkModeToggle');
-    darkBtn.addEventListener('click', toggleDarkMode);
+    var darkBtn = document.getElementById("darkModeToggle");
+    darkBtn.addEventListener("click", toggleDarkMode);
     
-    // Restore dark mode
-    if (localStorage.getItem('darkMode') === 'true') {
-        document.body.classList.add('dark-mode');
-        darkBtn.textContent = '☀️';
+    if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark-mode");
+        darkBtn.textContent = "☀️";
     }
     
-    // Event: Modal close
-    document.querySelector('.modal-close').addEventListener('click', closeModal);
-    document.getElementById('modal').addEventListener('click', (e) => {
-        if (e.target === document.getElementById('modal')) {
+    document.querySelector(".modal-close").addEventListener("click", closeModal);
+    document.getElementById("modal").addEventListener("click", function(e) {
+        if (e.target === document.getElementById("modal")) {
             closeModal();
         }
     });
     
-    // Event: Keyboard Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeModal();
+    document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape") closeModal();
     });
     
-    // Last updated
-    document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString('id-ID', {
-        day: 'numeric', month: 'long', year: 'numeric'
+    document.getElementById("lastUpdated").textContent = new Date().toLocaleDateString("id-ID", {
+        day: "numeric", month: "long", year: "numeric"
     });
 });
