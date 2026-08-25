@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio GAS Saya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Dark Mode Toggle -->
+    <button id="darkModeToggle" class="dark-toggle" aria-label="Toggle Dark Mode">🌙</button>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="profile">
+                <img src="https://via.placeholder.com/100/1a73e8/ffffff?text=👨‍💻" alt="Profile" class="profile-img">
+                <h1>🚀 Portofolio Google Apps Script</h1>
+                <p>Kumpulan aplikasi web yang saya buat dengan GAS</p>
+                <div class="social-links">
+                    <a href="#" target="_blank">🐙 GitHub</a>
+                    <a href="#" target="_blank">💼 LinkedIn</a>
+                    <a href="#" target="_blank">📧 Email</a>
+                </div>
+            </div>
+            
+            <!-- Filter & Search -->
+            <div class="controls">
+                <div class="filter-container">
+                    <button class="filter-btn active" data-category="Semua">📋 Semua</button>
+                    <button class="filter-btn" data-category="Tools">🔧 Tools</button>
+                    <button class="filter-btn" data-category="Dashboard">📊 Dashboard</button>
+                    <button class="filter-btn" data-category="Form">📝 Form</button>
+                    <button class="filter-btn" data-category="Automation">⚡ Automation</button>
+                    <button class="filter-btn" data-category="API">🔌 API</button>
+                </div>
+
+                <div class="search-sort">
+                    <input type="text" id="searchInput" placeholder="🔍 Cari project...">
+                    <select id="sortSelect">
+                        <option value="default">📌 Default</option>
+                        <option value="title">🔤 A-Z</option>
+                        <option value="title-desc">🔤 Z-A</option>
+                        <option value="newest">🆕 Terbaru</option>
+                        <option value="oldest">📅 Terlama</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div id="projectContainer">
+            <div class="loading">⏳ Memuat project...</div>
+        </div>
+        
+        <!-- Pagination -->
+        <div id="pagination" class="pagination-container"></div>
+    </main>
+
+    <!-- Modal Detail -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Dibuat dengan ❤️ menggunakan GitHub Pages & Google Apps Script</p>
+        <div class="footer-stats">
+            <span id="projectCount"></span>
+            <span>|</span>
+            <span>🔄 Last updated: <span id="lastUpdated"></span></span>
+        </div>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>
