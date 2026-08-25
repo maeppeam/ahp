@@ -6,14 +6,14 @@ const projects = [
         id: 1,
         title: "Manajement Inventory V.1",
         description: "Aplikasi berbasis web ini dirancang untuk mempermudah pencatatan, pelacakan, dan pengawasan status inventaris serta aset secara real-time, efisien, dan terstruktur.",
-        tech: ["Coming Soon],
+        tech: ["Coming Soon"],
         url: "https://script.google.com/macros/s/AKfycbww6LjEAP-Slaz0NLO1OaVhrBh_vtwhg9W6XYKnz1IvXoyF1XM21mIv8JcVDcDabfI/exec",
         screenshot: "assets/inventory-app.jpg",
         category: "Coming Soon",
         status: "Live",
         date: "2026-04-24",
         features: [
-            "Coming Soon",           
+            "Coming Soon"        
         ]
     },
     {
@@ -27,7 +27,7 @@ const projects = [
         status: "Live",
         date: "2026-07-13",
         features: [
-            "Coming Soon",
+            "Coming Soon"
         ]
     },
     {
@@ -41,7 +41,7 @@ const projects = [
         status: "Live",
         date: "2026-07-15",
         features: [
-            "Coming Soon",
+            "Coming Soon"
         ]
     },
     {
@@ -55,7 +55,7 @@ const projects = [
         status: "Live",
         date: "2026-07-30",
         features: [
-            "Coming Soon",
+            "Coming Soon"
         ]
     },
     {
@@ -69,7 +69,7 @@ const projects = [
         status: "Live",
         date: "2026-08-05",
         features: [
-            "Coming Soon",
+            "Coming Soon"
         ]
     },
     {
@@ -83,9 +83,9 @@ const projects = [
         status: "Live",
         date: "2026-08-13",
         features: [
-            "Coming Soon",
+            "Coming Soon"
         ]
-    },
+    }
     {        
 ];
 
