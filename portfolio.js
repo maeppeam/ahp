@@ -199,4 +199,330 @@ function renderProjects(projectList) {
     var container = document.getElementById("projectContainer");
     
     if (projectList.length === 0) {
-        container.innerHTML = "<div class=\"empty-state\"><div class=\"empty-icon\">🔍</div><h2>Tidak ada project yang ditemukan</h2><p>Coba cari dengan keyword lain atau reset filter</p><button
+        container.innerHTML = "<div class=\"empty-state\"><div class=\"empty-icon\">🔍</div><h2>Tidak ada project yang ditemukan</h2><p>Coba cari dengan keyword lain atau reset filter</p><button onclick=\"resetAllFilters()\" class=\"btn-reset\">🔄 Reset Filter</button></div>";
+        updatePagination(0);
+        return;
+    }
+    
+    var start = (state.currentPage - 1) * state.itemsPerPage;
+    var end = start + state.itemsPerPage;
+    var paginatedItems = projectList.slice(start, end);
+    
+    var html = "";
+    for (var i = 0; i < paginatedItems.length; i++) {
+        var project = paginatedItems[i];
+        var delay = i * 0.08;
+        
+        var screenshots = project.screenshots || [];
+        if (screenshots.length === 0 && project.screenshot) {
+            screenshots = [project.screenshot];
+        }
+        
+        var sliderHtml = renderSlider(screenshots, project.id);
+        
+        html += "<div class=\"project-card\" style=\"animation-delay: " + delay + "s\">";
+        html += sliderHtml;
+        html += "<div class=\"card-content\">";
+        html += "<div class=\"card-header\">";
+        html += "<span class=\"category\">" + getCategoryIcon(project.category) + " " + project.category + "</span>";
+        html += getStatusBadge(project.status);
+        html += "</div>";
+        html += "<h2>" + project.title + "</h2>";
+        html += "<p>" + project.description + "</p>";
+        html += "<div class=\"tech-tags\">";
+        for (var j = 0; j < project.tech.length; j++) {
+            html += "<span>" + project.tech[j] + "</span>";
+        }
+        html += "</div>";
+        html += "<div class=\"project-meta\">";
+        html += "<span>📅 " + formatDate(project.date) + "</span>";
+        html += "<span>#" + project.id + "</span>";
+        html += "</div>";
+        html += "<div class=\"card-actions\">";
+        html += "<a href=\"" + project.url + "\" target=\"_blank\" class=\"btn-demo\">🚀 Lihat Demo</a>";
+        html += "<button class=\"btn-detail\" onclick=\"showDetail(" + project.id + ")\">📖 Detail</button>";
+        html += "<button class=\"btn-share\" onclick=\"shareProject(" + project.id + ")\">📤 Share</button>";
+        html += "</div></div></div>";
+    }
+    
+    container.innerHTML = html;
+    updatePagination(projectList.length);
+    updateProjectCount(projectList.length);
+}
+
+// ============================================
+// PAGINATION
+// ============================================
+function updatePagination(totalItems) {
+    var container = document.getElementById("pagination");
+    var totalPages = Math.ceil(totalItems / state.itemsPerPage);
+    
+    if (totalPages <= 1) {
+        container.innerHTML = "";
+        return;
+    }
+    
+    var html = "";
+    html += "<button class=\"page-btn\" onclick=\"changePage(" + (state.currentPage - 1) + ")\" " + (state.currentPage === 1 ? "disabled" : "") + ">◀</button>";
+    
+    for (var i = 1; i <= totalPages; i++) {
+        html += "<button class=\"page-btn " + (i === state.currentPage ? "active" : "") + "\" onclick=\"changePage(" + i + ")\">" + i + "</button>";
+    }
+    
+    html += "<button class=\"page-btn\" onclick=\"changePage(" + (state.currentPage + 1) + ")\" " + (state.currentPage === totalPages ? "disabled" : "") + ">▶</button>";
+    
+    container.innerHTML = html;
+}
+
+function changePage(page) {
+    var totalPages = Math.ceil(state.filteredProjects.length / state.itemsPerPage);
+    if (page < 1 || page > totalPages) return;
+    state.currentPage = page;
+    renderProjects(state.filteredProjects);
+    document.querySelector("main").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+// ============================================
+// FILTER & SEARCH
+// ============================================
+function filterProjects(category) {
+    state.currentCategory = category;
+    state.currentPage = 1;
+    applyFilters();
+}
+
+function searchProjects(query) {
+    state.searchQuery = query.toLowerCase().trim();
+    state.currentPage = 1;
+    applyFilters();
+}
+
+function sortProjects(sortBy) {
+    state.sortBy = sortBy;
+    applyFilters();
+}
+
+function applyFilters() {
+    var filtered = [];
+    for (var i = 0; i < projects.length; i++) {
+        filtered.push(projects[i]);
+    }
+    
+    if (state.currentCategory !== "Semua") {
+        var temp = [];
+        for (var i = 0; i < filtered.length; i++) {
+            if (filtered[i].category === state.currentCategory) {
+                temp.push(filtered[i]);
+            }
+        }
+        filtered = temp;
+    }
+    
+    if (state.searchQuery) {
+        var temp = [];
+        for (var i = 0; i < filtered.length; i++) {
+            var p = filtered[i];
+            var match = false;
+            if (p.title.toLowerCase().indexOf(state.searchQuery) !== -1) match = true;
+            if (p.description.toLowerCase().indexOf(state.searchQuery) !== -1) match = true;
+            if (p.category.toLowerCase().indexOf(state.searchQuery) !== -1) match = true;
+            if (p.status.toLowerCase().indexOf(state.searchQuery) !== -1) match = true;
+            for (var j = 0; j < p.tech.length; j++) {
+                if (p.tech[j].toLowerCase().indexOf(state.searchQuery) !== -1) match = true;
+            }
+            if (match) temp.push(p);
+        }
+        filtered = temp;
+    }
+    
+    if (state.sortBy === "title") {
+        filtered.sort(function(a, b) { return a.title.localeCompare(b.title); });
+    } else if (state.sortBy === "title-desc") {
+        filtered.sort(function(a, b) { return b.title.localeCompare(a.title); });
+    } else if (state.sortBy === "newest") {
+        filtered.sort(function(a, b) { return new Date(b.date) - new Date(a.date); });
+    } else if (state.sortBy === "oldest") {
+        filtered.sort(function(a, b) { return new Date(a.date) - new Date(b.date); });
+    }
+    
+    state.filteredProjects = filtered;
+    renderProjects(filtered);
+}
+
+function resetAllFilters() {
+    state.currentCategory = "Semua";
+    state.searchQuery = "";
+    state.sortBy = "default";
+    state.currentPage = 1;
+    
+    document.getElementById("searchInput").value = "";
+    document.getElementById("sortSelect").value = "default";
+    
+    applyFilters();
+}
+
+// ============================================
+// SHARE PROJECT
+// ============================================
+function shareProject(id) {
+    var project = null;
+    for (var i = 0; i < projects.length; i++) {
+        if (projects[i].id === id) {
+            project = projects[i];
+            break;
+        }
+    }
+    if (!project) return;
+    
+    if (navigator.share) {
+        navigator.share({
+            title: project.title,
+            text: "Cek project GAS keren: " + project.title + "\n" + project.description,
+            url: project.url
+        }).catch(function() {});
+    } else {
+        navigator.clipboard.writeText(project.url).then(function() {
+            alert("✅ URL project telah disalin ke clipboard!");
+        }).catch(function() {
+            var text = project.title + "\n" + project.url;
+            var textarea = document.createElement("textarea");
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            alert("✅ Text project telah disalin!");
+        });
+    }
+}
+
+// ============================================
+// SHOW DETAIL MODAL
+// ============================================
+function showDetail(id) {
+    var project = null;
+    for (var i = 0; i < projects.length; i++) {
+        if (projects[i].id === id) {
+            project = projects[i];
+            break;
+        }
+    }
+    if (!project) return;
+    
+    var modal = document.getElementById("modal");
+    var modalBody = document.getElementById("modalBody");
+    
+    var html = "<div class=\"modal-header\"><h2>" + project.title + "</h2><span class=\"modal-status\">" + getStatusBadge(project.status) + "</span></div>";
+    html += "<div class=\"modal-content-body\">";
+    html += "<div class=\"modal-section\"><h3>📝 Deskripsi</h3><p>" + project.description + "</p></div>";
+    html += "<div class=\"modal-section\"><h3>🔧 Teknologi</h3><div class=\"tech-tags\">";
+    for (var i = 0; i < project.tech.length; i++) {
+        html += "<span>" + project.tech[i] + "</span>";
+    }
+    html += "</div></div>";
+    html += "<div class=\"modal-section\"><h3>✨ Fitur Unggulan</h3><ul class=\"feature-list\">";
+    for (var i = 0; i < project.features.length; i++) {
+        html += "<li>✅ " + project.features[i] + "</li>";
+    }
+    html += "</ul></div>";
+    html += "<div class=\"modal-section\"><h3>📊 Informasi</h3>";
+    html += "<p><strong>Kategori:</strong> " + getCategoryIcon(project.category) + " " + project.category + "</p>";
+    html += "<p><strong>Tanggal:</strong> " + formatDate(project.date) + "</p>";
+    html += "<p><strong>Status:</strong> " + project.status + "</p>";
+    html += "<p><strong>Project ID:</strong> #" + project.id + "</p></div>";
+    html += "<div class=\"modal-actions\">";
+    html += "<a href=\"" + project.url + "\" target=\"_blank\" class=\"btn-demo\">🚀 Buka Demo</a>";
+    html += "<button onclick=\"shareProject(" + project.id + ")\" class=\"btn-share-modal\">📤 Share</button>";
+    html += "<button onclick=\"closeModal()\" class=\"btn-close-modal\">✕ Tutup</button>";
+    html += "</div></div>";
+    
+    modalBody.innerHTML = html;
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+// ============================================
+// UPDATE COUNTER & STATS
+// ============================================
+function updateProjectCount(count) {
+    var el = document.getElementById("projectCount");
+    if (el) {
+        el.textContent = count + " dari " + projects.length + " project";
+    }
+}
+
+function updateStats() {
+    var total = projects.length;
+    var live = projects.filter(function(p) { return p.status === "Live"; }).length;
+    
+    var latest = projects[0];
+    for (var i = 1; i < projects.length; i++) {
+        if (new Date(projects[i].date) > new Date(latest.date)) {
+            latest = projects[i];
+        }
+    }
+    
+    document.getElementById("totalProjects").textContent = total;
+    document.getElementById("liveProjects").textContent = live;
+    document.getElementById("latestProject").textContent = latest ? latest.title.substring(0, 15) + "..." : "-";
+}
+
+// ============================================
+// DARK MODE
+// ============================================
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    var btn = document.getElementById("darkModeToggle");
+    var isDark = document.body.classList.contains("dark-mode");
+    btn.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("darkMode", isDark ? "true" : "false");
+}
+
+// ============================================
+// INITIALIZATION
+// ============================================
+document.addEventListener("DOMContentLoaded", function() {
+    applyFilters();
+    updateStats();
+    
+    var searchInput = document.getElementById("searchInput");
+    var debounceTimer;
+    searchInput.addEventListener("input", function() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(function() {
+            searchProjects(searchInput.value);
+        }, 300);
+    });
+    
+    document.getElementById("sortSelect").addEventListener("change", function(e) {
+        sortProjects(e.target.value);
+    });
+    
+    var darkBtn = document.getElementById("darkModeToggle");
+    darkBtn.addEventListener("click", toggleDarkMode);
+    
+    if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark-mode");
+        darkBtn.textContent = "☀️";
+    }
+    
+    document.querySelector(".modal-close").addEventListener("click", closeModal);
+    document.getElementById("modal").addEventListener("click", function(e) {
+        if (e.target === document.getElementById("modal")) {
+            closeModal();
+        }
+    });
+    
+    document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape") closeModal();
+    });
+    
+    document.getElementById("lastUpdated").textContent = new Date().toLocaleDateString("id-ID", {
+        day: "numeric", month: "long", year: "numeric"
+    });
+});
