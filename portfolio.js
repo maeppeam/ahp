@@ -21,26 +21,36 @@ const projects = [
     {
         id: 2,
         title: "Ticketing System",
-        description: "Antarmuka Pusat Bantuan & Laporan ini berfungsi sebagai portal pengaduan dan tiket layanan pelanggan yang dirancang untuk memudahkan wali murid serta siswa dalam menyampaikan kendala secara terstruktur",
-        tech: ["Coming Soon"],
+        description: "Ticketing System adalah aplikasi berbasis web untuk mengelola tiket/layanan pelanggan secara efisien. Sistem ini dirancang untuk mencatat, memantau, dan menindaklanjuti permintaan atau laporan melalui antarmuka yang terstruktur.",
+        tech: ["HTML", "CSS", "JavaScript"],
         url: "https://maeppeam.github.io/ticketing-system/",
         screenshots: ["assets/ticketing-system.jpg"],
-        category: "Dashboard",
+        category: "Tools",
         status: "Live",
         date: "2026-07-13",
-        features: ["Coming Soon"]
+        features: [
+            "Pencatatan",
+            "Pemantauan Status",
+            "Penanganan Permintaan Tiket",
+            "Real Time"
+        ]
     },
     {
         id: 3,
         title: "Manajement Inventory V.2",
-        description: "Antarmuka Dashboard Sarana dan Prasarana ini dirancang khusus untuk mengelola, memantau sirkulasi, serta mencatat kelayakan aset operasional sekolah secara real-time dan terpusat",
-        tech: ["Coming Soon"],
+        description: "Versi ini merupakan penyempurnaan dari V.1 dengan peningkatan fitur dan kinerja",
+        tech: ["HTML", "CSS", "JavaScript", "API QR Code"],
         url: "https://maeppeam.github.io/inventory-system-v2/",
         screenshots: ["assets/manajement-inventory-v2.jpg"],
-        category: "Dashboard",
+        category: "Tools",
         status: "Live",
         date: "2026-07-15",
-        features: ["Coming Soon"]
+        features: [
+            "Dashboard Ringkasan Data Real-Time",
+            "Daftar aset lengkap dengan manajemen status",
+            "Log sirkulasi peminjaman/pengembalian",
+            "Generate QR Code untuk setiap aset"
+        ]
     },
     {
         id: 4,
