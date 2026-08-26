@@ -1,83 +1,150 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio GAS Saya</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio GAS - Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Dark Mode Toggle -->
-    <button id="darkModeToggle" class="dark-toggle" aria-label="Toggle Dark Mode">🌙</button>
-
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="profile">
-                <!-- GANTI DENGAN FOTO PROFIL KAMU -->
-                <img src="assets/profile.jpg" alt="Profile" class="profile-img" onerror="this.style.display='none'">
-                <h1>🚀 Portofolio Google Apps Script</h1>
-                <p>Kumpulan aplikasi web yang saya buat dengan GAS</p>
-                <div class="social-links">
-                    <a href="#" target="_blank">🐙 GitHub</a>
-                    <a href="#" target="_blank">💼 LinkedIn</a>
-                    <a href="#" target="_blank">📧 Email</a>
-                </div>
-            </div>
-            
-            <!-- Filter & Search -->
-            <div class="controls">
-                <div class="filter-container">
-                    <button class="filter-btn active" data-category="Semua">📋 Semua</button>
-                    <button class="filter-btn" data-category="Tools">🔧 Tools</button>
-                    <button class="filter-btn" data-category="Dashboard">📊 Dashboard</button>
-                    <button class="filter-btn" data-category="Form">📝 Form</button>
-                    <button class="filter-btn" data-category="Automation">⚡ Automation</button>
-                    <button class="filter-btn" data-category="API">🔌 API</button>
-                </div>
-
-                <div class="search-sort">
-                    <input type="text" id="searchInput" placeholder="🔍 Cari project...">
-                    <select id="sortSelect">
-                        <option value="default">📌 Default</option>
-                        <option value="title">🔤 A-Z</option>
-                        <option value="title-desc">🔤 Z-A</option>
-                        <option value="newest">🆕 Terbaru</option>
-                        <option value="oldest">📅 Terlama</option>
-                    </select>
-                </div>
-            </div>
+  <!-- ===================== SIDEBAR ===================== -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon">⚡</div>
+      <span>MyPorto</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active" data-category="Semua">
+        <span class="nav-icon">📊</span> <span>Dashboard</span>
+      </a>
+      <a href="#" class="nav-item" data-category="Tools">
+        <span class="nav-icon">🔧</span> <span>Tools</span>
+        <span class="nav-badge" id="count-Tools">0</span>
+      </a>
+      <a href="#" class="nav-item" data-category="Dashboard">
+        <span class="nav-icon">📊</span> <span>Dashboard</span>
+        <span class="nav-badge" id="count-Dashboard">0</span>
+      </a>
+      <a href="#" class="nav-item" data-category="Form">
+        <span class="nav-icon">📝</span> <span>Form</span>
+        <span class="nav-badge" id="count-Form">0</span>
+      </a>
+      <a href="#" class="nav-item" data-category="Automation">
+        <span class="nav-icon">⚡</span> <span>Automation</span>
+        <span class="nav-badge" id="count-Automation">0</span>
+      </a>
+      <a href="#" class="nav-item" data-category="API">
+        <span class="nav-icon">🔌</span> <span>API</span>
+        <span class="nav-badge" id="count-API">0</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-info">
+        <div class="user-avatar">👨‍💻</div>
+        <div>
+          <div class="user-name">Mae Peam</div>
+          <div class="user-role">Developer</div>
         </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===================== MAIN ===================== -->
+  <main class="main-content">
+    <!-- HEADER -->
+    <header class="top-header">
+      <div class="header-left">
+        <h1>Dashboard</h1>
+        <p>Kelola dan pantau semua project Google Apps Script-mu</p>
+      </div>
+      <div class="header-right">
+        <button id="darkModeToggle" class="dark-toggle">🌙</button>
+        <div class="header-avatar">👨‍💻</div>
+      </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <div id="projectContainer">
-            <div class="loading">⏳ Memuat project...</div>
+    <!-- STATISTIK -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">📦</div>
+        <div>
+          <div class="stat-number" id="totalProjects">0</div>
+          <div class="stat-label">Total Project</div>
         </div>
-        
-        <!-- Pagination -->
-        <div id="pagination" class="pagination-container"></div>
-    </main>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🟢</div>
+        <div>
+          <div class="stat-number" id="liveProjects">0</div>
+          <div class="stat-label">Live</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📂</div>
+        <div>
+          <div class="stat-number" id="categoryCount">0</div>
+          <div class="stat-label">Kategori</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📅</div>
+        <div>
+          <div class="stat-number" id="latestProject">-</div>
+          <div class="stat-label">Project Terbaru</div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Modal Detail -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <div id="modalBody"></div>
-        </div>
+    <!-- FILTER & SEARCH -->
+    <div class="filter-bar">
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-category="Semua">📋 Semua</button>
+        <button class="filter-tab" data-category="Tools">🔧 Tools</button>
+        <button class="filter-tab" data-category="Dashboard">📊 Dashboard</button>
+        <button class="filter-tab" data-category="Form">📝 Form</button>
+        <button class="filter-tab" data-category="Automation">⚡ Automation</button>
+        <button class="filter-tab" data-category="API">🔌 API</button>
+      </div>
+      <div class="filter-actions">
+        <input type="text" id="searchInput" placeholder="🔍 Cari project...">
+        <select id="sortSelect">
+          <option value="default">📌 Default</option>
+          <option value="title">🔤 A-Z</option>
+          <option value="title-desc">🔤 Z-A</option>
+          <option value="newest">🆕 Terbaru</option>
+          <option value="oldest">📅 Terlama</option>
+        </select>
+      </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>Dibuat dengan ❤️ menggunakan GitHub Pages & Google Apps Script</p>
-        <div class="footer-stats">
-            <span id="projectCount"></span>
-            <span>|</span>
-            <span>🔄 Last updated: <span id="lastUpdated"></span></span>
-        </div>
-    </footer>
+    <!-- PROJECT GRID -->
+    <section class="projects-section">
+      <div class="section-header">
+        <h2>📁 Semua Project</h2>
+        <span id="projectCount">0 project</span>
+      </div>
+      <div id="projectContainer" class="project-grid">
+        <div class="loading">⏳ Memuat project...</div>
+      </div>
+      <div id="pagination" class="pagination-container"></div>
+    </section>
 
-    <script src="portfolio.js"></script>
+    <!-- FOOTER -->
+    <footer class="main-footer">
+      <p>Dibuat dengan ❤️ menggunakan GitHub Pages & Google Apps Script</p>
+      <span>🔄 Last updated: <span id="lastUpdated"></span></span>
+    </footer>
+  </main>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="portfolio.js"></script>
 </body>
 </html>
