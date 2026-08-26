@@ -1,5 +1,5 @@
 // ============================================
-// DATA PROJECT GAS - DENGAN MULTIPLE SCREENSHOTS
+// DATA PROJECT GAS
 // ============================================
 const projects = [
     {
@@ -8,9 +8,7 @@ const projects = [
         description: "Aplikasi berbasis web ini dirancang untuk mempermudah pencatatan, pelacakan, dan pengawasan status inventaris serta aset secara real-time, efisien, dan terstruktur.",
         tech: ["Coming Soon"],
         url: "https://maeppeam.github.io/inventory-system-v1/",
-        screenshots: [
-            "assets/manajement-inventory-v1.jpg"
-        ],
+        screenshots: ["assets/manajement-inventory-v1.jpg"],
         category: "Tools",
         status: "Live",
         date: "2026-04-24",
@@ -22,9 +20,7 @@ const projects = [
         description: "Antarmuka Pusat Bantuan & Laporan ini berfungsi sebagai portal pengaduan dan tiket layanan pelanggan yang dirancang untuk memudahkan wali murid serta siswa dalam menyampaikan kendala secara terstruktur",
         tech: ["Coming Soon"],
         url: "https://maeppeam.github.io/ticketing-system/",
-        screenshots: [
-            "assets/ticketing-system.jpg"
-        ],
+        screenshots: ["assets/ticketing-system.jpg"],
         category: "Dashboard",
         status: "Live",
         date: "2026-07-13",
@@ -36,9 +32,7 @@ const projects = [
         description: "Antarmuka Dashboard Sarana dan Prasarana ini dirancang khusus untuk mengelola, memantau sirkulasi, serta mencatat kelayakan aset operasional sekolah secara real-time dan terpusat",
         tech: ["Coming Soon"],
         url: "https://maeppeam.github.io/inventory-system-v2/",
-        screenshots: [
-            "assets/manajement-inventory-v2.jpg"
-        ],
+        screenshots: ["assets/manajement-inventory-v2.jpg"],
         category: "Dashboard",
         status: "Live",
         date: "2026-07-15",
@@ -50,10 +44,7 @@ const projects = [
         description: "Antarmuka sistem SABAR (Sistem Arus Barang Masuk dan Keluar) ini berfungsi sebagai dashboard manajemen logistik dan persediaan barang yang dirancang untuk memantau pergerakan stok secara terstruktur dan efisien.",
         tech: ["Coming Soon"],
         url: "https://maeppeam.github.io/sabar/",
-        screenshots: [
-            "assets/sabar-1.jpg",
-            "assets/sabar-2.jpg"
-        ],
+        screenshots: ["assets/sabar-1.jpg", "assets/sabar-2.jpg"],
         category: "Automation",
         status: "Live",
         date: "2026-07-30",
@@ -65,10 +56,7 @@ const projects = [
         description: "Antarmuka web app Sah In dirancang sebagai sistem Tanda Tangan Elektronik (TTE) dan pemeliharaan dokumen digital yang memfasilitasi penandatanganan serta pembubuhan stempel resmi secara visual, instan, dan aman",
         tech: ["Coming Soon"],
         url: "https://maeppeam.github.io/sah-in/",
-        screenshots: [
-            "assets/sahin-1.jpg",
-            "assets/sahin-2.jpg"
-        ],
+        screenshots: ["assets/sahin-1.jpg", "assets/sahin-2.jpg"],
         category: "API",
         status: "Live",
         date: "2026-08-05",
@@ -80,10 +68,7 @@ const projects = [
         description: "Antarmuka Dashboard SDM (GROO - Grow Together, Work Better) ini dirancang khusus untuk mengelola data kepegawaian, memantau status kualifikasi pendidik, serta mengadministrasikan data Sumber Daya Manusia secara terstruktur dan terpusat",
         tech: ["Coming Soon"],
         url: "https://maeppeam.github.io/groo/",
-        screenshots: [
-            "assets/groo-1.jpg",
-            "assets/groo-2.jpg"
-        ],
+        screenshots: ["assets/groo-1.jpg", "assets/groo-2.jpg"],
         category: "Dashboard",
         status: "Live",
         date: "2026-08-13",
@@ -149,7 +134,6 @@ function renderSlider(screenshots, projectId) {
     
     html += "</div>";
     
-    // Tombol navigasi (hanya muncul kalau > 1 gambar)
     if (images.length > 1) {
         html += "<button class=\"slider-btn prev\" onclick=\"changeSlide(" + projectId + ", -1)\">❮</button>";
         html += "<button class=\"slider-btn next\" onclick=\"changeSlide(" + projectId + ", 1)\">❯</button>";
@@ -176,7 +160,6 @@ function changeSlide(projectId, direction) {
     var dots = container.querySelectorAll(".dot");
     var currentIndex = 0;
     
-    // Cari slide yang aktif
     for (var i = 0; i < slides.length; i++) {
         if (slides[i].classList.contains("active")) {
             currentIndex = i;
@@ -184,7 +167,6 @@ function changeSlide(projectId, direction) {
         }
     }
     
-    // Hitung index baru
     var newIndex = currentIndex + direction;
     if (newIndex < 0) newIndex = slides.length - 1;
     if (newIndex >= slides.length) newIndex = 0;
@@ -199,13 +181,11 @@ function goToSlide(projectId, index) {
     var slides = container.querySelectorAll(".slide");
     var dots = container.querySelectorAll(".dot");
     
-    // Hapus active dari semua
     for (var i = 0; i < slides.length; i++) {
         slides[i].classList.remove("active");
         if (dots[i]) dots[i].classList.remove("active");
     }
     
-    // Tambah active ke yang dipilih
     if (slides[index]) slides[index].classList.add("active");
     if (dots[index]) dots[index].classList.add("active");
 }
@@ -232,7 +212,6 @@ function renderProjects(projectList) {
         var project = paginatedItems[i];
         var delay = i * 0.08;
         
-        // Ambil screenshots (array) atau fallback ke screenshot tunggal
         var screenshots = project.screenshots || [];
         if (screenshots.length === 0 && project.screenshot) {
             screenshots = [project.screenshot];
