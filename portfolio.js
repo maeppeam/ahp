@@ -8,7 +8,7 @@ const projects = [
         description: "Aplikasi berbasis web ini dirancang untuk mempermudah pencatatan, pelacakan, dan pengawasan status inventaris serta aset secara real-time, efisien, dan terstruktur.",
         tech: ["Coming Soon"],
         url: "https://maeppeam.github.io/inventory-system-v1/",
-        screenshot: "https://via.placeholder.com/400x250/1a73e8/ffffff?text=Inventory+V1",
+        screenshot: "assets/manajement-inventory-v1.jpg",
         category: "Tools",
         status: "Live",
         date: "2026-04-24",
