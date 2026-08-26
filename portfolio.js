@@ -152,8 +152,12 @@ function getStatusBadge(status) {
 // RENDER SLIDER
 // ============================================
 function renderSlider(screenshots, projectId) {
-    var defaultImage = "https://via.placeholder.com/400x250/4285f4/ffffff?text=GAS+Project";
-    var images = screenshots || [defaultImage];
+    var images = screenshots || [];
+    
+    // Jika tidak ada screenshot, tampilkan pesan
+    if (images.length === 0) {
+        return "<div class=\"slider-container\" id=\"slider-" + projectId + "\"><div class=\"slider-wrapper\"><div class=\"slide active\"><div class=\"no-image\">📷 Tidak ada screenshot</div></div></div></div>";
+    }
     
     var sliderId = "slider-" + projectId;
     var html = "<div class=\"slider-container\" id=\"" + sliderId + "\">";
@@ -162,7 +166,7 @@ function renderSlider(screenshots, projectId) {
     for (var i = 0; i < images.length; i++) {
         var active = i === 0 ? "active" : "";
         html += "<div class=\"slide " + active + "\">";
-        html += "<img src=\"" + (images[i] || defaultImage) + "\" alt=\"Screenshot " + (i+1) + "\" onerror=\"this.src='" + defaultImage + "'\" loading=\"lazy\">";
+        html += "<img src=\"" + images[i] + "\" alt=\"Screenshot " + (i+1) + "\" onerror=\"this.style.display='none'\" loading=\"lazy\">";
         html += "</div>";
     }
     
@@ -229,7 +233,6 @@ function goToSlide(projectId, index) {
 // ============================================
 function renderProjects(projectList) {
     var container = document.getElementById("projectContainer");
-    var defaultImage = "https://via.placeholder.com/400x250/4285f4/ffffff?text=GAS+Project";
     
     if (projectList.length === 0) {
         container.innerHTML = "<div class=\"empty-state\"><div class=\"empty-icon\">🔍</div><h2>Tidak ada project yang ditemukan</h2><p>Coba cari dengan keyword lain atau reset filter</p><button onclick=\"resetAllFilters()\" class=\"btn-reset\">🔄 Reset Filter</button></div>";
@@ -249,9 +252,6 @@ function renderProjects(projectList) {
         var screenshots = project.screenshots || [];
         if (screenshots.length === 0 && project.screenshot) {
             screenshots = [project.screenshot];
-        }
-        if (screenshots.length === 0) {
-            screenshots = [defaultImage];
         }
         
         var sliderHtml = renderSlider(screenshots, project.id);
