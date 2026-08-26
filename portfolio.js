@@ -69,7 +69,7 @@ const projects = [
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "Hash Code", "Single-Page Application"],
         url: "https://maeppeam.github.io/groo/",
         screenshots: ["assets/groo-1.jpg", "assets/groo-2.jpg"],
-        category: "Tools",
+        category: "Dashboard",
         status: "Live",
         date: "2026-08-13",
         features: ["Dashboard Lengkap", "Kategori Pegawai", "Kelengkapan Data", "Direktori Pegawai", "Manajemen Data"]
@@ -280,28 +280,6 @@ function changePage(page) {
 function filterProjects(category) {
     state.currentCategory = category;
     state.currentPage = 1;
-    
-    var btns = document.querySelectorAll(".filter-tab");
-    for (var i = 0; i < btns.length; i++) {
-        var btn = btns[i];
-        if (btn.dataset.category === category) {
-            btn.classList.add("active");
-        } else {
-            btn.classList.remove("active");
-        }
-    }
-    
-    // Update sidebar nav
-    var navItems = document.querySelectorAll(".nav-item");
-    for (var i = 0; i < navItems.length; i++) {
-        var nav = navItems[i];
-        if (nav.dataset.category === category) {
-            nav.classList.add("active");
-        } else {
-            nav.classList.remove("active");
-        }
-    }
-    
     applyFilters();
 }
 
@@ -356,24 +334,6 @@ function resetAllFilters() {
     
     document.getElementById("searchInput").value = "";
     document.getElementById("sortSelect").value = "default";
-    
-    var btns = document.querySelectorAll(".filter-tab");
-    for (var i = 0; i < btns.length; i++) {
-        if (btns[i].dataset.category === "Semua") {
-            btns[i].classList.add("active");
-        } else {
-            btns[i].classList.remove("active");
-        }
-    }
-    
-    var navItems = document.querySelectorAll(".nav-item");
-    for (var i = 0; i < navItems.length; i++) {
-        if (navItems[i].dataset.category === "Semua") {
-            navItems[i].classList.add("active");
-        } else {
-            navItems[i].classList.remove("active");
-        }
-    }
     
     applyFilters();
 }
@@ -476,16 +436,6 @@ function updateProjectCount(count) {
 function updateStats() {
     var total = projects.length;
     var live = projects.filter(function(p) { return p.status === "Live"; }).length;
-    var categories = {};
-    for (var i = 0; i < projects.length; i++) {
-        var cat = projects[i].category;
-        if (categories[cat]) {
-            categories[cat]++;
-        } else {
-            categories[cat] = 1;
-        }
-    }
-    var categoryCount = Object.keys(categories).length;
     
     var latest = projects[0];
     for (var i = 1; i < projects.length; i++) {
@@ -496,13 +446,7 @@ function updateStats() {
     
     document.getElementById("totalProjects").textContent = total;
     document.getElementById("liveProjects").textContent = live;
-    document.getElementById("categoryCount").textContent = categoryCount;
     document.getElementById("latestProject").textContent = latest ? latest.title.substring(0, 15) + "..." : "-";
-    
-    for (var cat in categories) {
-        var badge = document.getElementById("count-" + cat);
-        if (badge) badge.textContent = categories[cat];
-    }
 }
 
 // ============================================
@@ -522,21 +466,6 @@ function toggleDarkMode() {
 document.addEventListener("DOMContentLoaded", function() {
     applyFilters();
     updateStats();
-    
-    var filterBtns = document.querySelectorAll(".filter-tab");
-    for (var i = 0; i < filterBtns.length; i++) {
-        filterBtns[i].addEventListener("click", function() {
-            filterProjects(this.dataset.category);
-        });
-    }
-    
-    var navItems = document.querySelectorAll(".nav-item");
-    for (var i = 0; i < navItems.length; i++) {
-        navItems[i].addEventListener("click", function(e) {
-            e.preventDefault();
-            filterProjects(this.dataset.category);
-        });
-    }
     
     var searchInput = document.getElementById("searchInput");
     var debounceTimer;
