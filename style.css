@@ -157,13 +157,6 @@ body {
   align-items: center;
   gap: 16px;
 }
-.header-avatar {
-  font-size: 2rem;
-  background: var(--bg-card);
-  padding: 4px 12px;
-  border-radius: 50%;
-  box-shadow: var(--shadow);
-}
 .dark-toggle {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -207,7 +200,7 @@ body {
 .stat-number { font-size: 1.6rem; font-weight: 700; line-height: 1.2; }
 .stat-label { font-size: 0.8rem; color: var(--text-secondary); }
 
-/* ===== FILTER ===== */
+/* ===== FILTER BAR (Search & Sort Only) ===== */
 .filter-bar {
   background: var(--bg-card);
   border-radius: var(--radius);
@@ -215,30 +208,6 @@ body {
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow);
   margin-bottom: 28px;
-}
-.filter-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 12px;
-}
-.filter-tab {
-  padding: 6px 16px;
-  border-radius: 20px;
-  border: 1px solid var(--border-color);
-  background: transparent;
-  color: var(--text-secondary);
-  cursor: pointer;
-  font-size: 0.8rem;
-  font-weight: 500;
-  transition: var(--transition);
-  font-family: inherit;
-}
-.filter-tab:hover { background: var(--bg-primary); }
-.filter-tab.active {
-  background: var(--gradient-start);
-  color: white;
-  border-color: var(--gradient-start);
 }
 .filter-actions {
   display: flex;
@@ -559,7 +528,7 @@ body {
 }
 .btn-share-modal:hover, .btn-close-modal:hover { background: var(--border-color); }
 
-/* ===== EMPTY & FOOTER ===== */
+/* ===== EMPTY STATE ===== */
 .empty-state {
   grid-column: 1 / -1;
   text-align: center;
@@ -579,18 +548,6 @@ body {
   transition: var(--transition);
 }
 .btn-reset:hover { background: var(--gradient-end); }
-.main-footer {
-  border-top: 1px solid var(--border-color);
-  padding-top: 20px;
-  margin-top: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
@@ -603,13 +560,10 @@ body {
   .nav-item { justify-content: center; padding: 10px; }
   .main-content { margin-left: 70px; padding: 16px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .filter-tabs { gap: 4px; }
-  .filter-tab { font-size: 0.7rem; padding: 4px 12px; }
   .filter-actions { flex-direction: column; }
   .project-grid { grid-template-columns: 1fr; }
   .slider-container { height: 200px; }
   .top-header { flex-direction: column; gap: 12px; }
-  .main-footer { flex-direction: column; text-align: center; }
 }
 @media (max-width: 480px) {
   .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
