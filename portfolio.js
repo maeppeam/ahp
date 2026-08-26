@@ -5,14 +5,18 @@ const projects = [
     {
         id: 1,
         title: "Manajement Inventory V.1",
-        description: "Aplikasi berbasis web ini dirancang untuk mempermudah pencatatan, pelacakan, dan pengawasan status inventaris serta aset secara real-time, efisien, dan terstruktur.",
-        tech: ["Coming Soon"],
+        description: "Asset Management System V.1 adalah aplikasi berbasis web untuk mengelola aset/inventaris secara efisien. Versi awal ini menyediakan antarmuka dasar untuk pelacakan dan pengelolaan data aset.",
+        tech: ["HTML", "CSS", "JavaScript"],
         url: "https://maeppeam.github.io/inventory-system-v1/",
         screenshots: ["assets/manajement-inventory-v1.jpg"],
         category: "Tools",
         status: "Live",
         date: "2026-04-24",
-        features: ["Coming Soon"]
+        features: [
+            "Pencatatan",
+            "Pemantauan",
+            "Real Time"
+        ]
     },
     {
         id: 2,
