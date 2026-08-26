@@ -75,26 +75,38 @@ const projects = [
     {
         id: 5,
         title: "SAHIN - Secure, Authentic, Hands-In",
-        description: "Antarmuka web app Sah In dirancang sebagai sistem Tanda Tangan Elektronik (TTE) dan pemeliharaan dokumen digital yang memfasilitasi penandatanganan serta pembubuhan stempel resmi secara visual, instan, dan aman",
-        tech: ["Coming Soon"],
+        description: "Aplikasi berbasis web untuk mengelola alur kerja dokumen/permohonan dengan fitur Tanda Tangan Elektronik (TTE)",
+        tech: ["HTML", "CSS", "JavaScript", "API QR Code", "Hash Code", "QR Code"],
         url: "https://maeppeam.github.io/sah-in/",
         screenshots: ["assets/sahin-1.jpg", "assets/sahin-2.jpg"],
-        category: "API",
+        category: "Tools",
         status: "Live",
         date: "2026-08-05",
-        features: ["Coming Soon"]
+        features: [
+            "Alur Kerja Dokumen",
+            "Verifikasi via QR Code",
+            "Dashboard Real-Time",
+            "Detail Dokumen",
+            "Manajemen Pengguna"
+        ]
     },
     {
         id: 6,
         title: "GROO",
-        description: "Antarmuka Dashboard SDM (GROO - Grow Together, Work Better) ini dirancang khusus untuk mengelola data kepegawaian, memantau status kualifikasi pendidik, serta mengadministrasikan data Sumber Daya Manusia secara terstruktur dan terpusat",
-        tech: ["Coming Soon"],
+        description: "Sistem ini menyediakan dashboard lengkap dengan ringkasan data pegawai (Guru, Tenaga Kependidikan, GTT, GTY) serta informasi kelengkapan data seperti Dapodik, NUPTK, dan PPG, dilengkapi dengan direktori pegawai dan fitur pencarian.",
+        tech: ["HTML", "CSS", "JavaScript", "API QR Code", "Hash Code", "Single-Page Application"],
         url: "https://maeppeam.github.io/groo/",
         screenshots: ["assets/groo-1.jpg", "assets/groo-2.jpg"],
         category: "Dashboard",
         status: "Live",
         date: "2026-08-13",
-        features: ["Coming Soon"]
+        features: [
+            "Dashboard Lengkap",
+            "Kategori Pegawai",
+            "Kelengkapan Data",
+            "Direktori Pegawai",
+            "Manajemen Data"
+        ]
     }
 ];
 
