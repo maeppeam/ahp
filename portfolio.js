@@ -469,7 +469,7 @@ function updateStats() {
     
     document.getElementById("totalProjects").textContent = total;
     document.getElementById("liveProjects").textContent = live;
-    document.getElementById("latestProject").textContent = latest ? latest.title.substring(0, 15) + "..." : "-";
+    document.getElementById("latestProject").textContent = latest ? latest.title : "-";
 }
 
 // ============================================
