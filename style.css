@@ -66,10 +66,8 @@ body {
 .brand-logo {
   width: 40px;
   height: 40px;
-  border-radius: 10px;
   object-fit: cover;
   flex-shrink: 0;
-  background: var(--gradient-start);
 }
 
 .sidebar-brand span {
