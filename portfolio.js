@@ -83,7 +83,7 @@ const projects = [
         screenshots: ["assets/higat-1.jpg"],
         category: "Utility",
         status: "Live",
-        date: "2026-08-13",
+        date: "2026-09-2",
         features: ["Role Management", "Multi Merchant", "Proforma Invoice Generator", "Invoice Generator"]
     }
 ];
