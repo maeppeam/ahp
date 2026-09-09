@@ -96,7 +96,7 @@ let state = {
     searchQuery: "",
     sortBy: "default",
     currentPage: 1,
-    itemsPerPage: 6,
+    itemsPerPage: 8,
     filteredProjects: [...projects]
 };
 
