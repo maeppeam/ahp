@@ -80,7 +80,7 @@ const projects = [
         description: "Platform terpusat yang fleksibel untuk mencetak proforma dan invoice multi-merchant dengan desain template profesional dalam hitungan detik",
         tech: ["HTML", "CSS", "JavaScript", "HTML Templating"],
         url: "https://maeppeam.github.io/higat/",
-        screenshots: ["assets/higat-1.jpg"],
+        screenshots: ["assets/higat-1.png"],
         category: "Utility",
         status: "Live",
         date: "2026-09-2",
