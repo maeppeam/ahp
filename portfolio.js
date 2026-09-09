@@ -73,6 +73,18 @@ const projects = [
         status: "Live",
         date: "2026-08-13",
         features: ["Dashboard Lengkap", "Kategori Pegawai", "Kelengkapan Data", "Direktori Pegawai", "Manajemen Data"]
+    },
+    {
+        id: 7,
+        title: "HIGAT",
+        description: "Platform terpusat yang fleksibel untuk mencetak proforma dan invoice multi-merchant dengan desain template profesional dalam hitungan detik",
+        tech: ["HTML", "CSS", "JavaScript", "HTML Templating"],
+        url: "https://maeppeam.github.io/groo/",
+        screenshots: ["assets/groo-1.jpg", "assets/groo-2.jpg"],
+        category: "Dashboard",
+        status: "Live",
+        date: "2026-08-13",
+        features: ["Dashboard Lengkap", "Kategori Pegawai", "Kelengkapan Data", "Direktori Pegawai", "Manajemen Data"]
     }
 ];
 
