@@ -79,12 +79,12 @@ const projects = [
         title: "HIGAT",
         description: "Platform terpusat yang fleksibel untuk mencetak proforma dan invoice multi-merchant dengan desain template profesional dalam hitungan detik",
         tech: ["HTML", "CSS", "JavaScript", "HTML Templating"],
-        url: "https://maeppeam.github.io/groo/",
-        screenshots: ["assets/groo-1.jpg", "assets/groo-2.jpg"],
-        category: "Dashboard",
+        url: "https://maeppeam.github.io/higat/",
+        screenshots: ["assets/higat-1.jpg"],
+        category: "Utility",
         status: "Live",
         date: "2026-08-13",
-        features: ["Dashboard Lengkap", "Kategori Pegawai", "Kelengkapan Data", "Direktori Pegawai", "Manajemen Data"]
+        features: ["Role Management", "Multi Merchant", "Proforma Invoice Generator", "Invoice Generator"]
     }
 ];
 
