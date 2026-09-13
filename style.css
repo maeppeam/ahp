@@ -53,7 +53,15 @@ button { font-family: inherit; cursor: pointer; }
   background: linear-gradient(120deg, var(--accent), #8b5cf6 60%, #d946ef);
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
   color: transparent;
+  display: inline-block;
+  padding: 0.04em 0.08em;
+  margin: -0.04em -0.08em;
+}
+@supports not (-webkit-background-clip: text) {
+  .gradient-text { color: var(--accent); }
 }
 .reveal {
   opacity: 0;
