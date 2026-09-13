@@ -215,24 +215,6 @@ button { font-family: inherit; cursor: pointer; }
   height: 100%;
   object-fit: cover;
 }
-.float-chip {
-  position: absolute;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-  font-size: 0.75rem;
-  font-weight: 600;
-  white-space: nowrap;
-  animation: float 4s ease-in-out infinite;
-}
-.chip-left { left: -52px; top: 22%; }
-.chip-right { right: -52px; bottom: 26%; animation-delay: 2s; }
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
 
 /* ===== SECTIONS ===== */
 .projects, .about {
@@ -595,7 +577,6 @@ button { font-family: inherit; cursor: pointer; }
   .section-head { flex-direction: column; align-items: flex-start; }
   .toolbar { width: 100%; }
   .toolbar input { flex: 1; min-width: 0; }
-  .float-chip { display: none; }
   .grid { grid-template-columns: 1fr; }
   .about-stats { gap: 24px; }
 }
