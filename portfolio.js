@@ -88,24 +88,15 @@ const projects = [
     }
 ];
 
-// Proyek kurasi yang ditampilkan di halaman ini
-const featuredIds = [2, 3, 4, 5, 6, 7];
-
-function getVisible() {
-    var out = [];
-    for (var i = 0; i < projects.length; i++) {
-        if (featuredIds.indexOf(projects[i].id) !== -1) out.push(projects[i]);
-    }
-    return out;
-}
-
 // ============================================
 // STATE
 // ============================================
 let state = {
     currentCategory: "Semua",
     searchQuery: "",
-    sortBy: "default"
+    sortBy: "newest",
+    currentPage: 1,
+    itemsPerPage: 6
 };
 
 // ============================================
@@ -134,7 +125,6 @@ function renderChips() {
     var seen = {};
     var cats = ["Semua"];
     for (var ci = 0; ci < projects.length; ci++) {
-        if (featuredIds.indexOf(projects[ci].id) === -1) continue;
         if (seen[projects[ci].category]) continue;
         seen[projects[ci].category] = true;
         cats.push(projects[ci].category);
@@ -160,7 +150,7 @@ function renderChips() {
 // FILTERS
 // ============================================
 function applyFilters() {
-    var filtered = getVisible();
+    var filtered = projects.slice();
 
     if (state.currentCategory !== "Semua") {
         filtered = filtered.filter(function (p) { return p.category === state.currentCategory; });
@@ -179,23 +169,32 @@ function applyFilters() {
     else if (state.sortBy === "newest") filtered.sort(function (a, b) { return new Date(b.date) - new Date(a.date); });
     else if (state.sortBy === "oldest") filtered.sort(function (a, b) { return new Date(a.date) - new Date(b.date); });
 
+    state.currentPage = 1;
+    state.filteredProjects = filtered;
     renderProjects(filtered);
 }
 
 function renderProjects(items) {
     var container = document.getElementById("projectContainer");
     var empty = document.getElementById("emptyState");
+    var totalPages = Math.max(1, Math.ceil(items.length / state.itemsPerPage));
+
+    if (state.currentPage > totalPages) state.currentPage = totalPages;
 
     if (items.length === 0) {
         container.innerHTML = "";
         empty.hidden = false;
+        updatePagination(0);
         return;
     }
     empty.hidden = true;
 
+    var start = (state.currentPage - 1) * state.itemsPerPage;
+    var pageItems = items.slice(start, start + state.itemsPerPage);
+
     var html = "";
-    for (var i = 0; i < items.length; i++) {
-        var p = items[i];
+    for (var i = 0; i < pageItems.length; i++) {
+        var p = pageItems[i];
         var img = (p.screenshots && p.screenshots.length > 0) ? p.screenshots[0] : "";
         var count = (p.screenshots || []).length;
 
@@ -219,14 +218,49 @@ function renderProjects(items) {
         html += "</div></div></article>";
     }
     container.innerHTML = html;
+    updatePagination(items.length);
+}
+
+// ============================================
+// PAGINATION
+// ============================================
+function updatePagination(totalItems) {
+    var container = document.getElementById("pagination");
+    var totalPages = Math.max(1, Math.ceil(totalItems / state.itemsPerPage));
+
+    if (totalPages <= 1) {
+        container.innerHTML = "";
+        return;
+    }
+
+    var html = "";
+    html += '<button class="page-btn" onclick="changePage(' + (state.currentPage - 1) + ')"' + (state.currentPage === 1 ? " disabled" : "") + ">◀</button>";
+
+    for (var i = 1; i <= totalPages; i++) {
+        html += '<button class="page-btn' + (i === state.currentPage ? " active" : "") + '" onclick="changePage(' + i + ')">' + i + "</button>";
+    }
+
+    html += '<button class="page-btn" onclick="changePage(' + (state.currentPage + 1) + ')"' + (state.currentPage === totalPages ? " disabled" : "") + ">▶</button>";
+
+    container.innerHTML = html;
+}
+
+function changePage(page) {
+    var totalPages = Math.max(1, Math.ceil(state.filteredProjects.length / state.itemsPerPage));
+    if (page < 1 || page > totalPages || page === state.currentPage) return;
+    state.currentPage = page;
+    renderProjects(state.filteredProjects);
+    var grid = document.getElementById("projects");
+    if (grid) grid.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function resetAllFilters() {
     state.currentCategory = "Semua";
     state.searchQuery = "";
-    state.sortBy = "default";
+    state.sortBy = "newest";
+    state.currentPage = 1;
     document.getElementById("searchInput").value = "";
-    document.getElementById("sortSelect").value = "default";
+    document.getElementById("sortSelect").value = "newest";
     renderChips();
     applyFilters();
 }
@@ -284,8 +318,8 @@ function toggleDarkMode() {
 // STATS
 // ============================================
 function updateStats() {
-    var live = getVisible().filter(function (p) { return p.status === "Live"; }).length;
-    document.getElementById("totalProjects").textContent = getVisible().length;
+    var live = projects.filter(function (p) { return p.status === "Live"; }).length;
+    document.getElementById("totalProjects").textContent = projects.length;
     document.getElementById("liveProjects").textContent = live;
 }
 
@@ -296,7 +330,7 @@ document.addEventListener("DOMContentLoaded", function () {
     renderChips();
     applyFilters();
     updateStats();
-    document.getElementById("heroCount").textContent = getVisible().length;
+    document.getElementById("heroCount").textContent = projects.length;
 
     var searchInput = document.getElementById("searchInput");
     var debounceTimer;
