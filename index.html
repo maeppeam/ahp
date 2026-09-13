@@ -16,7 +16,7 @@
   <!-- ===== NAVBAR ===== -->
   <header class="navbar">
     <div class="nav-inner">
-      <a href="#top" class="brand">peam<span class="brand-dot">.</span></a>
+      <a href="#top" class="brand"><img src="logo.png" alt="PEAM" class="brand-logo"></a>
       <nav class="nav-links">
         <a href="#projects">Proyek</a>
         <a href="#about">Tentang</a>
@@ -29,12 +29,10 @@
   <section class="hero" id="top">
     <div class="hero-grid">
       <div class="hero-text reveal">
-        <div class="hero-badge"><span class="pulse-dot"></span> 7 proyek live</div>
+        <div class="hero-badge"><span class="pulse-dot"></span> <span id="heroCount">0</span> proyek live</div>
         <h1 class="hero-title">Halo, aku <span class="gradient-text">PEAM</span>.</h1>
         <p class="hero-subtitle">
-          Aku membangun aplikasi web dari masalah nyata — dari inventaris,
-          manajemen dokumen, sampai dashboard pegawai. Semua dikerjakan dengan
-          cara modern: vibe coding.
+          Aku membuat aplikasi web untuk bekerja lebih efektif dan efisien.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
@@ -43,7 +41,7 @@
       </div>
       <div class="hero-visual reveal">
         <div class="profile-frame">
-          <img src="assets/profile.png" alt="Foto profil PEAM" onerror="this.style.display='none'">
+          <img src="assets/foto.jpg" alt="Foto profil PEAM">
           <div class="float-chip chip-left">⚡ Vibe coded</div>
           <div class="float-chip chip-right">📦 100% live</div>
         </div>
@@ -85,15 +83,13 @@
       <div class="section-kicker">Tentang</div>
       <h2 class="section-title">Bukan sekadar coding, tapi <span class="gradient-text">memecahkan masalah</span>.</h2>
       <p>
-        Semua proyek di sini lahir dari kebutuhan nyata: sistem inventaris yang
-        bikin stok ketelusuran, ticketing biar laporan pelanggan gak hilang,
-        sampai dashboard pegawai yang merapikan data. Aku suka tantangan nyata
-        dan menyelesaikannya dengan cepat.
+        Semua proyek di sini lahir dari kebutuhan nyata agar lebih efektif dan
+        efisien dalam bekerja.
       </p>
       <ul class="about-stats">
         <li><strong id="totalProjects">0</strong><span>Total proyek</span></li>
         <li><strong id="liveProjects">0</strong><span>Status live</span></li>
-        <li><strong>100%</strong><span>Buatan tangan + AI</span></li>
+        <li><strong>100%</strong><span>Karya sendiri</span></li>
       </ul>
     </div>
   </section>
@@ -101,8 +97,7 @@
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="footer-inner">
-      <span class="brand">peam<span class="brand-dot">.</span></span>
-      <span>Dibuat dengan vibe coding · <span id="year"></span></span>
+      <span>© <span id="year"></span></span>
       <span id="lastUpdated"></span>
     </div>
   </footer>
