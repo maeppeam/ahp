@@ -31,9 +31,6 @@
       <div class="hero-text reveal">
         <div class="hero-badge"><span class="pulse-dot"></span> <span id="heroCount">0</span> proyek live</div>
         <h1 class="hero-title">Halo, aku <span class="gradient-text">PEAM</span>.</h1>
-        <p class="hero-subtitle">
-          Aku membuat aplikasi web untuk bekerja lebih efektif dan efisien.
-        </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
           <a href="https://github.com/maeppeam" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
@@ -41,7 +38,7 @@
       </div>
       <div class="hero-visual reveal">
         <div class="profile-frame">
-          <img src="assets/foto.jpg" alt="Foto profil PEAM">
+          <img src="foto.jpg" alt="Foto profil PEAM">
           <div class="float-chip chip-left">⚡ Vibe coded</div>
           <div class="float-chip chip-right">📦 100% live</div>
         </div>
@@ -59,8 +56,7 @@
       <div class="toolbar">
         <input type="text" id="searchInput" placeholder="Cari proyek..." aria-label="Cari proyek">
         <select id="sortSelect" aria-label="Urutkan proyek">
-          <option value="default">Urut: Default</option>
-          <option value="newest">Terbaru</option>
+          <option value="newest" selected>Terbaru</option>
           <option value="oldest">Terlama</option>
           <option value="title">A-Z</option>
           <option value="title-desc">Z-A</option>
@@ -75,6 +71,7 @@
       <p>😕 Tidak ada proyek yang cocok.</p>
       <button class="btn btn-ghost" onclick="resetAllFilters()">Reset Filter</button>
     </div>
+    <div id="pagination" class="pagination"></div>
   </section>
 
   <!-- ===== ABOUT ===== -->
