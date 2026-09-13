@@ -88,6 +88,17 @@ const projects = [
     }
 ];
 
+// Proyek kurasi yang ditampilkan di halaman ini
+const featuredIds = [2, 3, 4, 5, 6, 7];
+
+function getVisible() {
+    var out = [];
+    for (var i = 0; i < projects.length; i++) {
+        if (featuredIds.indexOf(projects[i].id) !== -1) out.push(projects[i]);
+    }
+    return out;
+}
+
 // ============================================
 // STATE
 // ============================================
@@ -120,7 +131,14 @@ function getProject(id) {
 // CATEGORY CHIPS
 // ============================================
 function renderChips() {
-    var cats = ["Semua", "Tools", "Dashboard", "Utility"];
+    var seen = {};
+    var cats = ["Semua"];
+    for (var ci = 0; ci < projects.length; ci++) {
+        if (featuredIds.indexOf(projects[ci].id) === -1) continue;
+        if (seen[projects[ci].category]) continue;
+        seen[projects[ci].category] = true;
+        cats.push(projects[ci].category);
+    }
     var el = document.getElementById("chipBar");
     var html = "";
     for (var i = 0; i < cats.length; i++) {
@@ -142,7 +160,7 @@ function renderChips() {
 // FILTERS
 // ============================================
 function applyFilters() {
-    var filtered = projects.slice();
+    var filtered = getVisible();
 
     if (state.currentCategory !== "Semua") {
         filtered = filtered.filter(function (p) { return p.category === state.currentCategory; });
@@ -266,8 +284,8 @@ function toggleDarkMode() {
 // STATS
 // ============================================
 function updateStats() {
-    var live = projects.filter(function (p) { return p.status === "Live"; }).length;
-    document.getElementById("totalProjects").textContent = projects.length;
+    var live = getVisible().filter(function (p) { return p.status === "Live"; }).length;
+    document.getElementById("totalProjects").textContent = getVisible().length;
     document.getElementById("liveProjects").textContent = live;
 }
 
@@ -278,6 +296,7 @@ document.addEventListener("DOMContentLoaded", function () {
     renderChips();
     applyFilters();
     updateStats();
+    document.getElementById("heroCount").textContent = getVisible().length;
 
     var searchInput = document.getElementById("searchInput");
     var debounceTimer;
