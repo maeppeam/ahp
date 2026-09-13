@@ -89,7 +89,10 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 1.3rem;
   letter-spacing: -0.02em;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
 }
+.brand-logo { height: 34px; width: auto; object-fit: contain; }
 .brand-dot { color: var(--accent); }
 .nav-links {
   display: flex;
