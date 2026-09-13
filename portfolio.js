@@ -44,7 +44,7 @@ const projects = [
         description: "Sistem ini dirancang untuk mengelola siklus barang secara lengkap mulai dari master data, transaksi masuk/keluar, hingga stock opname dengan fitur approval dan notifikasi stok menipis.",
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "MVC Like Architecture"],
         url: "https://maeppeam.github.io/sabar/",
-        screenshots: ["assets/sabar-1.jpg", "assets/sabar-2.jpg"],
+        screenshots: ["assets/sabar.png"],
         category: "Tools",
         status: "Live",
         date: "2026-07-30",
