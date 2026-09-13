@@ -439,6 +439,29 @@ button { font-family: inherit; cursor: pointer; }
 }
 .grid-empty .btn { margin-top: 16px; }
 
+/* ===== PAGINATION ===== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+.page-btn {
+  min-width: 40px;
+  padding: 9px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+.page-btn:hover:not(:disabled):not(.active) { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+.page-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
 /* ===== ABOUT ===== */
 .about { padding-bottom: 72px; }
 .about-card {
