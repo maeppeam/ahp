@@ -3,108 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AfterHours Project</title>
+  <meta name="description" content="Portofolio PEAM — pembuatan aplikasi web dari masalah nyata, hasil vibe coding." />
+  <title>PEAM — Vibe Coded Portfolio</title>
   <link rel="icon" type="image/png" href="profile.png">
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- ===================== SIDEBAR ===================== -->
-  <aside class="sidebar">
-    <div class="sidebar-brand">
-      <img src="assets/profile.png" alt="Logo" class="brand-logo" onerror="this.style.display='none'">
-      <span>After Hours Project</span>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="#top" class="brand">peam<span class="brand-dot">.</span></a>
+      <nav class="nav-links">
+        <a href="#projects">Proyek</a>
+        <a href="#about">Tentang</a>
+      </nav>
+      <button id="darkModeToggle" class="dark-toggle" aria-label="Ganti mode terang/gelap">🌙</button>
     </div>
-    <nav class="sidebar-nav">
-      <a href="#" class="nav-item active" data-category="Semua">
-        <span class="nav-icon">📊</span> <span>Dashboard</span>
-      </a>
-    </nav>
-    <div class="sidebar-footer">
-      <div class="user-info">
-        <div class="user-avatar">👨‍💻</div>
-        <div>
-          <div class="user-name">PEAM</div>
-          <div class="user-role">Creator</div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="hero-grid">
+      <div class="hero-text reveal">
+        <div class="hero-badge"><span class="pulse-dot"></span> 7 proyek live</div>
+        <h1 class="hero-title">Halo, aku <span class="gradient-text">PEAM</span>.</h1>
+        <p class="hero-subtitle">
+          Aku membangun aplikasi web dari masalah nyata — dari inventaris,
+          manajemen dokumen, sampai dashboard pegawai. Semua dikerjakan dengan
+          cara modern: vibe coding.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
+          <a href="https://github.com/maeppeam" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="profile-frame">
+          <img src="assets/profile.png" alt="Foto profil PEAM" onerror="this.style.display='none'">
+          <div class="float-chip chip-left">⚡ Vibe coded</div>
+          <div class="float-chip chip-right">📦 100% live</div>
         </div>
       </div>
     </div>
-  </aside>
+  </section>
 
-  <!-- ===================== MAIN ===================== -->
-  <main class="main-content">
-    <!-- HEADER -->
-    <header class="top-header">
-      <div class="header-left">
-        <h1>Dashboard</h1>
-        <p>Mau cek project apa hari ini?</p>
+  <!-- ===== PROJECTS ===== -->
+  <section class="projects" id="projects">
+    <div class="section-head reveal">
+      <div>
+        <div class="section-kicker">Portofolio</div>
+        <h2 class="section-title">Proyek Pilihan</h2>
       </div>
-      <div class="header-right">
-        <button id="darkModeToggle" class="dark-toggle">🌙</button>
-      </div>
-    </header>
-
-    <!-- STATISTIK -->
-    <section class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-icon">📦</div>
-        <div>
-          <div class="stat-number" id="totalProjects">0</div>
-          <div class="stat-label">Total Project</div>
-        </div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">🟢</div>
-        <div>
-          <div class="stat-number" id="liveProjects">0</div>
-          <div class="stat-label">Live</div>
-        </div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">📅</div>
-        <div>
-          <div class="stat-number" id="latestProject">-</div>
-          <div class="stat-label">Project Terbaru</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SEARCH & SORT -->
-    <div class="filter-bar">
-      <div class="filter-actions">
-        <input type="text" id="searchInput" placeholder="🔍 Cari project...">
-        <select id="sortSelect">
-          <option value="default">📌 Default</option>
-          <option value="title">🔤 A-Z</option>
-          <option value="title-desc">🔤 Z-A</option>
-          <option value="newest">🆕 Terbaru</option>
-          <option value="oldest">📅 Terlama</option>
+      <div class="toolbar">
+        <input type="text" id="searchInput" placeholder="Cari proyek..." aria-label="Cari proyek">
+        <select id="sortSelect" aria-label="Urutkan proyek">
+          <option value="default">Urut: Default</option>
+          <option value="newest">Terbaru</option>
+          <option value="oldest">Terlama</option>
+          <option value="title">A-Z</option>
+          <option value="title-desc">Z-A</option>
         </select>
       </div>
     </div>
 
-    <!-- PROJECT GRID -->
-    <section class="projects-section">
-      <div class="section-header">
-        <h2>📁 Semua Project</h2>
-        <span id="projectCount">0 project</span>
-      </div>
-      <div id="projectContainer" class="project-grid">
-        <div class="loading">⏳ Memuat project...</div>
-      </div>
-      <div id="pagination" class="pagination-container"></div>
-    </section>
+    <div class="chips" id="chipBar"></div>
 
-    <!-- FOOTER -->
-    <footer class="main-footer">
-      <span>🔄 Last updated: <span id="lastUpdated"></span></span>
-    </footer>
-  </main>
+    <div id="projectContainer" class="grid"></div>
+    <div class="grid-empty" id="emptyState" hidden>
+      <p>😕 Tidak ada proyek yang cocok.</p>
+      <button class="btn btn-ghost" onclick="resetAllFilters()">Reset Filter</button>
+    </div>
+  </section>
 
-  <!-- MODAL -->
-  <div id="modal" class="modal">
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="about-card reveal">
+      <div class="section-kicker">Tentang</div>
+      <h2 class="section-title">Bukan sekadar coding, tapi <span class="gradient-text">memecahkan masalah</span>.</h2>
+      <p>
+        Semua proyek di sini lahir dari kebutuhan nyata: sistem inventaris yang
+        bikin stok ketelusuran, ticketing biar laporan pelanggan gak hilang,
+        sampai dashboard pegawai yang merapikan data. Aku suka tantangan nyata
+        dan menyelesaikannya dengan cepat.
+      </p>
+      <ul class="about-stats">
+        <li><strong id="totalProjects">0</strong><span>Total proyek</span></li>
+        <li><strong id="liveProjects">0</strong><span>Status live</span></li>
+        <li><strong>100%</strong><span>Buatan tangan + AI</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="brand">peam<span class="brand-dot">.</span></span>
+      <span>Dibuat dengan vibe coding · <span id="year"></span></span>
+      <span id="lastUpdated"></span>
+    </div>
+  </footer>
+
+  <!-- ===== MODAL ===== -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true">
     <div class="modal-content">
-      <span class="modal-close">&times;</span>
+      <button class="modal-close" aria-label="Tutup">&times;</button>
       <div id="modalBody"></div>
     </div>
   </div>
