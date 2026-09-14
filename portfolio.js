@@ -97,7 +97,7 @@ const projects = [
         status: "Live",
         date: "2026-09-02",
         features: ["Coming Soon", "Multi Merchant", "Proforma Invoice Generator", "Invoice Generator"]
-    },
+    }
     
 ];
 
