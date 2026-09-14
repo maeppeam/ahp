@@ -56,7 +56,7 @@ const projects = [
         description: "Aplikasi berbasis web untuk mengelola alur kerja dokumen/permohonan dengan fitur Tanda Tangan Elektronik (TTE)",
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "Hash Code", "QR Code"],
         url: "https://maeppeam.github.io/sah-in/",
-        screenshots: ["assets/sahin-1.jpg", "assets/sahin-2.jpg"],
+        screenshots: ["assets/sahin.png"],
         category: "Tools",
         status: "Live",
         date: "2026-08-05",
