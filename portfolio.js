@@ -321,6 +321,7 @@ function updateStats() {
     var live = projects.filter(function (p) { return p.status === "Live"; }).length;
     document.getElementById("totalProjects").textContent = projects.length;
     document.getElementById("liveProjects").textContent = live;
+    document.getElementById("heroCount").textContent = live;
 }
 
 // ============================================
@@ -330,7 +331,6 @@ document.addEventListener("DOMContentLoaded", function () {
     renderChips();
     applyFilters();
     updateStats();
-    document.getElementById("heroCount").textContent = projects.length;
 
     var searchInput = document.getElementById("searchInput");
     var debounceTimer;
