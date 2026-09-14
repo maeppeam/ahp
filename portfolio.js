@@ -85,7 +85,20 @@ const projects = [
         status: "Live",
         date: "2026-09-02",
         features: ["Role Management", "Multi Merchant", "Proforma Invoice Generator", "Invoice Generator"]
-    }
+    },
+    {
+        id: 8,
+        title: "SIMPUL",
+        description: "Coming Soon",
+        tech: ["Coming Soon", "CSS", "JavaScript", "HTML Templating"],
+        url: "https://simpul.afterhoursproject.my.id",
+        screenshots: ["assets/higat-1.png"],
+        category: "Coming Soon",
+        status: "Live",
+        date: "2026-09-02",
+        features: ["Coming Soon", "Multi Merchant", "Proforma Invoice Generator", "Invoice Generator"]
+    },
+    
 ];
 
 // ============================================
