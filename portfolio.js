@@ -85,7 +85,19 @@ const projects = [
         status: "Live",
         date: "2026-09-02",
         features: ["Role Management", "Multi Merchant", "Proforma Invoice Generator", "Invoice Generator"]
-    }   
+    },
+    {
+        id: 8,
+        title: "SIMPUL",
+        description: "Platform terpusat yang fleksibel untuk mencetak proforma dan invoice multi-merchant dengan desain template profesional dalam hitungan detik",
+        tech: ["HTML", "CSS", "JavaScript", "HTML Templating"],
+        url: "https://simpul.afterhoursproject.my.id",
+        screenshots: ["assets/higat-1.png"],
+        category: "Utility",
+        status: "Live",
+        date: "2026-09-02",
+        features: ["Role Management", "Multi Merchant", "Proforma Invoice Generator", "Invoice Generator"]
+    }
 ];
 
 // ============================================
