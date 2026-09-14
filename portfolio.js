@@ -91,7 +91,7 @@ const projects = [
         title: "SIMPUL",
         description: "Coming Soon",
         tech: ["Coming Soon", "CSS", "JavaScript", "HTML Templating"],
-        url: "https://simpul.afterhoursproject.my.id",
+        url: "https://maeppeam.github.io/higat/",
         screenshots: ["assets/higat-1.png"],
         category: "Coming Soon",
         status: "Live",
