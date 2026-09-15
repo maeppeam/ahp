@@ -67,10 +67,10 @@ const projects = [
         title: "GROO",
         description: "Sistem ini menyediakan dashboard lengkap dengan ringkasan data pegawai (Guru, Tenaga Kependidikan, GTT, GTY) serta informasi kelengkapan data seperti Dapodik, NUPTK, dan PPG, dilengkapi dengan direktori pegawai dan fitur pencarian.",
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "Hash Code", "Single-Page Application"],
-        url: "https://maeppeam.github.io/grook/",
+        url: "https://maeppeam.github.io/groo/",
         screenshots: ["assets/groo-1.jpg", "assets/groo-2.jpg"],
         category: "Dashboard",
-        status: "Maintenance",
+        status: "Live",
         date: "2026-08-13",
         features: ["Dashboard Lengkap", "Kategori Pegawai", "Kelengkapan Data", "Direktori Pegawai", "Manajemen Data"]
     },
