@@ -43,7 +43,7 @@ const projects = [
         title: "SABAR - Sistem Arus Barang Masuk & Keluar",
         description: "Sistem ini dirancang untuk mengelola siklus barang secara lengkap mulai dari master data, transaksi masuk/keluar, hingga stock opname dengan fitur approval dan notifikasi stok menipis.",
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "MVC Like Architecture"],
-        url: "https://maeppeam.github.io/sabar/",
+        url: "https://sabar.afterhoursproject.my.id/",
         screenshots: ["assets/sabar.png"],
         category: "Tools",
         status: "Live",
