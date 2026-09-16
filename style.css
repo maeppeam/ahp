@@ -100,7 +100,16 @@ button { font-family: inherit; cursor: pointer; }
   display: inline-flex;
   align-items: center;
 }
-.brand-logo { height: 34px; width: auto; object-fit: contain; }
+.brand-logo {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0);
+  transition: filter 0.3s ease;
+}
+.dark-mode .brand-logo {
+  filter: none;
+}
 .brand-dot { color: var(--accent); }
 .nav-links {
   display: flex;
