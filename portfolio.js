@@ -350,7 +350,7 @@ function loadVisitorCount() {
     // Dengarkan perubahan secara real-time (update instan tanpa refresh)
     visitorCounterRef.onSnapshot(function (doc) {
         if (doc.exists) {
-            document.getElementById("visitorCount").textContent = doc.data().count + " pengunjung";
+            document.getElementById("visitorCount").textContent = doc.data().count + " kali dilihat";
         }
     }, function (err) {
         console.error("Gagal membaca visitor count:", err);
