@@ -327,13 +327,34 @@ function updateStats() {
 // ============================================
 // VISITOR COUNT
 // ============================================
+var firebaseConfig = {
+    apiKey: "AIzaSyA8SNOA6xzB2LZ8-vx6Xni55N-gJ4FwF04",
+    authDomain: "afterhoursproject-3f0c4.firebaseapp.com",
+    projectId: "afterhoursproject-3f0c4",
+    storageBucket: "afterhoursproject-3f0c4.firebasestorage.app",
+    messagingSenderId: "1012159782297",
+    appId: "1:1012159782297:web:a62bc12e31e917a4e2c708"
+};
+firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore();
+var visitorCounterRef = db.collection("counters").doc("visitors");
+
 function loadVisitorCount() {
-    fetch("https://api.counterapi.dev/v1/maep-portfolio/visits/up")
-        .then(function (res) { return res.json(); })
-        .then(function (data) {
-            document.getElementById("visitorCount").textContent = data.count + " pengunjung";
-        })
-        .catch(function () {});
+    // Tambah 1 setiap kali halaman ini dibuka
+    visitorCounterRef.update({
+        count: firebase.firestore.FieldValue.increment(1)
+    }).catch(function (err) {
+        console.error("Gagal menambah visitor count:", err);
+    });
+
+    // Dengarkan perubahan secara real-time (update instan tanpa refresh)
+    visitorCounterRef.onSnapshot(function (doc) {
+        if (doc.exists) {
+            document.getElementById("visitorCount").textContent = doc.data().count + " pengunjung";
+        }
+    }, function (err) {
+        console.error("Gagal membaca visitor count:", err);
+    });
 }
 
 // ============================================
