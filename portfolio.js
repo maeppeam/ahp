@@ -325,6 +325,18 @@ function updateStats() {
 }
 
 // ============================================
+// VISITOR COUNT
+// ============================================
+function loadVisitorCount() {
+    fetch("https://api.counterapi.dev/v1/maep-portfolio/visits/up")
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+            document.getElementById("visitorCount").textContent = data.count + " pengunjung";
+        })
+        .catch(function () {});
+}
+
+// ============================================
 // INITIALIZATION
 // ============================================
 document.addEventListener("DOMContentLoaded", function () {
@@ -363,6 +375,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.getElementById("year").textContent = new Date().getFullYear();
+    loadVisitorCount();
     document.getElementById("lastUpdated").textContent =
         (document.getElementById("lastUpdated").textContent || "Update terakhir") + " " +
         new Date().toLocaleDateString("id-ID");
