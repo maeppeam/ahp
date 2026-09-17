@@ -5,79 +5,79 @@ const projects = [
     {
         id: 1,
         title: "Manajement Inventory V.1",
-        description: "Asset Management System V.1 adalah aplikasi berbasis web untuk mengelola aset/inventaris secara efisien. Versi awal ini menyediakan antarmuka dasar untuk pelacakan dan pengelolaan data aset.",
+        description: "Asset Management System V.1 is a web-based application for managing assets/inventory efficiently. This early version provides a basic interface for tracking and managing asset data.",
         tech: ["HTML", "CSS", "JavaScript"],
         url: "https://maeppeam.github.io/inventory-system-v1/",
         screenshots: ["assets/manajement-inventory-v1.jpg"],
         category: "Internal Tool",
         status: "Live",
         date: "2026-04-24",
-        features: ["Pencatatan", "Pemantauan", "Real Time"]
+        features: ["Logging", "Monitoring", "Real Time"]
     },
     {
         id: 2,
         title: "Ticketing System",
-        description: "Ticketing System adalah aplikasi berbasis web untuk mengelola tiket/layanan pelanggan secara efisien. Sistem ini dirancang untuk mencatat, memantau, dan menindaklanjuti permintaan atau laporan melalui antarmuka yang terstruktur.",
+        description: "Ticketing System is a web-based application for managing customer service tickets efficiently. It's designed to log, track, and follow up on requests or reports through a structured interface.",
         tech: ["HTML", "CSS", "JavaScript"],
         url: "https://maeppeam.github.io/ticketing-system/",
         screenshots: ["assets/ticketing-system.jpg"],
         category: "Web Utilities",
         status: "Live",
         date: "2026-07-13",
-        features: ["Pencatatan", "Pemantauan Status", "Penanganan Permintaan Tiket", "Real Time"]
+        features: ["Logging", "Status Tracking", "Ticket Request Handling", "Real Time"]
     },
     {
         id: 3,
         title: "Manajement Inventory V.2",
-        description: "Versi ini merupakan penyempurnaan dari V.1 dengan peningkatan fitur dan kinerja",
+        description: "This version is a refinement of V.1 with improved features and performance.",
         tech: ["HTML", "CSS", "JavaScript", "API QR Code"],
         url: "https://maeppeam.github.io/inventory-system-v2/",
         screenshots: ["assets/manajement-inventory-v2.jpg"],
         category: "Internal Tool",
         status: "Live",
         date: "2026-07-15",
-        features: ["Dashboard Ringkasan Data Real-Time", "Daftar aset lengkap dengan manajemen status", "Log sirkulasi peminjaman/pengembalian", "Generate QR Code untuk setiap aset"]
+        features: ["Real-Time Summary Dashboard", "Full asset list with status management", "Borrow/return circulation log", "QR Code generation for every asset"]
     },
     {
         id: 4,
         title: "SABAR - Sistem Arus Barang Masuk & Keluar",
-        description: "Sistem ini dirancang untuk mengelola siklus barang secara lengkap mulai dari master data, transaksi masuk/keluar, hingga stock opname dengan fitur approval dan notifikasi stok menipis.",
+        description: "This system is designed to manage the full goods cycle — from master data and inbound/outbound transactions to stock opname — complete with approval features and low-stock notifications.",
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "MVC Like Architecture"],
         url: "https://sabar.afterhoursproject.my.id/",
         screenshots: ["assets/sabar.png"],
         category: "Internal Tool",
         status: "Live",
         date: "2026-07-30",
-        features: ["Dashboard", "Master Barang", "Barang Masuk", "Barang Keluar", "Stock Opname", "Sistem Approval", "Notifikasi"]
+        features: ["Dashboard", "Master Data", "Goods In", "Goods Out", "Stock Opname", "Approval System", "Notifications"]
     },
     {
         id: 5,
         title: "SAHIN - Secure, Authentic, Hands-In",
-        description: "Aplikasi berbasis web untuk mengelola alur kerja dokumen/permohonan dengan fitur Tanda Tangan Elektronik (TTE)",
+        description: "A web-based application for managing document/request workflows with an Electronic Signature (TTE) feature.",
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "Hash Code", "QR Code"],
         url: "https://maeppeam.github.io/sah-in/",
         screenshots: ["assets/sahin.png"],
         category: "Web Utilities",
         status: "Live",
         date: "2026-08-05",
-        features: ["Alur Kerja Dokumen", "Verifikasi via QR Code", "Dashboard Real-Time", "Detail Dokumen", "Manajemen Pengguna"]
+        features: ["Document Workflow", "QR Code Verification", "Real-Time Dashboard", "Document Detail", "User Management"]
     },
     {
         id: 6,
         title: "GROO",
-        description: "Sistem ini menyediakan dashboard lengkap dengan ringkasan data pegawai (Guru, Tenaga Kependidikan, GTT, GTY) serta informasi kelengkapan data seperti Dapodik, NUPTK, dan PPG, dilengkapi dengan direktori pegawai dan fitur pencarian.",
+        description: "This system provides a complete dashboard with a summary of staff data (Teachers, Support Staff, GTT, GTY) along with data-completeness info such as Dapodik, NUPTK, and PPG, plus a staff directory with search.",
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "Hash Code", "Single-Page Application"],
         url: "https://maeppeam.github.io/groo/",
         screenshots: ["assets/groo.png"],
         category: "Internal Tool",
         status: "Live",
         date: "2026-08-13",
-        features: ["Dashboard Lengkap", "Kategori Pegawai", "Kelengkapan Data", "Direktori Pegawai", "Manajemen Data"]
+        features: ["Complete Dashboard", "Staff Categories", "Data Completeness", "Staff Directory", "Data Management"]
     },
     {
         id: 7,
         title: "HIGAT",
-        description: "Platform terpusat yang fleksibel untuk mencetak proforma dan invoice multi-merchant dengan desain template profesional dalam hitungan detik",
+        description: "A flexible, centralized platform for printing multi-merchant proforma invoices and invoices with professional template designs in seconds.",
         tech: ["HTML", "CSS", "JavaScript", "HTML Templating"],
         url: "https://maeppeam.github.io/higat/",
         screenshots: ["assets/higat.png"],
@@ -89,7 +89,7 @@ const projects = [
     {
         id: 8,
         title: "SIMPUL - School Information & Management Platform for Unified Learning",
-        description: "Sistem informasi manajemen sekolah berbasis web yang dirancang untuk mengelola data akademik secara terpusat, mencakup administrasi siswa, guru, kelas, hingga pencatatan presensi",
+        description: "A web-based school information management system designed to centrally manage academic data, covering student, teacher, and class administration through attendance tracking.",
         tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
         url: "https://simpul.afterhoursproject.my.id",
         screenshots: ["assets/simpul.png"],
@@ -104,7 +104,7 @@ const projects = [
 // STATE
 // ============================================
 let state = {
-    currentCategory: "Semua",
+    currentCategory: "All",
     searchQuery: "",
     sortBy: "newest",
     currentPage: 1,
@@ -116,7 +116,7 @@ let state = {
 // ============================================
 function formatDate(dateString) {
     var options = { year: "numeric", month: "short", day: "numeric" };
-    return new Date(dateString).toLocaleDateString("id-ID", options);
+    return new Date(dateString).toLocaleDateString("en-US", options);
 }
 
 function getStatusBadge(status) {
@@ -135,7 +135,7 @@ function getProject(id) {
 // ============================================
 function renderChips() {
     var seen = {};
-    var cats = ["Semua"];
+    var cats = ["All"];
     for (var ci = 0; ci < projects.length; ci++) {
         if (seen[projects[ci].category]) continue;
         seen[projects[ci].category] = true;
@@ -164,7 +164,7 @@ function renderChips() {
 function applyFilters() {
     var filtered = projects.slice();
 
-    if (state.currentCategory !== "Semua") {
+    if (state.currentCategory !== "All") {
         filtered = filtered.filter(function (p) { return p.category === state.currentCategory; });
     }
 
@@ -215,7 +215,7 @@ function renderProjects(items) {
         if (img) {
             html += '<img src="' + img + '" alt="' + p.title + '" loading="lazy" onerror="this.style.display=\'none\'">';
         }
-        if (count > 1) html += '<span class="card-count">' + count + " foto</span>";
+        if (count > 1) html += '<span class="card-count">' + count + " photos</span>";
         html += "</div>";
         html += '<div class="card-body">';
         html += '<div class="card-top"><span class="category">' + p.category + "</span>" + getStatusBadge(p.status) + "</div>";
@@ -225,8 +225,8 @@ function renderProjects(items) {
         for (var j = 0; j < p.tech.length; j++) html += "<span>" + p.tech[j] + "</span>";
         html += "</div>";
         html += '<div class="card-actions">';
-        html += '<a href="' + p.url + '" target="_blank" rel="noopener" class="btn btn-card btn-card-demo">Lihat Demo →</a>';
-        html += '<button class="btn btn-card btn-card-detail" onclick="showDetail(' + p.id + ')">Detail</button>';
+        html += '<a href="' + p.url + '" target="_blank" rel="noopener" class="btn btn-card btn-card-demo">View Demo →</a>';
+        html += '<button class="btn btn-card btn-card-detail" onclick="showDetail(' + p.id + ')">Details</button>';
         html += "</div></div></article>";
     }
     container.innerHTML = html;
@@ -267,7 +267,7 @@ function changePage(page) {
 }
 
 function resetAllFilters() {
-    state.currentCategory = "Semua";
+    state.currentCategory = "All";
     state.searchQuery = "";
     state.sortBy = "newest";
     state.currentPage = 1;
@@ -289,21 +289,21 @@ function showDetail(id) {
     html += "<h2>" + p.title + "</h2>";
     html += '<div class="modal-meta">' + formatDate(p.date) + "</div>";
 
-    html += '<div class="modal-section"><h4>Deskripsi</h4><p>' + p.description + "</p></div>";
+    html += '<div class="modal-section"><h4>Description</h4><p>' + p.description + "</p></div>";
 
-    html += '<div class="modal-section"><h4>Teknologi</h4><div class="tech-tags">';
+    html += '<div class="modal-section"><h4>Technology</h4><div class="tech-tags">';
     for (var i = 0; i < p.tech.length; i++) html += "<span>" + p.tech[i] + "</span>";
     html += "</div></div>";
 
     if (p.features && p.features.length) {
-        html += '<div class="modal-section"><h4>Fitur Unggulan</h4><ul class="feature-list">';
+        html += '<div class="modal-section"><h4>Key Features</h4><ul class="feature-list">';
         for (var j = 0; j < p.features.length; j++) html += "<li>" + p.features[j] + "</li>";
         html += "</ul></div>";
     }
 
     html += '<div class="modal-actions">';
-    html += '<a href="' + p.url + '" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1">Buka Demo →</a>';
-    html += '<button class="btn btn-ghost" onclick="closeModal()">Tutup</button>';
+    html += '<a href="' + p.url + '" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1">View Demo →</a>';
+    html += '<button class="btn btn-ghost" onclick="closeModal()">Close</button>';
     html += "</div></div>";
 
     document.getElementById("modalBody").innerHTML = html;
@@ -357,21 +357,21 @@ if (firebaseReady) {
 
 function loadVisitorCount() {
     if (!firebaseReady || !visitorCounterRef) return;
-    // Tambah 1 setiap kali halaman ini dibuka
+    // Increment by 1 every time this page is opened
     visitorCounterRef.update({
         count: firebase.firestore.FieldValue.increment(1)
     }).catch(function (err) {
-        console.error("Gagal menambah visitor count:", err);
+        console.error("Failed to increment visitor count:", err);
     });
 
-    // Dengarkan perubahan secara real-time (update instan tanpa refresh)
+    // Listen for real-time changes (instant update without refresh)
     visitorCounterRef.onSnapshot(function (doc) {
         if (doc.exists) {
             var el = document.getElementById("visitorCount");
-            if (el) el.textContent = doc.data().count + " kali dilihat";
+            if (el) el.textContent = doc.data().count + " views";
         }
     }, function (err) {
-        console.error("Gagal membaca visitor count:", err);
+        console.error("Failed to read visitor count:", err);
     });
 }
 
@@ -416,6 +416,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("year").textContent = new Date().getFullYear();
     loadVisitorCount();
     document.getElementById("lastUpdated").textContent =
-        (document.getElementById("lastUpdated").textContent || "Update terakhir") + " " +
-        new Date().toLocaleDateString("id-ID");
+        (document.getElementById("lastUpdated").textContent || "Last updated") + " " +
+        new Date().toLocaleDateString("en-US");
 });
