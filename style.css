@@ -246,7 +246,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ===== SECTIONS ===== */
-.projects, .about {
+.projects, .about, .techstack, .journey {
   max-width: 1080px;
   margin: 0 auto;
   padding: 48px 24px;
@@ -474,6 +474,158 @@ button { font-family: inherit; cursor: pointer; }
 .page-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 .page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
+/* ===== TECH STACK & SKILLS ===== */
+.techstack-intro {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 640px;
+  margin-bottom: 32px;
+}
+.techstack-intro strong { color: var(--text); }
+.techstack-intro em { color: var(--accent); font-style: normal; font-weight: 600; }
+.techstack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.tech-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.tech-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+.tech-card-icon {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+}
+.tech-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 2px;
+}
+.tech-card-sub {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  min-height: 1em;
+}
+.tech-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tech-card li {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  padding-left: 18px;
+  position: relative;
+}
+.tech-card li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ===== JEJAK EKSPERIMEN (TIMELINE) ===== */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 28px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--border);
+}
+.timeline-item {
+  position: relative;
+  padding: 18px 0 18px 24px;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 24px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 1px var(--border);
+}
+.timeline-year {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.timeline-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.timeline-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-muted);
+  border: 1px solid var(--border);
+  padding: 2px 9px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.timeline-role {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+.timeline-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.timeline-list li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  padding-left: 18px;
+  position: relative;
+}
+.timeline-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
 /* ===== ABOUT ===== */
 .about { padding-bottom: 72px; }
 .about-card {
@@ -485,9 +637,12 @@ button { font-family: inherit; cursor: pointer; }
 .about-card > p {
   color: var(--text-secondary);
   font-size: 1rem;
-  margin: 16px 0 28px;
+  margin: 16px 0 0;
   text-align: justify;
 }
+.about-card > p + p { margin-top: 14px; }
+.about-card > p:last-of-type { margin-bottom: 28px; }
+.about-card em { color: var(--text); font-style: normal; font-weight: 600; }
 .about-stats {
   list-style: none;
   display: flex;
@@ -609,11 +764,16 @@ button { font-family: inherit; cursor: pointer; }
   .toolbar input { flex: 1; min-width: 0; }
   .grid { grid-template-columns: 1fr; }
   .about-stats { gap: 24px; }
+  .techstack-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .nav-inner { padding: 12px 16px; }
+  .nav-links { gap: 14px; }
   .cards { padding: 16px; }
   .toolbar { flex-direction: column; }
   .about-card { padding: 28px; }
   .about-stats strong { font-size: 1.5rem; }
+  .timeline { padding-left: 20px; }
+  .timeline-item { padding-left: 18px; }
+  .timeline-item::before { left: -20px; }
 }
