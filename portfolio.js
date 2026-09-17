@@ -108,7 +108,7 @@ let state = {
     searchQuery: "",
     sortBy: "newest",
     currentPage: 1,
-    itemsPerPage: 6
+    itemsPerPage: 3
 };
 
 // ============================================
