@@ -347,11 +347,16 @@ var firebaseConfig = {
     messagingSenderId: "1012159782297",
     appId: "1:1012159782297:web:a62bc12e31e917a4e2c708"
 };
-firebase.initializeApp(firebaseConfig);
-var db = firebase.firestore();
-var visitorCounterRef = db.collection("counters").doc("visitors");
+var firebaseReady = typeof firebase !== "undefined";
+var visitorCounterRef = null;
+if (firebaseReady) {
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+    visitorCounterRef = db.collection("counters").doc("visitors");
+}
 
 function loadVisitorCount() {
+    if (!firebaseReady || !visitorCounterRef) return;
     // Tambah 1 setiap kali halaman ini dibuka
     visitorCounterRef.update({
         count: firebase.firestore.FieldValue.increment(1)
@@ -362,7 +367,8 @@ function loadVisitorCount() {
     // Dengarkan perubahan secara real-time (update instan tanpa refresh)
     visitorCounterRef.onSnapshot(function (doc) {
         if (doc.exists) {
-            document.getElementById("visitorCount").textContent = doc.data().count + " kali dilihat";
+            var el = document.getElementById("visitorCount");
+            if (el) el.textContent = doc.data().count + " kali dilihat";
         }
     }, function (err) {
         console.error("Gagal membaca visitor count:", err);
