@@ -24,9 +24,9 @@
   --text: #eef1f7;
   --text-secondary: #9aa5b8;
   --border: #212b40;
-  --accent: #22d3ee;
-  --accent-strong: #67e8f9;
-  --accent-soft: rgba(34, 211, 238, 0.16);
+  --accent: #2aa9c2;
+  --accent-strong: #4dc2d6;
+  --accent-soft: rgba(42, 169, 194, 0.16);
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 6px rgba(0, 0, 0, 0.25);
   --shadow-lg: 0 20px 50px -12px rgba(0, 0, 0, 0.6);
 }
