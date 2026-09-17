@@ -9,7 +9,7 @@ const projects = [
         tech: ["HTML", "CSS", "JavaScript"],
         url: "https://maeppeam.github.io/inventory-system-v1/",
         screenshots: ["assets/manajement-inventory-v1.jpg"],
-        category: "Tools",
+        category: "Internal Tool",
         status: "Live",
         date: "2026-04-24",
         features: ["Pencatatan", "Pemantauan", "Real Time"]
@@ -21,7 +21,7 @@ const projects = [
         tech: ["HTML", "CSS", "JavaScript"],
         url: "https://maeppeam.github.io/ticketing-system/",
         screenshots: ["assets/ticketing-system.jpg"],
-        category: "Tools",
+        category: "Web Utilities",
         status: "Live",
         date: "2026-07-13",
         features: ["Pencatatan", "Pemantauan Status", "Penanganan Permintaan Tiket", "Real Time"]
@@ -33,7 +33,7 @@ const projects = [
         tech: ["HTML", "CSS", "JavaScript", "API QR Code"],
         url: "https://maeppeam.github.io/inventory-system-v2/",
         screenshots: ["assets/manajement-inventory-v2.jpg"],
-        category: "Tools",
+        category: "Internal Tool",
         status: "Live",
         date: "2026-07-15",
         features: ["Dashboard Ringkasan Data Real-Time", "Daftar aset lengkap dengan manajemen status", "Log sirkulasi peminjaman/pengembalian", "Generate QR Code untuk setiap aset"]
@@ -45,7 +45,7 @@ const projects = [
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "MVC Like Architecture"],
         url: "https://sabar.afterhoursproject.my.id/",
         screenshots: ["assets/sabar.png"],
-        category: "Tools",
+        category: "Internal Tool",
         status: "Live",
         date: "2026-07-30",
         features: ["Dashboard", "Master Barang", "Barang Masuk", "Barang Keluar", "Stock Opname", "Sistem Approval", "Notifikasi"]
@@ -57,7 +57,7 @@ const projects = [
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "Hash Code", "QR Code"],
         url: "https://maeppeam.github.io/sah-in/",
         screenshots: ["assets/sahin.png"],
-        category: "Tools",
+        category: "Web Utilities",
         status: "Live",
         date: "2026-08-05",
         features: ["Alur Kerja Dokumen", "Verifikasi via QR Code", "Dashboard Real-Time", "Detail Dokumen", "Manajemen Pengguna"]
@@ -69,7 +69,7 @@ const projects = [
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "Hash Code", "Single-Page Application"],
         url: "https://maeppeam.github.io/groo/",
         screenshots: ["assets/groo.png"],
-        category: "Dashboard",
+        category: "Internal Tools",
         status: "Live",
         date: "2026-08-13",
         features: ["Dashboard Lengkap", "Kategori Pegawai", "Kelengkapan Data", "Direktori Pegawai", "Manajemen Data"]
@@ -81,11 +81,23 @@ const projects = [
         tech: ["HTML", "CSS", "JavaScript", "HTML Templating"],
         url: "https://maeppeam.github.io/higat/",
         screenshots: ["assets/higat.png"],
-        category: "Utility",
+        category: "Web Utilities",
         status: "Live",
         date: "2026-09-02",
         features: ["Role Management", "Multi Merchant", "Proforma Invoice Generator", "Invoice Generator"]
-    }  
+    },
+    {
+        id: 8,
+        title: "SIMPUL - School Information & Management Platform for Unified Learning",
+        description: "Sistem informasi manajemen sekolah berbasis web yang dirancang untuk mengelola data akademik secara terpusat, mencakup administrasi siswa, guru, kelas, hingga pencatatan presensi",
+        tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+        url: "https://simpul.afterhoursproject.my.id",
+        screenshots: ["assets/simpul.png"],
+        category: "Internal Tool",
+        status: "Live",
+        date: "2026-09-02",
+        features: ["Student & Teacher Management", "Class & Subject Management", "Attendance Tracking", "Data Visualization"]
+    } 
 ];
 
 // ============================================
