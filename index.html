@@ -1,115 +1,114 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Portofolio MAEP — pembuatan aplikasi web dari masalah nyata, hasil vibe coding." />
-  <title>MAEP - Portfolio</title>
-  <link rel="icon" type="image/png" href="profile.png">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Portofolio MAEP — pembuatan aplikasi web dari masalah nyata, hasil vibe coding." />
+<title>MAEP - Portfolio</title>
+<link rel="icon" type="image/png" href="profile.png">
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<!-- ===== NAVBAR ===== -->
+<header class="navbar">
+<div class="nav-inner">
+<a href="#top" class="brand"><img src="logo.png" alt="MAEP" class="brand-logo"></a>
+<nav class="nav-links">
+<a href="#projects">Proyek</a>
+<a href="#about">Tentang</a>
+</nav>
+<button id="darkModeToggle" class="dark-toggle" aria-label="Ganti mode terang/gelap">🌙</button>
+</div>
+</header>
 
-  <!-- ===== NAVBAR ===== -->
-  <header class="navbar">
-    <div class="nav-inner">
-      <a href="#top" class="brand"><img src="logo.png" alt="MAEP" class="brand-logo"></a>
-      <nav class="nav-links">
-        <a href="#projects">Proyek</a>
-        <a href="#about">Tentang</a>
-      </nav>
-      <button id="darkModeToggle" class="dark-toggle" aria-label="Ganti mode terang/gelap">🌙</button>
-    </div>
-  </header>
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+<div class="hero-grid">
+<div class="hero-text reveal">
+<p class="hero-eyebrow"><span id="heroCount">0</span> proyek live &middot; dikerjakan sendiri</p>
+<h1 class="hero-title">
+<span class="hero-title-line">Halo, aku</span>
+<span class="hero-title-name">MAEP.</span>
+</h1>
+<p class="hero-subtitle">Menyederhanakan proses yang kompleks menjadi karya digital yang rapi, modern, dan fungsional.</p>
+<div class="hero-actions">
+<a href="#projects" class="btn btn-outline">Lihat Proyek</a>
+</div>
+</div>
+<div class="hero-visual reveal">
+<div class="profile-frame-wrap">
+<div class="profile-frame">
+<img src="foto.jpg" alt="Foto profil MAEP">
+</div>
+</div>
+</div>
+</div>
+</section>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="top">
-    <div class="hero-grid">
-      <div class="hero-text reveal">
-        <div class="hero-badge"><span class="pulse-dot"></span> <span id="heroCount">0</span> proyek live</div>
-        <h1 class="hero-title">Halo, aku <span class="gradient-text">MAEP</span>.</h1>
-        <p class="hero-subtitle">Menyederhanakan proses yang kompleks menjadi karya digital yang rapi, modern, dan fungsional.</p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
-        </div>
-      </div>
-      <div class="hero-visual reveal">
-        <div class="profile-frame">
-          <img src="foto.jpg" alt="Foto profil MAEP">
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- ===== PROJECTS ===== -->
+<section class="projects" id="projects">
+<div class="section-head reveal">
+<div>
+<div class="section-kicker">Portofolio</div>
+<h2 class="section-title">Proyek Pilihan</h2>
+</div>
+<div class="toolbar">
+<input type="text" id="searchInput" placeholder="Cari proyek..." aria-label="Cari proyek">
+<select id="sortSelect" aria-label="Urutkan proyek">
+<option value="newest" selected>Terbaru</option>
+<option value="oldest">Terlama</option>
+<option value="title">A-Z</option>
+<option value="title-desc">Z-A</option>
+</select>
+</div>
+</div>
+<div class="chips" id="chipBar"></div>
+<div id="projectContainer" class="grid"></div>
+<div class="grid-empty" id="emptyState" hidden>
+<p>😕 Tidak ada proyek yang cocok.</p>
+<button class="btn btn-ghost" onclick="resetAllFilters()">Reset Filter</button>
+</div>
+<div id="pagination" class="pagination"></div>
+</section>
 
-  <!-- ===== PROJECTS ===== -->
-  <section class="projects" id="projects">
-    <div class="section-head reveal">
-      <div>
-        <div class="section-kicker">Portofolio</div>
-        <h2 class="section-title">Proyek Pilihan</h2>
-      </div>
-      <div class="toolbar">
-        <input type="text" id="searchInput" placeholder="Cari proyek..." aria-label="Cari proyek">
-        <select id="sortSelect" aria-label="Urutkan proyek">
-          <option value="newest" selected>Terbaru</option>
-          <option value="oldest">Terlama</option>
-          <option value="title">A-Z</option>
-          <option value="title-desc">Z-A</option>
-        </select>
-      </div>
-    </div>
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+<div class="about-card reveal">
+<div class="section-kicker">Tentang</div>
+<h2 class="section-title">Bukan sekadar coding, tapi <span class="gradient-text">memecahkan masalah</span>.</h2>
+<p>
+Tidak ada proyek yang dibuat tanpa alasan. Setiap karya di sini
+lahir dari masalah nyata yang perlu dipecahkan&mdash;berawal dari kebutuhan
+sehari-hari, berkembang menjadi sistem digital yang praktis, modern,
+dan mudah digunakan.
+</p>
+<ul class="about-stats">
+<li><strong id="totalProjects">0</strong><span>Total proyek</span></li>
+<li><strong id="liveProjects">0</strong><span>Status live</span></li>
+<li><strong>100%</strong><span>Karya Sendiri</span></li>
+</ul>
+</div>
+</section>
 
-    <div class="chips" id="chipBar"></div>
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+<div class="footer-inner">
+<span>© <span id="year"></span></span>
+<span id="lastUpdated"></span>
+</div>
+</footer>
 
-    <div id="projectContainer" class="grid"></div>
-    <div class="grid-empty" id="emptyState" hidden>
-      <p>😕 Tidak ada proyek yang cocok.</p>
-      <button class="btn btn-ghost" onclick="resetAllFilters()">Reset Filter</button>
-    </div>
-    <div id="pagination" class="pagination"></div>
-  </section>
+<!-- ===== MODAL ===== -->
+<div id="modal" class="modal" role="dialog" aria-modal="true">
+<div class="modal-content">
+<button class="modal-close" aria-label="Tutup">&times;</button>
+<div id="modalBody"></div>
+</div>
+</div>
 
-  <!-- ===== ABOUT ===== -->
-  <section class="about" id="about">
-    <div class="about-card reveal">
-      <div class="section-kicker">Tentang</div>
-      <h2 class="section-title">Bukan sekadar coding, tapi <span class="gradient-text">memecahkan masalah</span>.</h2>
-      <p>
-        Tidak ada proyek yang dibuat tanpa alasan. Setiap karya di sini
-        lahir dari masalah nyata yang perlu dipecahkan—berawal dari kebutuhan
-        sehari-hari, berkembang menjadi sistem digital yang praktis, modern,
-        dan mudah digunakan.
-      </p>
-      <ul class="about-stats">
-        <li><strong id="totalProjects">0</strong><span>Total proyek</span></li>
-        <li><strong id="liveProjects">0</strong><span>Status live</span></li>
-        <li><strong>100%</strong><span>Karya Sendiri</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <span id="visitorCount"></span>
-      <span>© <span id="year"></span></span>
-      <span id="lastUpdated"></span>
-    </div>
-  </footer>
-
-  <!-- ===== MODAL ===== -->
-  <div id="modal" class="modal" role="dialog" aria-modal="true">
-    <div class="modal-content">
-      <button class="modal-close" aria-label="Tutup">&times;</button>
-      <div id="modalBody"></div>
-    </div>
-  </div>
-
-  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
-  <script src="portfolio.js"></script>
+<script src="portfolio.js"></script>
 </body>
 </html>
