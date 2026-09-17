@@ -123,6 +123,10 @@ button { font-family: inherit; cursor: pointer; }
   transition: color 0.2s ease;
 }
 .nav-links a:hover { color: var(--text); }
+.nav-links a.active {
+  color: var(--text);
+  font-weight: 700;
+}
 .dark-toggle {
   width: 38px;
   height: 38px;
@@ -541,38 +545,60 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 700;
 }
 
-/* ===== JEJAK EKSPERIMEN (TIMELINE) ===== */
+/* ===== JOURNEY TIMELINE (precision layout) =====
+   Structure required in HTML:
+   .timeline
+     .timeline-item
+       .timeline-marker > .timeline-dot
+       .timeline-content
+
+   The marker column has a fixed width and the dot + connecting
+   line are always centered inside it via left:50%/translateX(-50%),
+   so the dot is guaranteed to sit exactly on the line regardless
+   of how tall each item's content is — no more magic offsets. */
+.journey { padding-bottom: 72px; }
 .timeline {
-  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding-left: 28px;
-}
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 6px;
-  top: 6px;
-  bottom: 6px;
-  width: 2px;
-  background: var(--border);
 }
 .timeline-item {
-  position: relative;
-  padding: 18px 0 18px 24px;
+  display: flex;
+  gap: 24px;
+  padding-bottom: 40px;
 }
-.timeline-item::before {
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-marker {
+  position: relative;
+  width: 14px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+.timeline-marker::before {
   content: "";
   position: absolute;
-  left: -27px;
-  top: 24px;
+  left: 50%;
+  top: 6px;
+  bottom: -40px;
+  width: 2px;
+  background: var(--border);
+  transform: translateX(-50%);
+}
+.timeline-item:last-child .timeline-marker::before { display: none; }
+.timeline-dot {
+  display: block;
   width: 12px;
   height: 12px;
+  margin-top: 2px;
   border-radius: 50%;
   background: var(--accent);
   border: 3px solid var(--bg);
   box-shadow: 0 0 0 1px var(--border);
+  flex-shrink: 0;
+}
+.timeline-content {
+  flex: 1;
+  min-width: 0;
 }
 .timeline-year {
   font-size: 0.75rem;
@@ -775,7 +801,6 @@ button { font-family: inherit; cursor: pointer; }
   .toolbar { flex-direction: column; }
   .about-card { padding: 28px; }
   .about-stats strong { font-size: 1.5rem; }
-  .timeline { padding-left: 20px; }
-  .timeline-item { padding-left: 18px; }
-  .timeline-item::before { left: -19px; }
+  .timeline-item { gap: 14px; padding-bottom: 32px; }
+  .timeline-marker::before { bottom: -32px; }
 }
