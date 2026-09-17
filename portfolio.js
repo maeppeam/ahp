@@ -69,7 +69,7 @@ const projects = [
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "Hash Code", "Single-Page Application"],
         url: "https://maeppeam.github.io/groo/",
         screenshots: ["assets/groo.png"],
-        category: "Internal Tools",
+        category: "Internal Tool",
         status: "Live",
         date: "2026-08-13",
         features: ["Dashboard Lengkap", "Kategori Pegawai", "Kelengkapan Data", "Direktori Pegawai", "Manajemen Data"]
@@ -95,7 +95,7 @@ const projects = [
         screenshots: ["assets/simpul.png"],
         category: "Internal Tool",
         status: "Live",
-        date: "2026-09-02",
+        date: "2026-09-09",
         features: ["Student & Teacher Management", "Class & Subject Management", "Attendance Tracking", "Data Visualization"]
     } 
 ];
