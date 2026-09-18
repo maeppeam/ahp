@@ -97,8 +97,156 @@ const projects = [
         status: "Live",
         date: "2026-09-09",
         features: ["Student & Teacher Management", "Class & Subject Management", "Attendance Tracking", "Data Visualization"]
-    } 
+    }
 ];
+
+// ============================================
+// I18N
+// ============================================
+const translations = {
+    en: {
+        "meta.description": "MAEP's portfolio — building web apps from real problems, the result of vibe coding.",
+        "meta.aboutDescription": "About MAEP — not just coding, but solving problems.",
+        "meta.journeyDescription": "The Journey So Far — MAEP's career path from school administrative staff to indie hacker.",
+        "journey.kicker": "Journey",
+        "journey.titleMain": "The Journey",
+        "journey.titleGradient": "So Far",
+        "journey.intro": "From handling everyday school administration and Dapodik data, to building my own internal application ecosystem.",
+        "journey.education": "Education",
+        "nav.home": "Home",
+        "nav.techstack": "Tech Stack",
+        "nav.projects": "Projects",
+        "nav.journey": "Journey",
+        "nav.about": "About",
+        "theme.aria": "Toggle light/dark mode",
+        "lang.aria": "Switch language",
+        "lang.label": "ID",
+        "hero.badge": " live projects",
+        "hero.title": "Hi, I'm",
+        "hero.subtitle": "Simplifying complex processes into clean, modern, and functional digital work.",
+        "hero.viewProjects": "View Projects",
+        "hero.journey": "The Journey So Far",
+        "techstack.introHtml": "All the projects here are built with a <em>vibe coding</em> approach — turning everyday school administration needs into <strong>functional, ready-to-use digital systems</strong>.",
+        "techstack.cat1": "Language & Frontend",
+        "techstack.cat2": "Backend & Data",
+        "techstack.cat3": "Tools & Approach",
+        "techstack.mvc": "MVC-like Architecture",
+        "projects.title": "Recent Projects",
+        "projects.search": "Search projects...",
+        "projects.sortNewest": "Newest",
+        "projects.sortOldest": "Oldest",
+        "projects.all": "All",
+        "projects.empty": "😕 No matching projects.",
+        "projects.reset": "Reset Filter",
+        "card.viewDemo": "View Demo →",
+        "card.details": "Details",
+        "card.photos": "photos",
+        "status.live": "Live",
+        "status.dev": "In Development",
+        "about.title": "Not just coding, but",
+        "about.titleGradient": "solving problems",
+        "about.body": "No project here is made without a reason. Every piece is born from a real problem that needed solving — starting from everyday needs, growing into a practical, modern, and easy-to-use digital system.",
+        "about.total": "Total Projects",
+        "about.live": "Live Projects",
+        "modal.description": "Description",
+        "modal.technology": "Technology",
+        "modal.features": "Key Features",
+        "modal.close": "Close",
+        "footer.updated": "Last updated",
+        "footer.views": "views"
+    },
+    id: {
+        "meta.description": "Portofolio MAEP — pembuatan aplikasi web dari masalah nyata, hasil vibe coding.",
+        "meta.aboutDescription": "Tentang MAEP — bukan sekadar coding, tapi memecahkan masalah.",
+        "meta.journeyDescription": "The Journey So Far — perjalanan karier MAEP dari staf administrasi sekolah menjadi indie hacker.",
+        "journey.kicker": "Perjalanan",
+        "journey.titleMain": "Perjalanan",
+        "journey.titleGradient": "Sejauh Ini",
+        "journey.intro": "Dari mengurus administrasi sekolah dan data Dapodik sehari-hari, sampai membangun ekosistem aplikasi internal sendiri.",
+        "journey.education": "Pendidikan",
+        "nav.home": "Beranda",
+        "nav.techstack": "Tech Stack",
+        "nav.projects": "Proyek",
+        "nav.journey": "Journey",
+        "nav.about": "Tentang",
+        "theme.aria": "Ganti mode terang/gelap",
+        "lang.aria": "Ganti bahasa",
+        "lang.label": "EN",
+        "hero.badge": " proyek live",
+        "hero.title": "Halo, aku",
+        "hero.subtitle": "Menyederhanakan proses yang kompleks menjadi karya digital yang rapi, modern, dan fungsional.",
+        "hero.viewProjects": "Lihat Proyek",
+        "hero.journey": "Perjalanan Sejauh Ini",
+        "techstack.introHtml": "Semua proyek di sini dibangun dengan pendekatan <em>vibe coding</em> — dari kebutuhan administrasi sekolah sehari-hari menjadi sistem digital yang <strong>fungsional dan siap pakai</strong>.",
+        "techstack.cat1": "Bahasa & Frontend",
+        "techstack.cat2": "Backend & Data",
+        "techstack.cat3": "Tools & Pendekatan",
+        "techstack.mvc": "Arsitektur MVC-like",
+        "projects.title": "Proyek Terbaru",
+        "projects.search": "Cari proyek...",
+        "projects.sortNewest": "Terbaru",
+        "projects.sortOldest": "Terlama",
+        "projects.all": "Semua",
+        "projects.empty": "😕 Tidak ada proyek yang cocok.",
+        "projects.reset": "Reset Filter",
+        "card.viewDemo": "Lihat Demo →",
+        "card.details": "Detail",
+        "card.photos": "foto",
+        "status.live": "Live",
+        "status.dev": "Dalam Pengembangan",
+        "about.title": "Bukan sekadar coding, tapi",
+        "about.titleGradient": "memecahkan masalah",
+        "about.body": "Tidak ada proyek yang dibuat tanpa alasan. Setiap karya di sini lahir dari masalah nyata yang perlu dipecahkan — berawal dari kebutuhan sehari-hari, berkembang menjadi sistem digital yang praktis, modern, dan mudah digunakan.",
+        "about.total": "Total Proyek",
+        "about.live": "Status Live",
+        "modal.description": "Deskripsi",
+        "modal.technology": "Teknologi",
+        "modal.features": "Fitur Utama",
+        "modal.close": "Tutup",
+        "footer.updated": "Terakhir diperbarui",
+        "footer.views": "dilihat"
+    }
+};
+
+let currentLang = localStorage.getItem("lang") === "id" ? "id" : "en";
+
+function t(key) {
+    return (translations[currentLang] && translations[currentLang][key]) || translations.en[key] || key;
+}
+
+function applyStaticTranslations() {
+    document.documentElement.lang = currentLang;
+
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+        el.textContent = t(el.getAttribute("data-i18n"));
+    });
+    document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
+        el.innerHTML = t(el.getAttribute("data-i18n-html"));
+    });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+        el.setAttribute("placeholder", t(el.getAttribute("data-i18n-placeholder")));
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
+        el.setAttribute("aria-label", t(el.getAttribute("data-i18n-aria")));
+    });
+    document.querySelectorAll("[data-i18n-content]").forEach(function (el) {
+        el.setAttribute("content", t(el.getAttribute("data-i18n-content")));
+    });
+
+    var langBtn = document.getElementById("langToggle");
+    if (langBtn) langBtn.textContent = t("lang.label");
+
+    updateLastUpdated();
+}
+
+function setLanguage(lang) {
+    currentLang = lang === "id" ? "id" : "en";
+    localStorage.setItem("lang", currentLang);
+    applyStaticTranslations();
+    renderChips();
+    applyFilters();
+    updateStats();
+}
 
 // ============================================
 // STATE
@@ -116,11 +264,12 @@ let state = {
 // ============================================
 function formatDate(dateString) {
     var options = { year: "numeric", month: "short", day: "numeric" };
-    return new Date(dateString).toLocaleDateString("en-US", options);
+    var locale = currentLang === "id" ? "id-ID" : "en-US";
+    return new Date(dateString).toLocaleDateString(locale, options);
 }
 
 function getStatusBadge(status) {
-    return '<span class="status-live">● ' + (status === "Live" ? "Live" : "Development") + "</span>";
+    return '<span class="status-live">● ' + (status === "Live" ? t("status.live") : t("status.dev")) + "</span>";
 }
 
 function getProject(id) {
@@ -134,6 +283,9 @@ function getProject(id) {
 // CATEGORY CHIPS
 // ============================================
 function renderChips() {
+    var el = document.getElementById("chipBar");
+    if (!el) return;
+
     var seen = {};
     var cats = ["All"];
     for (var ci = 0; ci < projects.length; ci++) {
@@ -141,10 +293,10 @@ function renderChips() {
         seen[projects[ci].category] = true;
         cats.push(projects[ci].category);
     }
-    var el = document.getElementById("chipBar");
     var html = "";
     for (var i = 0; i < cats.length; i++) {
-        html += '<button class="chip' + (cats[i] === state.currentCategory ? " active" : "") + '" data-cat="' + cats[i] + '">' + cats[i] + "</button>";
+        var label = cats[i] === "All" ? t("projects.all") : cats[i];
+        html += '<button class="chip' + (cats[i] === state.currentCategory ? " active" : "") + '" data-cat="' + cats[i] + '">' + label + "</button>";
     }
     el.innerHTML = html;
 
@@ -162,6 +314,8 @@ function renderChips() {
 // FILTERS
 // ============================================
 function applyFilters() {
+    if (!document.getElementById("projectContainer")) return;
+
     var filtered = projects.slice();
 
     if (state.currentCategory !== "All") {
@@ -188,6 +342,7 @@ function applyFilters() {
 
 function renderProjects(items) {
     var container = document.getElementById("projectContainer");
+    if (!container) return;
     var empty = document.getElementById("emptyState");
     var totalPages = Math.max(1, Math.ceil(items.length / state.itemsPerPage));
 
@@ -195,11 +350,11 @@ function renderProjects(items) {
 
     if (items.length === 0) {
         container.innerHTML = "";
-        empty.hidden = false;
+        if (empty) empty.hidden = false;
         updatePagination(0);
         return;
     }
-    empty.hidden = true;
+    if (empty) empty.hidden = true;
 
     var start = (state.currentPage - 1) * state.itemsPerPage;
     var pageItems = items.slice(start, start + state.itemsPerPage);
@@ -215,7 +370,7 @@ function renderProjects(items) {
         if (img) {
             html += '<img src="' + img + '" alt="' + p.title + '" loading="lazy" onerror="this.style.display=\'none\'">';
         }
-        if (count > 1) html += '<span class="card-count">' + count + " photos</span>";
+        if (count > 1) html += '<span class="card-count">' + count + " " + t("card.photos") + "</span>";
         html += "</div>";
         html += '<div class="card-body">';
         html += '<div class="card-top"><span class="category">' + p.category + "</span>" + getStatusBadge(p.status) + "</div>";
@@ -225,8 +380,8 @@ function renderProjects(items) {
         for (var j = 0; j < p.tech.length; j++) html += "<span>" + p.tech[j] + "</span>";
         html += "</div>";
         html += '<div class="card-actions">';
-        html += '<a href="' + p.url + '" target="_blank" rel="noopener" class="btn btn-card btn-card-demo">View Demo →</a>';
-        html += '<button class="btn btn-card btn-card-detail" onclick="showDetail(' + p.id + ')">Details</button>';
+        html += '<a href="' + p.url + '" target="_blank" rel="noopener" class="btn btn-card btn-card-demo">' + t("card.viewDemo") + '</a>';
+        html += '<button class="btn btn-card btn-card-detail" onclick="showDetail(' + p.id + ')">' + t("card.details") + '</button>';
         html += "</div></div></article>";
     }
     container.innerHTML = html;
@@ -238,6 +393,7 @@ function renderProjects(items) {
 // ============================================
 function updatePagination(totalItems) {
     var container = document.getElementById("pagination");
+    if (!container) return;
     var totalPages = Math.max(1, Math.ceil(totalItems / state.itemsPerPage));
 
     if (totalPages <= 1) {
@@ -271,8 +427,10 @@ function resetAllFilters() {
     state.searchQuery = "";
     state.sortBy = "newest";
     state.currentPage = 1;
-    document.getElementById("searchInput").value = "";
-    document.getElementById("sortSelect").value = "newest";
+    var searchInput = document.getElementById("searchInput");
+    var sortSelect = document.getElementById("sortSelect");
+    if (searchInput) searchInput.value = "";
+    if (sortSelect) sortSelect.value = "newest";
     renderChips();
     applyFilters();
 }
@@ -289,30 +447,35 @@ function showDetail(id) {
     html += "<h2>" + p.title + "</h2>";
     html += '<div class="modal-meta">' + formatDate(p.date) + "</div>";
 
-    html += '<div class="modal-section"><h4>Description</h4><p>' + p.description + "</p></div>";
+    html += '<div class="modal-section"><h4>' + t("modal.description") + '</h4><p>' + p.description + "</p></div>";
 
-    html += '<div class="modal-section"><h4>Technology</h4><div class="tech-tags">';
+    html += '<div class="modal-section"><h4>' + t("modal.technology") + '</h4><div class="tech-tags">';
     for (var i = 0; i < p.tech.length; i++) html += "<span>" + p.tech[i] + "</span>";
     html += "</div></div>";
 
     if (p.features && p.features.length) {
-        html += '<div class="modal-section"><h4>Key Features</h4><ul class="feature-list">';
+        html += '<div class="modal-section"><h4>' + t("modal.features") + '</h4><ul class="feature-list">';
         for (var j = 0; j < p.features.length; j++) html += "<li>" + p.features[j] + "</li>";
         html += "</ul></div>";
     }
 
     html += '<div class="modal-actions">';
-    html += '<a href="' + p.url + '" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1">View Demo →</a>';
-    html += '<button class="btn btn-ghost" onclick="closeModal()">Close</button>';
+    html += '<a href="' + p.url + '" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1">' + t("card.viewDemo") + '</a>';
+    html += '<button class="btn btn-ghost" onclick="closeModal()">' + t("modal.close") + '</button>';
     html += "</div></div>";
 
-    document.getElementById("modalBody").innerHTML = html;
-    document.getElementById("modal").classList.add("open");
+    var modalBody = document.getElementById("modalBody");
+    var modal = document.getElementById("modal");
+    if (!modalBody || !modal) return;
+    modalBody.innerHTML = html;
+    modal.classList.add("open");
     document.body.style.overflow = "hidden";
 }
 
 function closeModal() {
-    document.getElementById("modal").classList.remove("open");
+    var modal = document.getElementById("modal");
+    if (!modal) return;
+    modal.classList.remove("open");
     document.body.style.overflow = "";
 }
 
@@ -322,7 +485,8 @@ function closeModal() {
 function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
     var isDark = document.body.classList.contains("dark-mode");
-    document.getElementById("darkModeToggle").textContent = isDark ? "☀️" : "🌙";
+    var btn = document.getElementById("darkModeToggle");
+    if (btn) btn.textContent = isDark ? "☀️" : "🌙";
     localStorage.setItem("darkMode", isDark ? "true" : "false");
 }
 
@@ -331,9 +495,22 @@ function toggleDarkMode() {
 // ============================================
 function updateStats() {
     var live = projects.filter(function (p) { return p.status === "Live"; }).length;
-    document.getElementById("totalProjects").textContent = projects.length;
-    document.getElementById("liveProjects").textContent = live;
-    document.getElementById("heroCount").textContent = live;
+    var totalEl = document.getElementById("totalProjects");
+    var liveEl = document.getElementById("liveProjects");
+    var heroEl = document.getElementById("heroCount");
+    if (totalEl) totalEl.textContent = projects.length;
+    if (liveEl) liveEl.textContent = live;
+    if (heroEl) heroEl.textContent = live;
+}
+
+// ============================================
+// FOOTER: LAST UPDATED
+// ============================================
+function updateLastUpdated() {
+    var el = document.getElementById("lastUpdated");
+    if (!el) return;
+    var locale = currentLang === "id" ? "id-ID" : "en-US";
+    el.textContent = t("footer.updated") + " " + new Date().toLocaleDateString(locale);
 }
 
 // ============================================
@@ -358,17 +535,17 @@ if (firebaseReady) {
 function loadVisitorCount() {
     if (!firebaseReady || !visitorCounterRef) return;
     // Increment by 1 every time this page is opened
-    visitorCounterRef.update({
+    visitorCounterRef.set({
         count: firebase.firestore.FieldValue.increment(1)
-    }).catch(function (err) {
+    }, { merge: true }).catch(function (err) {
         console.error("Failed to increment visitor count:", err);
     });
 
     // Listen for real-time changes (instant update without refresh)
     visitorCounterRef.onSnapshot(function (doc) {
-        if (doc.exists) {
-            var el = document.getElementById("visitorCount");
-            if (el) el.textContent = doc.data().count + " views";
+        var el = document.getElementById("visitorCount");
+        if (el && doc.exists) {
+            el.textContent = doc.data().count + " " + t("footer.views");
         }
     }, function (err) {
         console.error("Failed to read visitor count:", err);
@@ -379,43 +556,61 @@ function loadVisitorCount() {
 // INITIALIZATION
 // ============================================
 document.addEventListener("DOMContentLoaded", function () {
+    applyStaticTranslations();
     renderChips();
     applyFilters();
     updateStats();
 
     var searchInput = document.getElementById("searchInput");
-    var debounceTimer;
-    searchInput.addEventListener("input", function () {
-        clearTimeout(debounceTimer);
-        debounceTimer = setTimeout(function () {
-            state.searchQuery = searchInput.value.trim().toLowerCase();
-            applyFilters();
-        }, 300);
-    });
-
-    document.getElementById("sortSelect").addEventListener("change", function (e) {
-        state.sortBy = e.target.value;
-        applyFilters();
-    });
-
-    var darkBtn = document.getElementById("darkModeToggle");
-    darkBtn.addEventListener("click", toggleDarkMode);
-    if (localStorage.getItem("darkMode") === "true") {
-        document.body.classList.add("dark-mode");
-        darkBtn.textContent = "☀️";
+    if (searchInput) {
+        var debounceTimer;
+        searchInput.addEventListener("input", function () {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(function () {
+                state.searchQuery = searchInput.value.trim().toLowerCase();
+                applyFilters();
+            }, 300);
+        });
     }
 
-    document.querySelector(".modal-close").addEventListener("click", closeModal);
-    document.getElementById("modal").addEventListener("click", function (e) {
-        if (e.target === this) closeModal();
-    });
+    var sortSelect = document.getElementById("sortSelect");
+    if (sortSelect) {
+        sortSelect.addEventListener("change", function (e) {
+            state.sortBy = e.target.value;
+            applyFilters();
+        });
+    }
+
+    var darkBtn = document.getElementById("darkModeToggle");
+    if (darkBtn) {
+        darkBtn.addEventListener("click", toggleDarkMode);
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark-mode");
+            darkBtn.textContent = "☀️";
+        }
+    }
+
+    var langBtn = document.getElementById("langToggle");
+    if (langBtn) {
+        langBtn.addEventListener("click", function () {
+            setLanguage(currentLang === "en" ? "id" : "en");
+        });
+    }
+
+    var modalClose = document.querySelector(".modal-close");
+    if (modalClose) modalClose.addEventListener("click", closeModal);
+    var modalEl = document.getElementById("modal");
+    if (modalEl) {
+        modalEl.addEventListener("click", function (e) {
+            if (e.target === this) closeModal();
+        });
+    }
     document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") closeModal();
     });
 
-    document.getElementById("year").textContent = new Date().getFullYear();
+    var yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
     loadVisitorCount();
-    document.getElementById("lastUpdated").textContent =
-        (document.getElementById("lastUpdated").textContent || "Last updated") + " " +
-        new Date().toLocaleDateString("en-US");
 });
