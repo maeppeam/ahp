@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="The Journey So Far — perjalanan karier MAEP dari staf administrasi sekolah menjadi indie hacker." />
+<meta name="description" id="metaDescription" data-i18n-content="meta.journeyDescription" content="The Journey So Far — MAEP's career path from school administrative staff to indie hacker." />
 <title>The Journey So Far — MAEP</title>
 <link rel="icon" type="image/png" href="profile.png">
 <link rel="stylesheet" href="style.css" />
@@ -17,12 +17,16 @@
 <div class="nav-inner">
 <a href="index.html#top" class="brand"><img src="logo.png" alt="MAEP" class="brand-logo"></a>
 <nav class="nav-links">
-<a href="index.html#techstack">Tech Stack</a>
-<a href="index.html#projects">Proyek</a>
-<a href="journey.html" class="active">Journey</a>
-<a href="index.html#about">Tentang</a>
+<a href="index.html#top" data-i18n="nav.home">Home</a>
+<a href="index.html#techstack" data-i18n="nav.techstack">Tech Stack</a>
+<a href="index.html#projects" data-i18n="nav.projects">Projects</a>
+<a href="journey.html" class="active" data-i18n="nav.journey">Journey</a>
+<a href="about.html" data-i18n="nav.about">About</a>
 </nav>
-<button id="darkModeToggle" class="dark-toggle" aria-label="Ganti mode terang/gelap">🌙</button>
+<div class="nav-actions">
+<button id="langToggle" class="lang-toggle" data-i18n-aria="lang.aria" aria-label="Switch language">EN</button>
+<button id="darkModeToggle" class="dark-toggle" data-i18n-aria="theme.aria" aria-label="Toggle light/dark mode">🌙</button>
+</div>
 </div>
 </header>
 
@@ -30,11 +34,11 @@
 <section class="journey" id="top">
 <div class="section-head reveal">
 <div>
-<div class="section-kicker">Perjalanan</div>
-<h2 class="section-title">The Journey <span class="gradient-text">So Far</span></h2>
+<div class="section-kicker" data-i18n="journey.kicker">Journey</div>
+<h2 class="section-title"><span data-i18n="journey.titleMain">The Journey</span> <span class="gradient-text" data-i18n="journey.titleGradient">So Far</span></h2>
 </div>
 </div>
-<p class="techstack-intro">Dari mengurus administrasi sekolah dan data Dapodik sehari-hari, sampai membangun ekosistem aplikasi internal sendiri.</p>
+<p class="techstack-intro" data-i18n="journey.intro">From handling everyday school administration and Dapodik data, to building my own internal application ecosystem.</p>
 
 <div class="timeline">
 
@@ -81,7 +85,7 @@
 <div class="timeline-marker"><span class="timeline-dot"></span></div>
 <div class="timeline-content">
 <div class="timeline-year">2019</div>
-<h3>Education</h3>
+<h3 data-i18n="journey.education">Education</h3>
 <p class="timeline-role">State University of Malang — Educational Administration</p>
 </div>
 </div>
@@ -92,11 +96,14 @@
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
 <div class="footer-inner">
+<span id="visitorCount"></span>
 <span>© <span id="year"></span> MAEP</span>
-<a href="index.html#top" style="color:var(--text-secondary); text-decoration:none; font-weight:500;">← Kembali ke Beranda</a>
+<span id="lastUpdated"></span>
 </div>
 </footer>
 
-<script src="journey.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="portfolio.js"></script>
 </body>
 </html>
