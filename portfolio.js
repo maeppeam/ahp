@@ -5,11 +5,11 @@ const projects = [
     {
         id: 1,
         title: "Manajement Inventory V.1",
+        catKey: "internal",
         description: "Asset Management System V.1 is a web-based application for managing assets/inventory efficiently. This early version provides a basic interface for tracking and managing asset data.",
         tech: ["HTML", "CSS", "JavaScript"],
         url: "https://maeppeam.github.io/inventory-system-v1/",
         screenshots: ["assets/manajement-inventory-v1.jpg"],
-        category: "Internal Tool",
         status: "Live",
         date: "2026-04-24",
         features: ["Logging", "Monitoring", "Real Time"]
@@ -17,11 +17,11 @@ const projects = [
     {
         id: 2,
         title: "Ticketing System",
+        catKey: "webutils",
         description: "Ticketing System is a web-based application for managing customer service tickets efficiently. It's designed to log, track, and follow up on requests or reports through a structured interface.",
         tech: ["HTML", "CSS", "JavaScript"],
         url: "https://maeppeam.github.io/ticketing-system/",
         screenshots: ["assets/ticketing-system.jpg"],
-        category: "Web Utilities",
         status: "Live",
         date: "2026-07-13",
         features: ["Logging", "Status Tracking", "Ticket Request Handling", "Real Time"]
@@ -29,11 +29,11 @@ const projects = [
     {
         id: 3,
         title: "Manajement Inventory V.2",
+        catKey: "internal",
         description: "This version is a refinement of V.1 with improved features and performance.",
         tech: ["HTML", "CSS", "JavaScript", "API QR Code"],
         url: "https://maeppeam.github.io/inventory-system-v2/",
         screenshots: ["assets/manajement-inventory-v2.jpg"],
-        category: "Internal Tool",
         status: "Live",
         date: "2026-07-15",
         features: ["Real-Time Summary Dashboard", "Full asset list with status management", "Borrow/return circulation log", "QR Code generation for every asset"]
@@ -41,11 +41,11 @@ const projects = [
     {
         id: 4,
         title: "SABAR - Sistem Arus Barang Masuk & Keluar",
+        catKey: "internal",
         description: "This system is designed to manage the full goods cycle — from master data and inbound/outbound transactions to stock opname — complete with approval features and low-stock notifications.",
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "MVC Like Architecture"],
         url: "https://sabar.afterhoursproject.my.id/",
         screenshots: ["assets/sabar.png"],
-        category: "Internal Tool",
         status: "Live",
         date: "2026-07-30",
         features: ["Dashboard", "Master Data", "Goods In", "Goods Out", "Stock Opname", "Approval System", "Notifications"]
@@ -53,11 +53,11 @@ const projects = [
     {
         id: 5,
         title: "SAHIN - Secure, Authentic, Hands-In",
+        catKey: "webutils",
         description: "A web-based application for managing document/request workflows with an Electronic Signature (TTE) feature.",
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "Hash Code", "QR Code"],
         url: "https://maeppeam.github.io/sah-in/",
         screenshots: ["assets/sahin.png"],
-        category: "Web Utilities",
         status: "Live",
         date: "2026-08-05",
         features: ["Document Workflow", "QR Code Verification", "Real-Time Dashboard", "Document Detail", "User Management"]
@@ -65,11 +65,11 @@ const projects = [
     {
         id: 6,
         title: "GROO",
+        catKey: "internal",
         description: "This system provides a complete dashboard with a summary of staff data (Teachers, Support Staff, GTT, GTY) along with data-completeness info such as Dapodik, NUPTK, and PPG, plus a staff directory with search.",
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "Hash Code", "Single-Page Application"],
         url: "https://maeppeam.github.io/groo/",
         screenshots: ["assets/groo.png"],
-        category: "Internal Tool",
         status: "Live",
         date: "2026-08-13",
         features: ["Complete Dashboard", "Staff Categories", "Data Completeness", "Staff Directory", "Data Management"]
@@ -77,11 +77,11 @@ const projects = [
     {
         id: 7,
         title: "HIGAT",
+        catKey: "webutils",
         description: "A flexible, centralized platform for printing multi-merchant proforma invoices and invoices with professional template designs in seconds.",
         tech: ["HTML", "CSS", "JavaScript", "HTML Templating"],
         url: "https://maeppeam.github.io/higat/",
         screenshots: ["assets/higat.png"],
-        category: "Web Utilities",
         status: "Live",
         date: "2026-09-02",
         features: ["Role Management", "Multi Merchant", "Proforma Invoice Generator", "Invoice Generator"]
@@ -89,16 +89,64 @@ const projects = [
     {
         id: 8,
         title: "SIMPUL - School Information & Management Platform for Unified Learning",
+        catKey: "internal",
         description: "A web-based school information management system designed to centrally manage academic data, covering student, teacher, and class administration through attendance tracking.",
         tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
         url: "https://simpul.afterhoursproject.my.id",
         screenshots: ["assets/simpul.png"],
-        category: "Internal Tool",
         status: "Live",
         date: "2026-09-09",
         features: ["Student & Teacher Management", "Class & Subject Management", "Attendance Tracking", "Data Visualization"]
     }
 ];
+
+// Indonesian content for each project (description + features).
+// Titles, tech names, and URLs stay the same across languages.
+const projectsID = {
+    1: {
+        description: "Sistem Manajemen Aset V.1 adalah aplikasi berbasis web untuk mengelola aset/inventaris secara efisien. Versi awal ini menyediakan antarmuka dasar untuk melacak dan mengelola data aset.",
+        features: ["Pencatatan Log", "Pemantauan", "Real Time"]
+    },
+    2: {
+        description: "Ticketing System adalah aplikasi berbasis web untuk mengelola tiket layanan pelanggan secara efisien. Dirancang untuk mencatat, melacak, dan menindaklanjuti permintaan atau laporan melalui antarmuka yang terstruktur.",
+        features: ["Pencatatan Log", "Pelacakan Status", "Penanganan Permintaan Tiket", "Real Time"]
+    },
+    3: {
+        description: "Versi ini merupakan penyempurnaan dari V.1 dengan fitur dan performa yang lebih baik.",
+        features: ["Dashboard Ringkasan Real-Time", "Daftar aset lengkap dengan manajemen status", "Log peminjaman/pengembalian barang", "Pembuatan QR Code untuk setiap aset"]
+    },
+    4: {
+        description: "Sistem ini dirancang untuk mengelola seluruh siklus barang — mulai dari data master dan transaksi barang masuk/keluar hingga stok opname — lengkap dengan fitur persetujuan dan notifikasi stok menipis.",
+        features: ["Dashboard", "Data Master", "Barang Masuk", "Barang Keluar", "Stok Opname", "Sistem Persetujuan", "Notifikasi"]
+    },
+    5: {
+        description: "Aplikasi berbasis web untuk mengelola alur kerja dokumen/permohonan dengan fitur Tanda Tangan Elektronik (TTE).",
+        features: ["Alur Kerja Dokumen", "Verifikasi QR Code", "Dashboard Real-Time", "Detail Dokumen", "Manajemen Pengguna"]
+    },
+    6: {
+        description: "Sistem ini menyediakan dashboard lengkap berisi ringkasan data pegawai (Guru, Tenaga Kependidikan, GTT, GTY) beserta informasi kelengkapan data seperti Dapodik, NUPTK, dan PPG, dilengkapi direktori pegawai dengan fitur pencarian.",
+        features: ["Dashboard Lengkap", "Kategori Pegawai", "Kelengkapan Data", "Direktori Pegawai", "Manajemen Data"]
+    },
+    7: {
+        description: "Platform terpusat dan fleksibel untuk mencetak proforma invoice dan invoice multi-merchant dengan desain template profesional hanya dalam hitungan detik.",
+        features: ["Manajemen Peran", "Multi Merchant", "Pembuat Proforma Invoice", "Pembuat Invoice"]
+    },
+    8: {
+        description: "Sistem informasi manajemen sekolah berbasis web yang dirancang untuk mengelola data akademik secara terpusat, mencakup administrasi siswa, guru, dan kelas melalui pencatatan kehadiran.",
+        features: ["Manajemen Siswa & Guru", "Manajemen Kelas & Mata Pelajaran", "Pencatatan Kehadiran", "Visualisasi Data"]
+    }
+};
+
+// Returns the description in the current language.
+function pDesc(p) {
+    if (currentLang === "id" && projectsID[p.id]) return projectsID[p.id].description;
+    return p.description;
+}
+// Returns the feature list in the current language.
+function pFeatures(p) {
+    if (currentLang === "id" && projectsID[p.id]) return projectsID[p.id].features;
+    return p.features;
+}
 
 // ============================================
 // I18N
@@ -108,6 +156,7 @@ const translations = {
         "meta.description": "MAEP's portfolio — building web apps from real problems, the result of vibe coding.",
         "meta.aboutDescription": "About MAEP — not just coding, but solving problems.",
         "meta.journeyDescription": "The Journey So Far — MAEP's career path from school administrative staff to indie hacker.",
+        "meta.projectsDescription": "All projects built by MAEP — 8 web apps born from real, everyday problems.",
         "journey.kicker": "Journey",
         "journey.titleMain": "The Journey",
         "journey.titleGradient": "So Far",
@@ -132,6 +181,9 @@ const translations = {
         "techstack.cat3": "Tools & Approach",
         "techstack.mvc": "MVC-like Architecture",
         "projects.title": "Recent Projects",
+        "projects.titleAll": "All Projects",
+        "projects.introAll": "Every application here — 8 in total — was built to solve a real, everyday problem.",
+        "projects.viewAll": "View All Projects →",
         "projects.search": "Search projects...",
         "projects.sortNewest": "Newest",
         "projects.sortOldest": "Oldest",
@@ -143,6 +195,8 @@ const translations = {
         "card.photos": "photos",
         "status.live": "Live",
         "status.dev": "In Development",
+        "category.internal": "Internal Tool",
+        "category.webutils": "Web Utilities",
         "about.title": "Not just coding, but",
         "about.titleGradient": "solving problems",
         "about.body": "No project here is made without a reason. Every piece is born from a real problem that needed solving — starting from everyday needs, growing into a practical, modern, and easy-to-use digital system.",
@@ -159,6 +213,7 @@ const translations = {
         "meta.description": "Portofolio MAEP — pembuatan aplikasi web dari masalah nyata, hasil vibe coding.",
         "meta.aboutDescription": "Tentang MAEP — bukan sekadar coding, tapi memecahkan masalah.",
         "meta.journeyDescription": "The Journey So Far — perjalanan karier MAEP dari staf administrasi sekolah menjadi indie hacker.",
+        "meta.projectsDescription": "Seluruh proyek yang sudah dibuat MAEP — 8 aplikasi web lahir dari masalah nyata sehari-hari.",
         "journey.kicker": "Perjalanan",
         "journey.titleMain": "Perjalanan",
         "journey.titleGradient": "Sejauh Ini",
@@ -183,6 +238,9 @@ const translations = {
         "techstack.cat3": "Tools & Pendekatan",
         "techstack.mvc": "Arsitektur MVC-like",
         "projects.title": "Proyek Terbaru",
+        "projects.titleAll": "Semua Proyek",
+        "projects.introAll": "Setiap aplikasi di sini — 8 total — dibangun untuk memecahkan masalah nyata sehari-hari.",
+        "projects.viewAll": "Lihat Semua Proyek →",
         "projects.search": "Cari proyek...",
         "projects.sortNewest": "Terbaru",
         "projects.sortOldest": "Terlama",
@@ -194,6 +252,8 @@ const translations = {
         "card.photos": "foto",
         "status.live": "Live",
         "status.dev": "Dalam Pengembangan",
+        "category.internal": "Alat Internal",
+        "category.webutils": "Utilitas Web",
         "about.title": "Bukan sekadar coding, tapi",
         "about.titleGradient": "memecahkan masalah",
         "about.body": "Tidak ada proyek yang dibuat tanpa alasan. Setiap karya di sini lahir dari masalah nyata yang perlu dipecahkan — berawal dari kebutuhan sehari-hari, berkembang menjadi sistem digital yang praktis, modern, dan mudah digunakan.",
@@ -243,9 +303,18 @@ function setLanguage(lang) {
     currentLang = lang === "id" ? "id" : "en";
     localStorage.setItem("lang", currentLang);
     applyStaticTranslations();
-    renderChips();
-    applyFilters();
     updateStats();
+    refreshProjectsUI();
+}
+
+// Re-renders whichever project UI is present on the current page.
+function refreshProjectsUI() {
+    if (document.getElementById("chipBar")) {
+        renderChips();
+        applyFilters();
+    } else if (document.getElementById("projectContainer")) {
+        renderPreviewProjects();
+    }
 }
 
 // ============================================
@@ -254,9 +323,7 @@ function setLanguage(lang) {
 let state = {
     currentCategory: "All",
     searchQuery: "",
-    sortBy: "newest",
-    currentPage: 1,
-    itemsPerPage: 3
+    sortBy: "newest"
 };
 
 // ============================================
@@ -289,13 +356,13 @@ function renderChips() {
     var seen = {};
     var cats = ["All"];
     for (var ci = 0; ci < projects.length; ci++) {
-        if (seen[projects[ci].category]) continue;
-        seen[projects[ci].category] = true;
-        cats.push(projects[ci].category);
+        if (seen[projects[ci].catKey]) continue;
+        seen[projects[ci].catKey] = true;
+        cats.push(projects[ci].catKey);
     }
     var html = "";
     for (var i = 0; i < cats.length; i++) {
-        var label = cats[i] === "All" ? t("projects.all") : cats[i];
+        var label = cats[i] === "All" ? t("projects.all") : t("category." + cats[i]);
         html += '<button class="chip' + (cats[i] === state.currentCategory ? " active" : "") + '" data-cat="' + cats[i] + '">' + label + "</button>";
     }
     el.innerHTML = html;
@@ -311,7 +378,7 @@ function renderChips() {
 }
 
 // ============================================
-// FILTERS
+// FILTERS (full projects page)
 // ============================================
 function applyFilters() {
     if (!document.getElementById("projectContainer")) return;
@@ -319,13 +386,13 @@ function applyFilters() {
     var filtered = projects.slice();
 
     if (state.currentCategory !== "All") {
-        filtered = filtered.filter(function (p) { return p.category === state.currentCategory; });
+        filtered = filtered.filter(function (p) { return p.catKey === state.currentCategory; });
     }
 
     if (state.searchQuery) {
         var q = state.searchQuery;
         filtered = filtered.filter(function (p) {
-            var haystack = (p.title + " " + p.description + " " + p.category + " " + p.status + " " + p.tech.join(" ")).toLowerCase();
+            var haystack = (p.title + " " + pDesc(p) + " " + t("category." + p.catKey) + " " + p.status + " " + p.tech.join(" ")).toLowerCase();
             return haystack.indexOf(q) !== -1;
         });
     }
@@ -335,98 +402,68 @@ function applyFilters() {
     else if (state.sortBy === "newest") filtered.sort(function (a, b) { return new Date(b.date) - new Date(a.date); });
     else if (state.sortBy === "oldest") filtered.sort(function (a, b) { return new Date(a.date) - new Date(b.date); });
 
-    state.currentPage = 1;
-    state.filteredProjects = filtered;
     renderProjects(filtered);
 }
 
+// Builds the HTML markup for a single project card.
+function buildCardHtml(p, i) {
+    var img = (p.screenshots && p.screenshots.length > 0) ? p.screenshots[0] : "";
+    var count = (p.screenshots || []).length;
+
+    var html = '<article class="card" style="animation-delay:' + (i * 0.06) + 's">';
+    html += '<div class="card-media">';
+    if (img) {
+        html += '<img src="' + img + '" alt="' + p.title + '" loading="lazy" onerror="this.style.display=\'none\'">';
+    }
+    if (count > 1) html += '<span class="card-count">' + count + " " + t("card.photos") + "</span>";
+    html += "</div>";
+    html += '<div class="card-body">';
+    html += '<div class="card-top"><span class="category">' + t("category." + p.catKey) + "</span>" + getStatusBadge(p.status) + "</div>";
+    html += "<h3>" + p.title + "</h3>";
+    html += "<p>" + pDesc(p) + "</p>";
+    html += '<div class="tech-tags">';
+    for (var j = 0; j < p.tech.length; j++) html += "<span>" + p.tech[j] + "</span>";
+    html += "</div>";
+    html += '<div class="card-actions">';
+    html += '<a href="' + p.url + '" target="_blank" rel="noopener" class="btn btn-card btn-card-demo">' + t("card.viewDemo") + '</a>';
+    html += '<button class="btn btn-card btn-card-detail" onclick="showDetail(' + p.id + ')">' + t("card.details") + '</button>';
+    html += "</div></div></article>";
+    return html;
+}
+
+// Renders the full, unpaginated project grid (used on the dedicated Projects page).
 function renderProjects(items) {
     var container = document.getElementById("projectContainer");
     if (!container) return;
     var empty = document.getElementById("emptyState");
-    var totalPages = Math.max(1, Math.ceil(items.length / state.itemsPerPage));
-
-    if (state.currentPage > totalPages) state.currentPage = totalPages;
 
     if (items.length === 0) {
         container.innerHTML = "";
         if (empty) empty.hidden = false;
-        updatePagination(0);
         return;
     }
     if (empty) empty.hidden = true;
 
-    var start = (state.currentPage - 1) * state.itemsPerPage;
-    var pageItems = items.slice(start, start + state.itemsPerPage);
-
     var html = "";
-    for (var i = 0; i < pageItems.length; i++) {
-        var p = pageItems[i];
-        var img = (p.screenshots && p.screenshots.length > 0) ? p.screenshots[0] : "";
-        var count = (p.screenshots || []).length;
-
-        html += '<article class="card" style="animation-delay:' + (i * 0.06) + 's">';
-        html += '<div class="card-media">';
-        if (img) {
-            html += '<img src="' + img + '" alt="' + p.title + '" loading="lazy" onerror="this.style.display=\'none\'">';
-        }
-        if (count > 1) html += '<span class="card-count">' + count + " " + t("card.photos") + "</span>";
-        html += "</div>";
-        html += '<div class="card-body">';
-        html += '<div class="card-top"><span class="category">' + p.category + "</span>" + getStatusBadge(p.status) + "</div>";
-        html += "<h3>" + p.title + "</h3>";
-        html += "<p>" + p.description + "</p>";
-        html += '<div class="tech-tags">';
-        for (var j = 0; j < p.tech.length; j++) html += "<span>" + p.tech[j] + "</span>";
-        html += "</div>";
-        html += '<div class="card-actions">';
-        html += '<a href="' + p.url + '" target="_blank" rel="noopener" class="btn btn-card btn-card-demo">' + t("card.viewDemo") + '</a>';
-        html += '<button class="btn btn-card btn-card-detail" onclick="showDetail(' + p.id + ')">' + t("card.details") + '</button>';
-        html += "</div></div></article>";
-    }
+    for (var i = 0; i < items.length; i++) html += buildCardHtml(items[i], i);
     container.innerHTML = html;
-    updatePagination(items.length);
 }
 
-// ============================================
-// PAGINATION
-// ============================================
-function updatePagination(totalItems) {
-    var container = document.getElementById("pagination");
+// Renders a small newest-first preview of projects (used on the home page).
+function renderPreviewProjects(limit) {
+    var container = document.getElementById("projectContainer");
     if (!container) return;
-    var totalPages = Math.max(1, Math.ceil(totalItems / state.itemsPerPage));
-
-    if (totalPages <= 1) {
-        container.innerHTML = "";
-        return;
-    }
-
+    var n = limit || 4;
+    var items = projects.slice().sort(function (a, b) { return new Date(b.date) - new Date(a.date); }).slice(0, n);
     var html = "";
-    html += '<button class="page-btn" onclick="changePage(' + (state.currentPage - 1) + ')"' + (state.currentPage === 1 ? " disabled" : "") + ">◀</button>";
-
-    for (var i = 1; i <= totalPages; i++) {
-        html += '<button class="page-btn' + (i === state.currentPage ? " active" : "") + '" onclick="changePage(' + i + ')">' + i + "</button>";
-    }
-
-    html += '<button class="page-btn" onclick="changePage(' + (state.currentPage + 1) + ')"' + (state.currentPage === totalPages ? " disabled" : "") + ">▶</button>";
-
+    for (var i = 0; i < items.length; i++) html += buildCardHtml(items[i], i);
     container.innerHTML = html;
-}
-
-function changePage(page) {
-    var totalPages = Math.max(1, Math.ceil(state.filteredProjects.length / state.itemsPerPage));
-    if (page < 1 || page > totalPages || page === state.currentPage) return;
-    state.currentPage = page;
-    renderProjects(state.filteredProjects);
-    var grid = document.getElementById("projects");
-    if (grid) grid.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function resetAllFilters() {
     state.currentCategory = "All";
     state.searchQuery = "";
     state.sortBy = "newest";
-    state.currentPage = 1;
     var searchInput = document.getElementById("searchInput");
     var sortSelect = document.getElementById("sortSelect");
     if (searchInput) searchInput.value = "";
@@ -443,19 +480,20 @@ function showDetail(id) {
     if (!p) return;
 
     var html = '<div class="modal-body">';
-    html += '<div class="card-top"><span class="category">' + p.category + "</span>" + getStatusBadge(p.status) + "</div>";
+    html += '<div class="card-top"><span class="category">' + t("category." + p.catKey) + "</span>" + getStatusBadge(p.status) + "</div>";
     html += "<h2>" + p.title + "</h2>";
     html += '<div class="modal-meta">' + formatDate(p.date) + "</div>";
 
-    html += '<div class="modal-section"><h4>' + t("modal.description") + '</h4><p>' + p.description + "</p></div>";
+    html += '<div class="modal-section"><h4>' + t("modal.description") + '</h4><p>' + pDesc(p) + "</p></div>";
 
     html += '<div class="modal-section"><h4>' + t("modal.technology") + '</h4><div class="tech-tags">';
     for (var i = 0; i < p.tech.length; i++) html += "<span>" + p.tech[i] + "</span>";
     html += "</div></div>";
 
-    if (p.features && p.features.length) {
+    var features = pFeatures(p);
+    if (features && features.length) {
         html += '<div class="modal-section"><h4>' + t("modal.features") + '</h4><ul class="feature-list">';
-        for (var j = 0; j < p.features.length; j++) html += "<li>" + p.features[j] + "</li>";
+        for (var j = 0; j < features.length; j++) html += "<li>" + features[j] + "</li>";
         html += "</ul></div>";
     }
 
@@ -557,9 +595,8 @@ function loadVisitorCount() {
 // ============================================
 document.addEventListener("DOMContentLoaded", function () {
     applyStaticTranslations();
-    renderChips();
-    applyFilters();
     updateStats();
+    refreshProjectsUI();
 
     var searchInput = document.getElementById("searchInput");
     if (searchInput) {
