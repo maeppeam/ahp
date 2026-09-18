@@ -453,7 +453,7 @@ function renderProjects(items) {
 function renderPreviewProjects(limit) {
     var container = document.getElementById("projectContainer");
     if (!container) return;
-    var n = limit || 4;
+    var n = limit || 3;
     var items = projects.slice().sort(function (a, b) { return new Date(b.date) - new Date(a.date); }).slice(0, n);
     var html = "";
     for (var i = 0; i < items.length; i++) html += buildCardHtml(items[i], i);
