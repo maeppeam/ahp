@@ -930,6 +930,82 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 0.8rem;
 }
 
+/* ===== FOOTER SOCIAL + CONTACT FORM ===== */
+.footer-social { display: flex; align-items: center; gap: 8px; }
+.footer-social a,
+.footer-social button {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.footer-social a:hover,
+.footer-social button:hover,
+.footer-social a:focus-visible,
+.footer-social button:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.footer-social svg { width: 16px; height: 16px; fill: currentColor; }
+.footer-social svg.icon-stroke,
+.icon-stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.contact-intro {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.contact-form { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.contact-form input:not([type="hidden"]),
+.contact-form textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 400;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.contact-form textarea { resize: vertical; min-height: 120px; }
+.contact-form .btn { width: 100%; }
+.contact-form .btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.contact-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.contact-status { min-height: 1.3em; font-size: 0.85rem; line-height: 1.4; }
+.contact-status.is-success { color: #16a34a; }
+.contact-status.is-error { color: #dc2626; }
+@media (max-width: 600px) {
+  .footer-inner { justify-content: center; text-align: center; }
+}
+
 /* ===== MODAL ===== */
 .modal {
   display: none;
