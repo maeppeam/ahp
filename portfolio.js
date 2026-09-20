@@ -707,9 +707,9 @@ function loadVisitorCount() {
 // >>> EDIT HERE: form endpoint & social media URLs <<<
 var CONTACT_ENDPOINT = "https://formspree.io/f/meaoegjr";
 var SOCIAL_LINKS = {
-    instagram: "https://www.instagram.com/USERNAME_KAMU",
+    instagram: "https://www.instagram.com/maeppeam",
     github: "https://github.com/maeppeam",
-    tiktok: "https://www.tiktok.com/@USERNAME_KAMU"
+    tiktok: "https://www.tiktok.com/@maeppeam"
 };
 // Links that still contain "USERNAME_KAMU" are hidden until you fill them in.
 
