@@ -656,16 +656,41 @@ if (firebaseReady) {
     visitorCounterRef = db.collection("counters").doc("visitors");
 }
 
+// Counts at most once per browser per calendar day (visitor's local date),
+// no matter how many pages they open. The date is stored in localStorage.
+var VISITOR_KEY = "visitorCountedDate";
+
+function todayKey() {
+    var d = new Date();
+    var m = d.getMonth() + 1, day = d.getDate();
+    return d.getFullYear() + "-" + (m < 10 ? "0" : "") + m + "-" + (day < 10 ? "0" : "") + day;
+}
+
+function shouldCountVisit() {
+    try {
+        if (localStorage.getItem(VISITOR_KEY) === todayKey()) return false;
+        // Mark BEFORE incrementing so pages/tabs opened at the same time don't double count.
+        localStorage.setItem(VISITOR_KEY, todayKey());
+    } catch (e) {
+        // Storage blocked (e.g. strict private mode): can't remember the visit, so count it.
+    }
+    return true;
+}
+
 function loadVisitorCount() {
     if (!firebaseReady || !visitorCounterRef) return;
-    // Increment by 1 every time this page is opened
-    visitorCounterRef.set({
-        count: firebase.firestore.FieldValue.increment(1)
-    }, { merge: true }).catch(function (err) {
-        console.error("Failed to increment visitor count:", err);
-    });
 
-    // Listen for real-time changes (instant update without refresh)
+    if (shouldCountVisit()) {
+        visitorCounterRef.set({
+            count: firebase.firestore.FieldValue.increment(1)
+        }, { merge: true }).catch(function (err) {
+            console.error("Failed to increment visitor count:", err);
+            // Increment failed: forget today's mark so the next page load can try again.
+            try { localStorage.removeItem(VISITOR_KEY); } catch (e) {}
+        });
+    }
+
+    // Always listen for real-time changes so the number shows on every page
     visitorCounterRef.onSnapshot(function (doc) {
         var el = document.getElementById("visitorCount");
         if (el && doc.exists) {
@@ -682,9 +707,9 @@ function loadVisitorCount() {
 // >>> EDIT HERE: form endpoint & social media URLs <<<
 var CONTACT_ENDPOINT = "https://formspree.io/f/meaoegjr";
 var SOCIAL_LINKS = {
-    instagram: "https://www.instagram.com/maeppeam",
+    instagram: "https://www.instagram.com/USERNAME_KAMU",
     github: "https://github.com/maeppeam",
-    tiktok: "https://www.tiktok.com/@maeppeam"
+    tiktok: "https://www.tiktok.com/@USERNAME_KAMU"
 };
 // Links that still contain "USERNAME_KAMU" are hidden until you fill them in.
 
