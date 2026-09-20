@@ -154,7 +154,7 @@ function pFeatures(p) {
 const translations = {
     en: {
         "meta.description": "MAEP's portfolio — building web apps from real problems, the result of vibe coding.",
-        "meta.aboutDescription": "About MAEP — not just coding, but solving problems.",
+        "meta.aboutDescription": "About MAEP — the journey from school administrative staff to indie hacker.",
         "meta.journeyDescription": "The Journey So Far — MAEP's career path from school administrative staff to indie hacker.",
         "meta.projectsDescription": "All projects built by MAEP — 8 web apps born from real, everyday problems.",
         "journey.kicker": "Journey",
@@ -228,7 +228,7 @@ const translations = {
     },
     id: {
         "meta.description": "Portofolio MAEP — pembuatan aplikasi web dari masalah nyata, hasil vibe coding.",
-        "meta.aboutDescription": "Tentang MAEP — bukan sekadar coding, tapi memecahkan masalah.",
+        "meta.aboutDescription": "Tentang MAEP — perjalanan dari staf administrasi sekolah menjadi indie hacker.",
         "meta.journeyDescription": "The Journey So Far — perjalanan karier MAEP dari staf administrasi sekolah menjadi indie hacker.",
         "meta.projectsDescription": "Seluruh proyek yang sudah dibuat MAEP — 8 aplikasi web lahir dari masalah nyata sehari-hari.",
         "journey.kicker": "Perjalanan",
