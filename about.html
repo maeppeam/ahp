@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" id="metaDescription" data-i18n-content="meta.aboutDescription" content="About MAEP — not just coding, but solving problems." />
+<meta name="description" id="metaDescription" data-i18n-content="meta.aboutDescription" content="About MAEP — the journey from school administrative staff to indie hacker." />
 <title>About - MAEP</title>
 <link rel="icon" type="image/png" href="profile.png">
 <link rel="stylesheet" href="style.css" />
@@ -20,7 +20,6 @@
 <a href="index.html#top" data-i18n="nav.home">Home</a>
 <a href="index.html#techstack" data-i18n="nav.techstack">Tech Stack</a>
 <a href="projects.html" data-i18n="nav.projects">Projects</a>
-<a href="journey.html" data-i18n="nav.journey">Journey</a>
 <a href="about.html" class="active" data-i18n="nav.about">About</a>
 </nav>
 <div class="nav-actions">
@@ -30,15 +29,81 @@
 </div>
 </header>
 
-<!-- ===== ABOUT ===== -->
-<section class="about" id="about" style="padding-top:56px">
-<div class="about-card reveal">
-<h2 class="section-title"><span data-i18n="about.title">Not just coding, but</span> <span class="gradient-text" data-i18n="about.titleGradient">solving problems</span></h2>
-<p data-i18n="about.body">No project here is made without a reason. Every piece is born from a real problem that needed solving — starting from everyday needs, growing into a practical, modern, and easy-to-use digital system.</p>
-<ul class="about-stats">
-<li><strong id="totalProjects">0</strong><span data-i18n="about.total">Total Projects</span></li>
-<li><strong id="liveProjects">0</strong><span data-i18n="about.live">Live Projects</span></li>
+<!-- ===== ABOUT (journey + photo) ===== -->
+<section class="journey about-page" id="top">
+<div class="about-layout">
+
+<div class="about-main">
+<div class="section-head reveal">
+<div>
+<div class="section-kicker" data-i18n="journey.kicker">Journey</div>
+<h2 class="section-title"><span data-i18n="journey.titleMain">The Journey</span> <span class="gradient-text" data-i18n="journey.titleGradient">So Far</span></h2>
+</div>
+</div>
+<p class="techstack-intro" data-i18n="journey.intro">From handling everyday school administration and Dapodik data, to building my own internal application ecosystem.</p>
+
+<div class="timeline">
+
+<div class="timeline-item reveal">
+<div class="timeline-marker"><span class="timeline-dot"></span></div>
+<div class="timeline-content">
+<div class="timeline-year" data-i18n="journey.j1.year">2026 — Present</div>
+<h3><span data-i18n="journey.j1.title">Indie Hacker &amp; Product Builder</span> </h3>
+<p class="timeline-role" data-i18n="journey.j1.role">Leveraging firsthand experience as a School Admin, Education Data Administrator, &amp; ICT Coordinator to build impactful EdTech solutions.</p>
+<ul class="timeline-list">
+<li data-i18n="journey.j1.b1">Spearheaded the digital transformation of school administrative workflows by developing bespoke software solutions.</li>
+<li data-i18n="journey.j1.b2">Architected, developed, and shipped 8+ internal productivity tools (including SIMPUL, GROO, and SAH-IN) from concept to deployment using rapid prototyping.</li>
+<li data-i18n="journey.j1.b3">Bridged the gap between administration and IT by engineering a cohesive web app ecosystem, significantly accelerating institutional performance and efficiency.</li>
 </ul>
+</div>
+</div>
+
+<div class="timeline-item reveal">
+<div class="timeline-marker"><span class="timeline-dot"></span></div>
+<div class="timeline-content">
+<div class="timeline-year" data-i18n="journey.j2.year">2023 — Present</div>
+<h3 data-i18n="journey.j2.title">ICT Coordinator</h3>
+<ul class="timeline-list">
+<li data-i18n="journey.j2.b1">Took on additional responsibility to lead and manage the school's technology infrastructure.</li>
+<li data-i18n="journey.j2.b2">Started analyzing efficiency gaps and mapping integrated digital system needs from both a technical and administrative perspective.</li>
+</ul>
+</div>
+</div>
+
+<div class="timeline-item reveal">
+<div class="timeline-marker"><span class="timeline-dot"></span></div>
+<div class="timeline-content">
+<div class="timeline-year" data-i18n="journey.j3.year">2019 — Present</div>
+<h3 data-i18n="journey.j3.title">School Administrative Staff &amp; Education Data Administrator</h3>
+<ul class="timeline-list">
+<li data-i18n="journey.j3.b1">Fully responsible for smooth school administration and management of Indonesia's national education data system.</li>
+<li data-i18n="journey.j3.b2">Dealt directly with the root causes of everyday bureaucracy and manual data management — now the foundation (problem-first mindset) of every application I build.</li>
+</ul>
+</div>
+</div>
+
+<div class="timeline-item reveal">
+<div class="timeline-marker"><span class="timeline-dot"></span></div>
+<div class="timeline-content">
+<div class="timeline-year">2019</div>
+<h3 data-i18n="journey.education">Education</h3>
+<p class="timeline-role" data-i18n="journey.j4.role">State University of Malang — Educational Administration</p>
+</div>
+</div>
+
+</div>
+</div>
+
+<aside class="about-photo reveal">
+<div class="profile-frame-wrap">
+<div class="profile-frame">
+<svg class="profile-placeholder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg>
+<!-- Ganti dengan foto yang BERBEDA dari foto.jpg (home). Rasio 4:5 paling pas. -->
+<img src="foto-about.jpg" alt="MAEP" loading="lazy" onerror="this.style.display='none'">
+</div>
+</div>
+</aside>
+
 </div>
 </section>
 
