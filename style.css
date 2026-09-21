@@ -303,12 +303,16 @@ button { font-family: inherit; cursor: pointer; }
 /* Home only: foto profil bulat.
    Semua selector di-scope ke .hero-visual, jadi foto di halaman Journey
    (.about-photo) tetap memakai bentuk persegi panjang di atas. */
-.hero-visual { padding: 0 18px 18px 0; } /* ruang untuk ring supaya tidak melebar keluar kolom */
+.hero-visual {
+  --ring: 8px; /* jarak garis lingkaran dari foto. Makin kecil makin dekat */
+  padding: 0 var(--ring) var(--ring) 0; /* ruang untuk ring supaya tidak melebar keluar kolom */
+}
 .hero-visual .profile-frame-wrap {
   width: min(300px, 72vw);
   aspect-ratio: 1 / 1;
 }
 .hero-visual .profile-frame-wrap::before {
+  inset: var(--ring) calc(var(--ring) * -1) calc(var(--ring) * -1) var(--ring);
   border-radius: 50%;
   border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
 }
@@ -317,8 +321,11 @@ button { font-family: inherit; cursor: pointer; }
 /* Atur angka kedua kalau wajah kurang pas di lingkaran (0% = atas foto, 50% = tengah) */
 .hero-visual .profile-frame img { object-position: center 22%; }
 @media (max-width: 820px) {
-  .hero-visual { padding: 0 14px 14px 0; }
+  .hero-visual { --ring: 6px; }
   .hero-visual .profile-frame-wrap { width: min(240px, 66vw); }
+  .hero-visual .profile-frame-wrap::before {
+    inset: var(--ring) calc(var(--ring) * -1) calc(var(--ring) * -1) var(--ring);
+  }
 }
 
 /* ===== SECTIONS ===== */
