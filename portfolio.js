@@ -97,6 +97,18 @@ const projects = [
         status: "Live",
         date: "2026-09-09",
         features: ["Student & Teacher Management", "Class & Subject Management", "Attendance Tracking", "Data Visualization"]
+    },
+    {
+        id: 9,
+        title: "POS Ngasir",
+        catKey: "SaaS",
+        description: "A web-based POS system for store operations and sales transactions, featuring separate access rights for the admin panel and cashier interface.",
+        tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+        url: "https://ngasir.afterhoursproject.my.id",
+        screenshots: ["assets/ngasir.png"],
+        status: "Live",
+        date: "2026-09-21",
+        features: ["Multi-Role Authentication System (Admin & Cashier)", "Cashier Transaction Interface (Point of Sale)", "Admin Dashboard & Management", "Centralized Database Management"]
     }
 ];
 
@@ -134,6 +146,10 @@ const projectsID = {
     8: {
         description: "Sistem informasi manajemen sekolah berbasis web yang dirancang untuk mengelola data akademik secara terpusat, mencakup administrasi siswa, guru, dan kelas melalui pencatatan kehadiran.",
         features: ["Manajemen Siswa & Guru", "Manajemen Kelas & Mata Pelajaran", "Pencatatan Kehadiran", "Visualisasi Data"]
+    },
+    9: {
+        description: "Sistem POS berbasis web untuk manajemen operasional toko dan transaksi penjualan, dengan hak akses terpisah antara panel admin dan antarmuka kasir.",
+        features: ["Sistem Autentikasi Multi-Peran (Admin & Kasir)", "Antarmuka Transaksi Kasir (Point of Sale)", "Dasbor & Manajemen Admin", "Pengelolaan Basis Data Terpusat"]
     }
 };
 
