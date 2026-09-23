@@ -346,7 +346,7 @@ const translations = {
         "tspage.s4": "Merakit potongan-potongan hasil AI menjadi satu kesatuan aplikasi (termasuk penerapan pengalaman Single-Page Application), melakukan uji coba alur, dan meluncurkannya agar segera memberikan dampak nyata.",
         "projects.title": "Proyek Terbaru",
         "projects.titleAll": "Semua Proyek",
-        "projects.introAll": "Setiap aplikasi di sini — 8 total — dibangun untuk memecahkan masalah nyata sehari-hari.",
+        "projects.introAll": "Setiap aplikasi di sini dibangun untuk memecahkan masalah nyata sehari-hari.",
         "projects.viewAll": "Lihat Semua Proyek →",
         "projects.search": "Cari proyek...",
         "projects.sortNewest": "Terbaru",
