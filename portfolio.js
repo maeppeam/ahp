@@ -5,7 +5,6 @@ const projects = [
     {
         id: 1,
         title: "Manajement Inventory V.1",
-        catKey: "internal",
         description: "Asset Management System V.1 is a web-based application for managing assets/inventory efficiently. This early version provides a basic interface for tracking and managing asset data.",
         tech: ["HTML", "CSS", "JavaScript"],
         url: "https://maeppeam.github.io/inventory-system-v1/",
@@ -17,7 +16,6 @@ const projects = [
     {
         id: 2,
         title: "Ticketing System",
-        catKey: "webutils",
         description: "Ticketing System is a web-based application for managing customer service tickets efficiently. It's designed to log, track, and follow up on requests or reports through a structured interface.",
         tech: ["HTML", "CSS", "JavaScript"],
         url: "https://maeppeam.github.io/ticketing-system/",
@@ -29,7 +27,6 @@ const projects = [
     {
         id: 3,
         title: "Manajement Inventory V.2",
-        catKey: "internal",
         description: "This version is a refinement of V.1 with improved features and performance.",
         tech: ["HTML", "CSS", "JavaScript", "API QR Code"],
         url: "https://maeppeam.github.io/inventory-system-v2/",
@@ -41,7 +38,6 @@ const projects = [
     {
         id: 4,
         title: "SABAR - Sistem Arus Barang Masuk & Keluar",
-        catKey: "internal",
         description: "This system is designed to manage the full goods cycle — from master data and inbound/outbound transactions to stock opname — complete with approval features and low-stock notifications.",
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "MVC Like Architecture"],
         url: "https://sabar.afterhoursproject.my.id/",
@@ -53,7 +49,6 @@ const projects = [
     {
         id: 5,
         title: "SAHIN - Secure, Authentic, Hands-In",
-        catKey: "webutils",
         description: "A web-based application for managing document/request workflows with an Electronic Signature (TTE) feature.",
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "Hash Code", "QR Code"],
         url: "https://maeppeam.github.io/sah-in/",
@@ -65,7 +60,6 @@ const projects = [
     {
         id: 6,
         title: "GROO",
-        catKey: "internal",
         description: "This system provides a complete dashboard with a summary of staff data (Teachers, Support Staff, GTT, GTY) along with data-completeness info such as Dapodik, NUPTK, and PPG, plus a staff directory with search.",
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "Hash Code", "Single-Page Application"],
         url: "https://maeppeam.github.io/groo/",
@@ -77,7 +71,6 @@ const projects = [
     {
         id: 7,
         title: "HIGAT",
-        catKey: "webutils",
         description: "A flexible, centralized platform for printing multi-merchant proforma invoices and invoices with professional template designs in seconds.",
         tech: ["HTML", "CSS", "JavaScript", "HTML Templating"],
         url: "https://maeppeam.github.io/higat/",
@@ -89,7 +82,6 @@ const projects = [
     {
         id: 8,
         title: "SIMPUL - School Information & Management Platform for Unified Learning",
-        catKey: "internal",
         description: "A web-based school information management system designed to centrally manage academic data, covering student, teacher, and class administration through attendance tracking.",
         tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
         url: "https://simpul.afterhoursproject.my.id",
@@ -101,7 +93,6 @@ const projects = [
     {
         id: 9,
         title: "POS Ngasir",
-        catKey: "SaaS",
         description: "A web-based POS system for store operations and sales transactions, featuring separate access rights for the admin panel and cashier interface.",
         tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
         url: "https://ngasir.afterhoursproject.my.id",
@@ -243,7 +234,7 @@ const translations = {
         "tspage.s4": "Assembling the AI-generated pieces into one cohesive application (including applying a Single-Page Application experience), testing the flow, and launching it so it makes a real impact right away.",
         "projects.title": "Recent Projects",
         "projects.titleAll": "All Projects",
-        "projects.introAll": "Every application here was built to solve a real, everyday problem.",
+        "projects.introAll": "Every application here — 8 in total — was built to solve a real, everyday problem.",
         "projects.viewAll": "View All Projects →",
         "projects.search": "Search projects...",
         "projects.sortNewest": "Newest",
@@ -346,7 +337,7 @@ const translations = {
         "tspage.s4": "Merakit potongan-potongan hasil AI menjadi satu kesatuan aplikasi (termasuk penerapan pengalaman Single-Page Application), melakukan uji coba alur, dan meluncurkannya agar segera memberikan dampak nyata.",
         "projects.title": "Proyek Terbaru",
         "projects.titleAll": "Semua Proyek",
-        "projects.introAll": "Setiap aplikasi di sini dibangun untuk memecahkan masalah nyata sehari-hari.",
+        "projects.introAll": "Setiap aplikasi di sini — 8 total — dibangun untuk memecahkan masalah nyata sehari-hari.",
         "projects.viewAll": "Lihat Semua Proyek →",
         "projects.search": "Cari proyek...",
         "projects.sortNewest": "Terbaru",
@@ -463,7 +454,7 @@ function applyFilters() {
     if (state.searchQuery) {
         var q = state.searchQuery;
         filtered = filtered.filter(function (p) {
-            var haystack = (p.title + " " + pDesc(p) + " " + t("category." + p.catKey) + " " + p.status + " " + p.tech.join(" ")).toLowerCase();
+            var haystack = (p.title + " " + pDesc(p) + " " + p.status + " " + p.tech.join(" ")).toLowerCase();
             return haystack.indexOf(q) !== -1;
         });
     }
