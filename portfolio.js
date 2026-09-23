@@ -411,8 +411,7 @@ function setLanguage(lang) {
 
 // Re-renders whichever project UI is present on the current page.
 function refreshProjectsUI() {
-    if (document.getElementById("chipBar")) {
-        renderChips();
+    if (document.getElementById("searchInput")) {
         applyFilters();
     } else if (document.getElementById("projectContainer")) {
         renderPreviewProjects();
@@ -423,7 +422,6 @@ function refreshProjectsUI() {
 // STATE
 // ============================================
 let state = {
-    currentCategory: "All",
     searchQuery: "",
     sortBy: "newest"
 };
@@ -449,47 +447,12 @@ function getProject(id) {
 }
 
 // ============================================
-// CATEGORY CHIPS
-// ============================================
-function renderChips() {
-    var el = document.getElementById("chipBar");
-    if (!el) return;
-
-    var seen = {};
-    var cats = ["All"];
-    for (var ci = 0; ci < projects.length; ci++) {
-        if (seen[projects[ci].catKey]) continue;
-        seen[projects[ci].catKey] = true;
-        cats.push(projects[ci].catKey);
-    }
-    var html = "";
-    for (var i = 0; i < cats.length; i++) {
-        var label = cats[i] === "All" ? t("projects.all") : t("category." + cats[i]);
-        html += '<button class="chip' + (cats[i] === state.currentCategory ? " active" : "") + '" data-cat="' + cats[i] + '">' + label + "</button>";
-    }
-    el.innerHTML = html;
-
-    var chips = el.querySelectorAll(".chip");
-    for (var j = 0; j < chips.length; j++) {
-        chips[j].addEventListener("click", function () {
-            state.currentCategory = this.getAttribute("data-cat");
-            renderChips();
-            applyFilters();
-        });
-    }
-}
-
-// ============================================
 // FILTERS (full projects page)
 // ============================================
 function applyFilters() {
     if (!document.getElementById("projectContainer")) return;
 
     var filtered = projects.slice();
-
-    if (state.currentCategory !== "All") {
-        filtered = filtered.filter(function (p) { return p.catKey === state.currentCategory; });
-    }
 
     if (state.searchQuery) {
         var q = state.searchQuery;
@@ -520,7 +483,7 @@ function buildCardHtml(p, i) {
     if (count > 1) html += '<span class="card-count">' + count + " " + t("card.photos") + "</span>";
     html += "</div>";
     html += '<div class="card-body">';
-    html += '<div class="card-top"><span class="category">' + t("category." + p.catKey) + "</span>" + getStatusBadge(p.status) + "</div>";
+    html += '<div class="card-top">' + getStatusBadge(p.status) + "</div>";
     html += "<h3>" + p.title + "</h3>";
     html += "<p>" + pDesc(p) + "</p>";
     html += '<div class="tech-tags">';
@@ -563,14 +526,12 @@ function renderPreviewProjects(limit) {
 }
 
 function resetAllFilters() {
-    state.currentCategory = "All";
     state.searchQuery = "";
     state.sortBy = "newest";
     var searchInput = document.getElementById("searchInput");
     var sortSelect = document.getElementById("sortSelect");
     if (searchInput) searchInput.value = "";
     if (sortSelect) sortSelect.value = "newest";
-    renderChips();
     applyFilters();
 }
 
@@ -582,7 +543,7 @@ function showDetail(id) {
     if (!p) return;
 
     var html = '<div class="modal-body">';
-    html += '<div class="card-top"><span class="category">' + t("category." + p.catKey) + "</span>" + getStatusBadge(p.status) + "</div>";
+    html += '<div class="card-top">' + getStatusBadge(p.status) + "</div>";
     html += "<h2>" + p.title + "</h2>";
     html += '<div class="modal-meta">' + formatDate(p.date) + "</div>";
 
