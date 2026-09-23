@@ -226,6 +226,8 @@ const translations = {
         "contact.sending": "Sending...",
         "contact.success": "Thank you! Your message has been sent.",
         "contact.error": "Something went wrong. Please try again in a moment.",
+        "contact.demoSubject": "Demo request: {title}",
+        "contact.demoMessage": "Hi, I'd like to request a demo for \"{title}\".",
         "meta.techstackDescription": "Tech Stack & My Skills — building systems through logic, flow, and AI orchestration.",
         "tspage.hero.desc": "I'm not a traditional programmer — I'm a system builder. My vibe coding approach means focusing on problem-solving and designing logical flows. I make full use of artificial intelligence (AI) to translate my way of thinking into functional, ready-to-use digital systems. Focused on solutions, executed with technology.",
         "tspage.core.kicker": "Logic & Orchestration",
@@ -249,7 +251,8 @@ const translations = {
         "projects.all": "All",
         "projects.empty": "😕 No matching projects.",
         "projects.reset": "Reset Filter",
-        "card.viewDemo": "View Demo →",
+        "card.viewDemo": "Visit →",
+        "card.requestDemo": "Request Demo",
         "card.details": "Details",
         "card.photos": "photos",
         "status.live": "Live",
@@ -326,6 +329,8 @@ const translations = {
         "contact.sending": "Mengirim...",
         "contact.success": "Terima kasih! Pesanmu sudah terkirim.",
         "contact.error": "Terjadi kesalahan. Coba lagi sebentar lagi.",
+        "contact.demoSubject": "Permintaan demo: {title}",
+        "contact.demoMessage": "Halo, saya ingin request demo untuk \"{title}\".",
         "meta.techstackDescription": "Tech Stack & Skill saya — membangun sistem lewat logika, alur, dan orkestrasi AI.",
         "tspage.hero.desc": "Saya bukan programmer tradisional, saya adalah system builder. Pendekatan vibe coding saya berarti fokus pada pemecahan masalah dan perancangan alur (flow) yang logis. Saya memanfaatkan kecerdasan buatan (AI) secara penuh untuk menerjemahkan kerangka berpikir saya menjadi sistem digital yang fungsional dan siap pakai. Fokus pada solusi, dieksekusi dengan teknologi.",
         "tspage.core.kicker": "Keahlian Logika & Orkestrasi",
@@ -341,7 +346,7 @@ const translations = {
         "tspage.s4": "Merakit potongan-potongan hasil AI menjadi satu kesatuan aplikasi (termasuk penerapan pengalaman Single-Page Application), melakukan uji coba alur, dan meluncurkannya agar segera memberikan dampak nyata.",
         "projects.title": "Proyek Terbaru",
         "projects.titleAll": "Semua Proyek",
-        "projects.introAll": "Setiap aplikasi di sini dibangun untuk memecahkan masalah nyata sehari-hari.",
+        "projects.introAll": "Setiap aplikasi di sini — 8 total — dibangun untuk memecahkan masalah nyata sehari-hari.",
         "projects.viewAll": "Lihat Semua Proyek →",
         "projects.search": "Cari proyek...",
         "projects.sortNewest": "Terbaru",
@@ -349,7 +354,8 @@ const translations = {
         "projects.all": "Semua",
         "projects.empty": "😕 Tidak ada proyek yang cocok.",
         "projects.reset": "Reset Filter",
-        "card.viewDemo": "Lihat Demo →",
+        "card.viewDemo": "Kunjungi →",
+        "card.requestDemo": "Request Demo",
         "card.details": "Detail",
         "card.photos": "foto",
         "status.live": "Live",
@@ -491,6 +497,7 @@ function buildCardHtml(p, i) {
     html += "</div>";
     html += '<div class="card-actions">';
     html += '<a href="' + p.url + '" target="_blank" rel="noopener" class="btn btn-card btn-card-demo">' + t("card.viewDemo") + '</a>';
+    html += '<button class="btn btn-card btn-card-request" onclick="requestDemo(' + p.id + ')">' + t("card.requestDemo") + '</button>';
     html += '<button class="btn btn-card btn-card-detail" onclick="showDetail(' + p.id + ')">' + t("card.details") + '</button>';
     html += "</div></div></article>";
     return html;
@@ -578,6 +585,13 @@ function closeModal() {
     if (!modal) return;
     modal.classList.remove("open");
     document.body.style.overflow = "";
+}
+
+// Opens the contact modal pre-filled as a demo request for a specific project.
+function requestDemo(id) {
+    var p = getProject(id);
+    if (!p) return;
+    openContact(p.title);
 }
 
 // ============================================
@@ -710,7 +724,7 @@ function renderFooterSocial() {
         html += '<a href="' + url + '" target="_blank" rel="noopener noreferrer" aria-label="' + labels[key] + '" title="' + labels[key] + '">' + ICONS[key] + "</a>";
     });
     box.innerHTML = html;
-    document.getElementById("contactOpen").addEventListener("click", openContact);
+    document.getElementById("contactOpen").addEventListener("click", function () { openContact(); });
 }
 
 function buildContactModal() {
@@ -746,12 +760,23 @@ function buildContactModal() {
     document.getElementById("contactForm").addEventListener("submit", submitContact);
 }
 
-function openContact() {
+function openContact(projectTitle) {
     var modal = document.getElementById("contactModal");
     if (!modal) return;
     lastContactTrigger = document.activeElement;
     modal.classList.add("open");
     document.body.style.overflow = "hidden";
+
+    var subjectInput = modal.querySelector('input[name="_subject"]');
+    var messageInput = modal.querySelector('textarea[name="message"]');
+    if (projectTitle) {
+        if (subjectInput) subjectInput.value = t("contact.demoSubject").replace("{title}", projectTitle);
+        if (messageInput) messageInput.value = t("contact.demoMessage").replace("{title}", projectTitle);
+    } else {
+        if (subjectInput) subjectInput.value = "New message from MAEP portfolio";
+        if (messageInput) messageInput.value = "";
+    }
+
     var first = modal.querySelector("input[name=name]");
     if (first) setTimeout(function () { first.focus(); }, 50);
 }
