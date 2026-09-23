@@ -243,7 +243,7 @@ const translations = {
         "tspage.s4": "Assembling the AI-generated pieces into one cohesive application (including applying a Single-Page Application experience), testing the flow, and launching it so it makes a real impact right away.",
         "projects.title": "Recent Projects",
         "projects.titleAll": "All Projects",
-        "projects.introAll": "Every application here — 8 in total — was built to solve a real, everyday problem.",
+        "projects.introAll": "Every application here was built to solve a real, everyday problem.",
         "projects.viewAll": "View All Projects →",
         "projects.search": "Search projects...",
         "projects.sortNewest": "Newest",
