@@ -51,7 +51,7 @@ const projects = [
         title: "SAHIN - Secure, Authentic, Hands-In",
         description: "A web-based application for managing document/request workflows with an Electronic Signature (TTE) feature.",
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "Hash Code", "QR Code"],
-        url: "https://shain.afterhoursproject.my.id",
+        url: "https://sahin.afterhoursproject.my.id",
         screenshots: ["assets/sahin.png"],
         status: "Live",
         date: "2026-08-05",
