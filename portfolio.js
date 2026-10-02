@@ -53,7 +53,7 @@ const projects = [
         tech: ["HTML", "CSS", "JavaScript", "API QR Code", "Hash Code", "QR Code"],
         url: "https://sahin.afterhoursproject.my.id",
         screenshots: ["assets/sahin.png"],
-        status: "Maintenance",
+        status: "Live",
         date: "2026-08-05",
         features: ["Document Workflow", "QR Code Verification", "Real-Time Dashboard", "Document Detail", "User Management"]
     },
